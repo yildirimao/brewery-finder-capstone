@@ -14,6 +14,8 @@ CREATE TABLE users (
 	user_id int DEFAULT nextval('seq_user_id'::regclass) NOT NULL,
 	username varchar(50) UNIQUE NOT NULL,
 	password_hash varchar(200) NOT NULL,
+	zipcode int,
+	email varchar(100),
 	role varchar(50) NOT NULL,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
