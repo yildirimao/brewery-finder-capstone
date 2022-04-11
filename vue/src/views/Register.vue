@@ -43,11 +43,27 @@
       </section>
       
       <section>
-        ZIPCODE section
+        <label for="email" class="sr-only">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Email Address"
+          v-model="user.email"
+          required
+        />
       </section>
 
       <section>
-        EMAIL section
+        <label for="ZipCode" class="sr-only">ZipCode</label>
+        <input
+          type="number"
+          id="ZipCode"
+          class="form-control"
+          placeholder="ZipCode"
+          v-model="user.zipCode"
+          required
+        />
       </section>
       
       <section>
@@ -74,6 +90,8 @@ export default {
         password: '',
         confirmPassword: '',
         role: 'user',
+        email:'',
+        zipCode:''
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
@@ -115,5 +133,8 @@ export default {
 <style scoped>
   section, button{
     margin-bottom: 1em;
+  }
+  section label{
+    margin-right: 1em;
   }
 </style>

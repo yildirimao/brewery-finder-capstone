@@ -74,3 +74,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  section, button{
+    margin-bottom: 1em;
+  }
+  section label{
+    margin-right: 1em;
+  }
+</style>
