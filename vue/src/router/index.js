@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
+import AgeFilter from '../views/AgeFilter.vue'
 import store from '../store/index'
 
 Vue.use(Router)
@@ -53,15 +54,31 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    {
+      path: "/agefilter",
+      name: "agefilter",
+      component: AgeFilter,
+      meta: {
+        requiresAuth: false
+      }
+    },
   ]
 })
 
 router.beforeEach((to, from, next) => {
   // Determine if the route requires Authentication
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
+  const authorized = store.state.token === '';
+  
+
+  //21+ filter
+  //const is21 = store.state.is21Plus;
+  // if(!authorized && !is21){
+  //   next("/agefilter");
+  // }
 
   // If it does and they are not logged in, send the user to "/login"
-  if (requiresAuth && store.state.token === '') {
+  if (requiresAuth && authorized) {
     next("/login");
   } else {
     // Else let them go to their next destination
