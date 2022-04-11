@@ -12,16 +12,20 @@ public class User {
    private String username;
    @JsonIgnore
    private String password;
+   private String zipCode;
+   private String email;
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
 
    public User() { }
 
-   public User(Long id, String username, String password, String authorities) {
+   public User(Long id, String username, String password, String zipCode, String email, String authorities) {
       this.id = id;
       this.username = username;
       this.password = password;
+      this.zipCode = zipCode;
+      this.email = email;
       this.activated = true;
    }
 
@@ -47,6 +51,22 @@ public class User {
 
    public void setPassword(String password) {
       this.password = password;
+   }
+
+   public String getZipCode() {
+      return zipCode;
+   }
+
+   public void setZipCode(String zipCode) {
+      this.zipCode = zipCode;
+   }
+
+   public String getEmail() {
+      return email;
+   }
+
+   public void setEmail(String email) {
+      this.email = email;
    }
 
    public boolean isActivated() {
@@ -82,12 +102,14 @@ public class User {
               activated == user.activated &&
               Objects.equals(username, user.username) &&
               Objects.equals(password, user.password) &&
+              Objects.equals(zipCode, user.zipCode) &&
+              Objects.equals(email, user.email) &&
               Objects.equals(authorities, user.authorities);
    }
 
    @Override
    public int hashCode() {
-      return Objects.hash(id, username, password, activated, authorities);
+      return Objects.hash(id, username, password, zipCode, email, activated, authorities);
    }
 
    @Override
