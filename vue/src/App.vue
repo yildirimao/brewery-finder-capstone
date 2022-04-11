@@ -7,3 +7,9 @@
     <router-view />
   </div>
 </template>
+
+<style>
+  html{
+    text-align: center;
+  }
+</style>
