@@ -18,12 +18,11 @@ export default {
   components: { BeerList },
   data(){
     return {
-      brewery:{
-        name: "Brewery Name",
-        address: "1234 main street, city, state, 55555",
-        phone: "(513) 555-1234"
-      }
+      brewery:{}
     }
+  },
+  created(){
+    this.brewery = this.$store.state.breweries[this.$route.params.id];
   }
 }
 </script>

@@ -1,14 +1,15 @@
 <template>
-  <div id="background">
+  <div id="background" v-bind:style="`background-image: url(${brewery.picture})`">
       <div id="text">
-          Brewery
+          {{brewery.name}}
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+    name:'brewery-card',
+    props:['brewery']
 }
 </script>
 
@@ -24,7 +25,6 @@ export default {
     justify-content: center;
     border-radius: 1em;
 }
-
 #text{
     color: black;
     background-color: #ffffff80;

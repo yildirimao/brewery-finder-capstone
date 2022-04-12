@@ -1,7 +1,7 @@
 <template>
   <div id="brewery-grid">
-    <router-link v-for="n in 10" :key="n" v-bind:to="{ name: 'brewery', params:{id:n}}">
-      <brewery-card/>
+    <router-link v-for="brewery in this.$store.state.breweries" :key="brewery.id" v-bind:to="{ name: 'brewery', params:{id:brewery.id}}">
+      <brewery-card v-bind:brewery="brewery"/>
     </router-link>
   </div>
 </template>
