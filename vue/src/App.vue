@@ -4,9 +4,10 @@
       <div id="home">
         <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
       </div>
-      <div id="login">
-         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
-         <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
+      <div id="nav-login">
+        <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
+        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+        <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
       </div>
      
     </div>
@@ -43,10 +44,14 @@
     padding-left: 2em;
   }
 
-  #login{
+  #nav-login{
     display: flex;
     justify-content: flex-end;
     grid-area: "login";
     padding-right: 2em;
+  }
+
+  #nav-login a{
+    margin-left: 1em;
   }
 </style>
