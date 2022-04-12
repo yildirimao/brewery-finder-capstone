@@ -8,8 +8,10 @@ export default {
 
   getBrewery(id) {
     return axios.get(`/breweries/${id}`)
+  },
+
+  createBrewery(brewery){
+      return axios.post('/breweries', brewery)
   }
-
   
-
 }

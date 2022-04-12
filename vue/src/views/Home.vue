@@ -6,13 +6,15 @@
     <button id="a-btn">This button is for Admins</button>
     <!-- <p>You must be authenticated to see this</p> -->
     <brewery-list />
+    <brewery-form v-if="ifAdmin()"/>
   </div>
 </template>
 
 <script>
+import BreweryForm from '../components/BreweryForm.vue';
 import BreweryList from "../components/BreweryList.vue";
 export default {
-  components: { BreweryList },
+  components: { BreweryList, BreweryForm },
   name: "home",
   mounted(){
     let user = this.$store.state.user;
@@ -27,6 +29,18 @@ export default {
     }
     else if(user.authorities[0].name == "ROLE_BREWER"){
       document.querySelector("#a-btn").disabled = true;
+    }
+  },
+  methods: {
+    ifAdmin(){
+      if(this.$store.state.user.authorities == undefined){
+        return false;
+      }
+      if(this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'){
+        return true;
+      }else {
+        return false;
+      }
     }
   }
 };
