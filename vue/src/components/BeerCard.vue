@@ -1,14 +1,17 @@
 <template>
-  <div id="background">
+  <div id="background" v-bind:style="`background-image: url(${beer.picture})`">
       <div id="text">
-          Beer
+          {{beer.name}} <br>
+          {{beer.abv}} <br>
+          {{beer.type}}
       </div>
   </div>
 </template>
 
 <script>
 export default {
-
+    name:'beer-card',
+    props:['beer']
 }
 </script>
 

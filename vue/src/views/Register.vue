@@ -57,7 +57,7 @@
       <section>
         <label for="ZipCode" class="sr-only">ZipCode</label>
         <input
-          type="number"
+          type="text"
           id="ZipCode"
           class="form-control"
           placeholder="ZipCode"
