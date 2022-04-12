@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="beer-picture" v-bind:style="`background:url(${beer.picture})`">
+    <div id="beer-picture" v-bind:style="`background:url(${beer.picture}); background-position:center;`">
       <div id="contrast">
         <h1>{{beer.name}} {{this.$route.params.id}}</h1>
         <p>{{beer.abv}}</p>
@@ -36,6 +36,11 @@ export default {
 #beer-picture{
   display: flex;
   justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  padding: 1em 5em;
+  border-radius: 15px;
 }
 #contrast{
   background-color: #ffffff80;
