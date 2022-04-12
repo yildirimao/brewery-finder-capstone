@@ -3,11 +3,11 @@ import axios from 'axios';
 export default {
 
   getListBreweries() {
-    return axios.get('/brewery')
+    return axios.get('/breweries')
   },
 
   getBrewery(id) {
-    return axios.get(`/brewery/${id}`)
+    return axios.get(`/breweries/${id}`)
   }
 
   

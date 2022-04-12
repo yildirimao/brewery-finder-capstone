@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
-import BreweryService from '../services/BreweryService'
 
 Vue.use(Vuex)
 
@@ -120,13 +119,6 @@ export default new Vuex.Store({
       state.user = {};
       axios.defaults.headers.common = {};
     },
-    GET_BREWERY_LIST(state){
-      BreweryService.getListBreweries().then(response => {
-        if(response.status == 200){
-          state.breweries = response.body;
-          
-        }
-      })
-    }
+    
   }
 })
