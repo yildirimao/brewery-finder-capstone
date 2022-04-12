@@ -69,16 +69,13 @@ router.beforeEach((to, from, next) => {
   // Determine if the route requires Authentication
   const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
   const authorized = store.state.token === '';
-  
+  const is21 = localStorage.getItem("is21");
 
-  //21+ filter
-  //const is21 = store.state.is21Plus;
-  // if(!authorized && !is21){
-  //   next("/agefilter");
-  // }
-
-  // If it does and they are not logged in, send the user to "/login"
-  if (requiresAuth && authorized) {
+  if(authorized && !is21 && to.name != "agefilter"){
+    //21+ filter
+    next("/agefilter"); 
+  }else if (requiresAuth && authorized) { 
+    // If it does and they are not logged in, send the user to "/login"
     next("/login");
   } else {
     // Else let them go to their next destination
