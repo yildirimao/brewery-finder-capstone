@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import AgeFilter from '../views/AgeFilter.vue'
+import BreweryDisplay from '../views/BreweryDisplay.vue'
 import store from '../store/index'
 
 Vue.use(Router)
@@ -58,6 +59,14 @@ const router = new Router({
       path: "/agefilter",
       name: "agefilter",
       component: AgeFilter,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/brewery/:id",
+      name: "brewery",
+      component: BreweryDisplay,
       meta: {
         requiresAuth: false
       }

@@ -1,7 +1,8 @@
 <template>
   <div id="brewery-grid">
-      <brewery-card
-      v-for="n in 10" :key="n"/>
+    <router-link v-for="n in 10" :key="n" v-bind:to="{ name: 'brewery', params:{id:n}}">
+      <brewery-card/>
+    </router-link>
   </div>
 </template>
 
