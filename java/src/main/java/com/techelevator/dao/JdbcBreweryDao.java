@@ -31,7 +31,7 @@ public class JdbcBreweryDao implements BreweryDao {
 
     @Override
     public Brewery getBreweryById(int breweryId) {
-        String sql = "SELECT (brewery_id, brewery_name, brewery_location) FROM breweries WHERE brewery_id = ?";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries WHERE brewery_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
         if(results.next()) {
             return mapRowToBrewery(results);
@@ -42,7 +42,7 @@ public class JdbcBreweryDao implements BreweryDao {
 
     @Override
     public Brewery findByName(String name) {
-        String sql = "SELECT (brewery_id, brewery_name, brewery_location) FROM breweries WHERE brewery_name = ?";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries WHERE brewery_name = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, name);
         if (results.next()) {
             return mapRowToBrewery(results);
@@ -54,7 +54,7 @@ public class JdbcBreweryDao implements BreweryDao {
     @Override
     public List<Brewery> findByLocation(String location) {
         List<Brewery> breweries = new ArrayList<>();
-        String sql = "SELECT (brewery_id, brewery_name, brewery_location) FROM breweries WHERE brewery_location = ?";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries WHERE brewery_location = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, location);
         while(results.next()) {
             breweries.add(mapRowToBrewery(results));
@@ -64,7 +64,7 @@ public class JdbcBreweryDao implements BreweryDao {
 
     @Override
     public Brewery create(String name, String location) {
-        String sql = "INSERT INTO breweries (brewery_name, brewery_location) VALUES (?,?) RETURNING brewery_id;";
+        String sql = "INSERT INTO breweries brewery_name, brewery_location VALUES (?,?) RETURNING brewery_id;";
         int newId = jdbcTemplate.queryForObject(sql, int.class, name, location);
         return getBreweryById(newId);
     }
