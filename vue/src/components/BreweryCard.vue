@@ -2,7 +2,9 @@
 <!-- v-bind:style="`background-image: url(${brewery.picture})`"  this is for when/if we add custom pictures per brewery-->
   <div id="background" >
       <div id="text">
-          {{brewery.name}}
+          <h1>{{brewery.name}}</h1>
+          <p>{{brewery.location}}</p>
+          
       </div>
   </div>
 </template>

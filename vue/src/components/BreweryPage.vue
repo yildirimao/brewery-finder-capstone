@@ -1,9 +1,10 @@
 <template>
   <div>
-    <div id="brewery-picture" v-bind:style="`background:no-repeat url(${brewery.picture}); background-position:center;`">
+    <!-- v-bind:style="`background:no-repeat url(${brewery.picture}); background-position:center;`" -->
+    <div id="brewery-picture" >
       <div id="contrast">
         <h1>{{brewery.name}} {{this.$route.params.id}}</h1>
-        <p>{{brewery.address}}</p>
+        <p>{{brewery.location}}</p>
         <p>{{brewery.phone}}</p>
       </div>
     </div>
@@ -31,6 +32,7 @@ export default {
 
 <style>
 #brewery-picture{
+  background-image: url("https://media.istockphoto.com/photos/draught-beer-in-glasses-picture-id1040303026");
   display: flex;
   justify-content: center;
   width: fit-content;
