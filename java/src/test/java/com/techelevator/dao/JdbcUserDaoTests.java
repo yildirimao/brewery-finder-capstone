@@ -13,8 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.List;
 
 public class JdbcUserDaoTests extends BaseDaoTests {
-    protected static final User USER_1 = new User(1L, "user1", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_USER");
-    protected static final User USER_2 = new User(2L, "user2", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_ADMIN");
+    protected static final User USER_1 = new User(1L, "user", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_USER");
+    protected static final User USER_2 = new User(2L, "admin", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_ADMIN");
 
     private JdbcUserDao sut;
 
@@ -80,7 +80,7 @@ public class JdbcUserDaoTests extends BaseDaoTests {
         List<User> users = sut.findAll();
 
         Assert.assertNotNull(users);
-        Assert.assertEquals(2, users.size());
+        Assert.assertEquals(3, users.size());
         Assert.assertEquals(USER_1, users.get(0));
         Assert.assertEquals(USER_2, users.get(1));
     }
@@ -104,7 +104,7 @@ public class JdbcUserDaoTests extends BaseDaoTests {
     public void create_user_creates_a_user() {
         User newUser = new User(-1L, "new", "user", "55555", "example@email.com", "ROLE_USER");
 
-        boolean userWasCreated = sut.create(newUser.getUsername(), newUser.getPassword(), newUser.getZipCode(), newUser.getEmail(), "ROLE_USER");
+        boolean userWasCreated = sut.create(newUser.getUsername(), newUser.getPassword(), newUser.getZipCode(), newUser.getEmail(), "USER");
 
         Assert.assertTrue(userWasCreated);
 
