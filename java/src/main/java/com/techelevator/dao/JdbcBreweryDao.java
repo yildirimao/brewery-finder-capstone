@@ -4,10 +4,11 @@ package com.techelevator.dao;
 import com.techelevator.model.Brewery;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class JdbcBreweryDao implements BreweryDao {
 
     private JdbcTemplate jdbcTemplate;
@@ -19,7 +20,7 @@ public class JdbcBreweryDao implements BreweryDao {
     @Override
     public List<Brewery> listAll() {
         List<Brewery> breweries = new ArrayList<>();
-        String sql = "SELECT (brewery_id, brewery_name, brewery_location) FROM breweries";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {
             Brewery brewery = mapRowToBrewery(results);

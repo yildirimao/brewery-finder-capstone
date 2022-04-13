@@ -17,7 +17,7 @@ public class BreweryController {
         this.breweryDao = breweryDao;
     }
 
-    @RequestMapping( path = "PLACEHOLDER", method = RequestMethod.GET)
+    @RequestMapping( path = "/breweries", method = RequestMethod.GET)
     public List<Brewery> listAll() {
         return breweryDao.listAll();
     }
