@@ -7,18 +7,18 @@
         <p>{{beer.type}}</p>
       </div>
     </div>
-    <div>
-        <h1>reviews go here!</h1>
-        <section>
-            <h2>review title</h2>
-            <p>Sunt est minim proident magna tempor anim aliquip deserunt. Voluptate aliqua nulla aute velit ut ex consequat. Velit consectetur elit ad aute officia et. Adipisicing exercitation ut laborum elit ut sit sit. Aliqua fugiat proident dolor sit ad officia pariatur sint veniam aliqua. Tempor nostrud pariatur excepteur dolore et proident velit ut non eiusmod sint voluptate nisi aliquip.</p>
-        </section>
-    </div>
+    <h1>reviews go here!</h1>
+    <review/>
+    <review/>
+    <review/>
+    <review/>
   </div>
 </template>
 
 <script>
+import Review from './Review.vue'
 export default {
+  components: { Review },
   data(){
     return {
       beer:{
