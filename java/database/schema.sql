@@ -47,6 +47,27 @@ CREATE TABLE breweries (
 INSERT INTO breweries (brewery_name, brewery_location)
 VALUES ('Madtree Brewery', 'Cincinnati, OH');
 
+INSERT INTO breweries (brewery_name, brewery_location)
+VALUES ('Great Lakes Brewery', 'Cleveland, OH');
+
+INSERT INTO breweries (brewery_name, brewery_location)
+VALUES ('50 West Brewery', 'Cincinnati, OH');
+
+INSERT INTO breweries (brewery_name, brewery_location)
+VALUES ('Fretboard', 'Cincinnati, OH');
+
+INSERT INTO breweries (brewery_name, brewery_location)
+VALUES ('High Grain Brewery', 'Cincinnati, OH');
+
+INSERT INTO breweries (brewery_name, brewery_location)
+VALUES ('Nine-Giant Brewery', 'Cincinnati, OH');
+
+INSERT INTO breweries (brewery_name, brewery_location)
+VALUES ('Rhinegheist', 'Cincinnati, OH');
+
+INSERT INTO breweries (brewery_name, brewery_location)
+VALUES ('Braxton', 'Covington, Ky');
+
 CREATE TABLE brewers (
 	brewer_id int CONSTRAINT fk_users REFERENCES users(user_id),
 	brewery_id int CONSTRAINT fk_breweries REFERENCES breweries(brewery_id)

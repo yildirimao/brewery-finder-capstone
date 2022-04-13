@@ -64,7 +64,7 @@ public class JdbcBreweryDao implements BreweryDao {
 
     @Override
     public Brewery create(String name, String location) {
-        String sql = "INSERT INTO breweries brewery_name, brewery_location VALUES (?,?) RETURNING brewery_id;";
+        String sql = "INSERT INTO breweries (brewery_name, brewery_location) VALUES (?,?) RETURNING brewery_id;";
         int newId = jdbcTemplate.queryForObject(sql, int.class, name, location);
         return getBreweryById(newId);
     }

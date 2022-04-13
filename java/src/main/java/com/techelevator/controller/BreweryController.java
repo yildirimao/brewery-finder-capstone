@@ -2,10 +2,8 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.BreweryDao;
 import com.techelevator.model.Brewery;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,8 +27,8 @@ public class BreweryController {
 //    @RequestMapping(path ="/breweries/{brewery_name}", method = RequestMethod.GET)
 //    public Brewery findBreweryByName(@PathVariable String brewery_name){ return breweryDao.findByName(brewery_name);}
 
-//    @RequestMapping(path = "/breweries", method = RequestMethod.POST)
-//    public Brewery createBrewery(){
-//        Brewery brewery = new Brewery();
-//            breweryDao.create(brewery.getName(), brewery.getLocation());
+    @ResponseStatus(code = HttpStatus.CREATED)
+    @RequestMapping(path = "/breweries", method = RequestMethod.POST)
+    public Brewery createBrewery(@RequestBody Brewery brewery){
+        return breweryDao.create(brewery.getName(), brewery.getLocation());}
 }
