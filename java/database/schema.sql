@@ -1,6 +1,7 @@
 BEGIN TRANSACTION;
 
 DROP TABLE IF EXISTS reviews;
+DROP SEQUENCE IF EXISTS seq_review_id;
 DROP TABLE IF EXISTS beers;
 DROP SEQUENCE IF EXISTS seq_beer_id;
 DROP TABLE IF EXISTS brewers;
@@ -26,11 +27,16 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
-INSERT INTO users (username,password_hash, zipcode, email, role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', '55555', 'example@email.com','ROLE_USER');
-INSERT INTO users (username,password_hash, zipcode, email, role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', '55555', 'example@email.com','ROLE_ADMIN');
+INSERT INTO users (username,password_hash, zipcode, email, role) 
+VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', '55555', 'example@email.com','ROLE_USER');
+
+INSERT INTO users (username,password_hash, zipcode, email, role) 
+VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', '55555', 'example@email.com','ROLE_ADMIN');
+
 INSERT INTO users (username, password_hash, zipcode, email, role) 
 VALUES ('Zach','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 
-		45236, 'zach@email.com', 'ROLE_BREWER');
+		'45236', 'zach@email.com', 'ROLE_BREWER');
+		
 insert into users(username, password_hash, role)
 values ('brewer', '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 'ROLE_BREWER');
 
@@ -43,32 +49,46 @@ CREATE TABLE breweries (
 	brewery_id int DEFAULT nextval('seq_brewery_id'::regclass) NOT NULL,
 	brewery_name varchar(50) UNIQUE NOT NULL,
 	brewery_location varchar(60) NOT NULL,
+	phone_number varchar(20) NOT NULL,
+	hours_of_operation varchar(300) NOT NULL,
+	address varchar(300) NOT NULL,
+	bio varchar(50000) NOT NULL,
+	brewery_img varchar(300),
+	active boolean NOT NULL,
 	CONSTRAINT PK_brewery PRIMARY KEY (brewery_id)
 );
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('Madtree Brewery', 'Cincinnati, OH');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('Madtree Brewing', 'Cincinnati, OH', '513-836-8733', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209', 'Madtree is a cool brewery in Cincinnati.', true);
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('Great Lakes Brewery', 'Cleveland, OH');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('Great Lakes Brewering Company', 'Cleveland, OH', '216-771-4404', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '2516 Market Ave, Cleveland, OH 44113', 'Great lakes is a cool Brewery', true);
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('50 West Brewery', 'Cincinnati, OH');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('50 West Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('Fretboard', 'Cincinnati, OH');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('Fretboard', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('High Grain Brewery', 'Cincinnati, OH');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('High Grain Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('Nine-Giant Brewery', 'Cincinnati, OH');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('Nine-Giant Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('Rhinegheist', 'Cincinnati, OH');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('Rhinegheist', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
-INSERT INTO breweries (brewery_name, brewery_location)
-VALUES ('Braxton', 'Covington, Ky');
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+VALUES ('Braxton', 'Covington, Ky', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
 CREATE TABLE brewers (
 	brewer_id int CONSTRAINT fk_users REFERENCES users(user_id),
@@ -100,17 +120,29 @@ CREATE TABLE beers(
 	beer_name varchar(50) UNIQUE NOT NULL,
 	abv decimal NOT NULL,
 	beer_type varchar(30) NOT NULL,
+	ibu int NOT NULL,
+	hops varchar(100) NOT NULL,
+	description varchar(50000) NOT NULL,
+	beer_img varchar(300),
+	malts varchar(100),
+	available boolean,
 	brewery_id int CONSTRAINT fk_breweries REFERENCES breweries(brewery_id),
 	CONSTRAINT PK_beer PRIMARY KEY (beer_id)
 );
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
 VALUES ('Shade', 4.6, 'sour', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewery'));
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'Perle', 'A sour beer from Madtree');
 
+CREATE SEQUENCE seq_review_id
+ INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
 CREATE TABLE reviews(
+	review_id int DEFAULT nextval('seq_review_id'::regclass) NOT NULL,
 	review varchar(10000) NOT NULL,
 	rating int NOT NULL CHECK (rating >= 5),
 	beer_id int CONSTRAINT fk_beers REFERENCES beers(beer_id),
