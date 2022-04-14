@@ -39,29 +39,27 @@ public class BeerController {
         return beerDao.getBeerById(beer_id);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    //TODO:Finish "brewer path" for this method
+    @PreAuthorize("hasRole('ADMIN', BREWER)")
     @ResponseStatus(code = HttpStatus.CREATED)
     @RequestMapping(path = "/beers", method = RequestMethod.POST)
-    public Beer createBeer(@RequestBody Beer beer){
-        return beerDao.create(beer);
-    }
-
-    //TODO: this isn't done yet. we need to only add the beer to a brewery the brewer works at.
-    @PreAuthorize("hasRole('BREWER')")
-    @ResponseStatus(code = HttpStatus.CREATED)
-    @RequestMapping(path = "/beers", method = RequestMethod.POST)
-    public Beer createBeerAsBrewer(@RequestBody Beer beer, Principal principal){
-        //Get user id of current user
+    public Beer createBeer(@RequestBody Beer beer, Principal principal){
+        //get current user
         User user = userDao.findByUsername(principal.getName());
-        //Make sure the user works at the brewery they are adding the beer to
-        //add the beer to database via beerDAO, AFTER verifying they work at that brewery.
 
-
-        //this is just placeholder response data, it doesn't actually add the beer to the brewery yet.
-        beer.setBreweryID(-1);
-        String placeholdertext = "This currently doesn't do anything. see comments in code for more info.";
-        beer.setDescription(placeholdertext);
-        return beer; //beerDao.create(beer);
+        //check if admin or brewer.
+        if(user.getAuthorities().contains("ROLE_ADMIN")){
+            //admin path
+            return beerDao.create(beer);
+        }else{
+            //brewer path
+            //Make sure the user works at the brewery they are adding the beer to
+            //add the beer to database via beerDAO, AFTER verifying they work at that brewery.
+            //this is just placeholder response data, it doesn't actually add the beer to the brewery yet.
+            beer.setBreweryID(-1);
+            String placeholdertext = "This currently doesn't do anything. see comments in code for more info.";
+            beer.setDescription(placeholdertext);
+            return beer; //beerDao.create(beer);
+        }
     }
-
 }

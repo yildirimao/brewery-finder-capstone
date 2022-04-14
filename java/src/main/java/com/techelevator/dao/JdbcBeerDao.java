@@ -103,7 +103,7 @@ public class JdbcBeerDao implements BeerDao{
         Beer beer = new Beer();
         beer.setId(rs.getInt("beer_id"));
         beer.setName(rs.getString("beer_name"));
-        beer.setImgURL(rs.getString("beer_imgURL"));
+        beer.setBeer_img(rs.getString("beer_img"));
         beer.setDescription(rs.getString("beer_description"));
         beer.setAbv(rs.getFloat("abv"));
         beer.setType(rs.getString("beer_type"));
