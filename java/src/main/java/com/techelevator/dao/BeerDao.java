@@ -11,7 +11,7 @@ public interface BeerDao {
 
     Beer getBeerById(int beerId);
 
-    Beer findByName(String name);
+    Beer getBeerByName(String name);
 
     Beer create(Beer beerToCreate);
 
