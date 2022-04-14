@@ -52,7 +52,7 @@ CREATE TABLE breweries (
 	hours_of_operation varchar(300) NOT NULL,
 	address varchar(300) NOT NULL,
 	bio varchar(50000) NOT NULL,
-	brewery_img varchar(10000),
+	brewery_img varchar(10000) NOT NULL,
 	active boolean NOT NULL,
 	CONSTRAINT PK_brewery PRIMARY KEY (brewery_id)
 );
@@ -60,35 +60,35 @@ CREATE TABLE breweries (
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Madtree Brewing', 'Cincinnati, OH', '513-836-8733', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209', 'Madtree is a cool brewery in Cincinnati.', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209', 'Madtree is a cool brewery in Cincinnati.', true, 'https://cincinnatiusa.com/sites/default/files/styles/Array/public/Venues/MadTree-00.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Great Lakes Brewering Company', 'Cleveland, OH', '216-771-4404', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '2516 Market Ave, Cleveland, OH 44113', 'Great lakes is a cool Brewery', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '2516 Market Ave, Cleveland, OH 44113', 'Great lakes is a cool Brewery', true, 'https://d1ynl4hb5mx7r8.cloudfront.net/wp-content/uploads/2020/02/17140001/great-lakes-1024x633.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('50 West Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://media1.citybeat.com/citybeat/imager/u/original/12086253/copy_of_20180412_4e9a2481.5c9e70e104fc3.png');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Fretboard', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://www.gannett-cdn.com/presto/2021/11/03/PCIN/49bf6db3-ff37-4b74-b615-fab35b87d110-Fretboard.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('High Grain Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://media.bizj.us/view/img/11339109/highgrain29*1200xx1800-1013-0-94.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Nine Giant Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://www.gannett-cdn.com/media/2016/06/23/Cincinnati/Cincinnati/636022930752296332-062316-NINE-GIANT-335.jpg?width=640');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Rhinegeist', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://media-exp1.licdn.com/dms/image/C4E1BAQGCkrtCNsSMMg/company-background_10000/0/1578514862862?e=2147483647&v=beta&t=Tbeps4MHeNRqWXULVPPqvyG_fYdFIBf3bT3_twwQgXg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Braxton', 'Covington, Ky', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://www.americanway.com/public/uploads/Cincinnati-Braxton-Brewing-Co-courtesy.jpg');
 
 CREATE TABLE brewers (
 	brewer_id int CONSTRAINT fk_users REFERENCES users(user_id),
