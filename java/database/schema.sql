@@ -52,43 +52,43 @@ CREATE TABLE breweries (
 	hours_of_operation varchar(300) NOT NULL,
 	address varchar(300) NOT NULL,
 	bio varchar(50000) NOT NULL,
-	brewery_img varchar(300),
+	brewery_img varchar(10000),
 	active boolean NOT NULL,
 	CONSTRAINT PK_brewery PRIMARY KEY (brewery_id)
 );
 
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Madtree Brewing', 'Cincinnati, OH', '513-836-8733', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209', 'Madtree is a cool brewery in Cincinnati.', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209', 'Madtree is a cool brewery in Cincinnati.', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Great Lakes Brewering Company', 'Cleveland, OH', '216-771-4404', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '2516 Market Ave, Cleveland, OH 44113', 'Great lakes is a cool Brewery', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '2516 Market Ave, Cleveland, OH 44113', 'Great lakes is a cool Brewery', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('50 West Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Fretboard', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('High Grain Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Nine Giant Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Rhinegeist', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Braxton', 'Covington, Ky', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
 CREATE TABLE brewers (
 	brewer_id int CONSTRAINT fk_users REFERENCES users(user_id),

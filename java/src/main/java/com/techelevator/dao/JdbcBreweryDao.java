@@ -85,7 +85,7 @@ public class JdbcBreweryDao implements BreweryDao {
         brewery.setHoursOfOperation(rs.getString("hours_of_operation"));
         brewery.setPhoneNumber(rs.getString("phone_number"));
         brewery.setBio(rs.getString("bio"));
-        brewery.setImgUrl("brewery_img");
+        brewery.setImgUrl(rs.getString("brewery_img"));
         brewery.setActive(rs.getBoolean("active"));
         return brewery;
     }
