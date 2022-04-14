@@ -8,7 +8,7 @@ public class Beer {
     private String name;
     private String imgURL;
     private String description;
-    private String abv;
+    private float abv;
     private String type;
     private int breweryID;
 
@@ -16,7 +16,7 @@ public class Beer {
 
     }
 
-    public Beer(int id, String name, String imgURL, String description, String abv, String type) {
+    public Beer(int id, String name, String imgURL, String description, float abv, String type) {
         this.id = id;
         this.name = name;
         this.imgURL = imgURL;
@@ -57,11 +57,11 @@ public class Beer {
         this.description = description;
     }
 
-    public String getAbv() {
+    public float getAbv() {
         return abv;
     }
 
-    public void setAbv(String abv) {
+    public void setAbv(float abv) {
         this.abv = abv;
     }
 
