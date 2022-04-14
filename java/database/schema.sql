@@ -29,7 +29,7 @@ CREATE TABLE users (
 INSERT INTO users (username,password_hash, zipcode, email, role) 
 VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', '55555', 'example@email.com','ROLE_USER');
 
-INSERT INTO users (username,password_hash, zipcode, email, role)
+INSERT INTO users (username,password_hash, zipcode, email, role) 
 VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', '55555', 'example@email.com','ROLE_ADMIN');
 
 INSERT INTO users (username, password_hash, zipcode, email, role) 
@@ -63,25 +63,32 @@ VALUES ('Madtree Brewing', 'Cincinnati, OH', '513-836-8733', 'Thursday: 11AM–1
 Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209', 'Madtree is a cool brewery in Cincinnati.', true);
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
-VALUES ('Great Lakes Brewering Company', 'Cleveland, OH', '216-771-4404', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '2516 Market Ave, Cleveland, OH 44113', 'Great lakes is a cool Brewery', true);
+VALUES ('Great Lakes Brewering Company', 'Cleveland, OH', '216-771-4404', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '2516 Market Ave, Cleveland, OH 44113', 'Great lakes is a cool Brewery', true);
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
-VALUES ('50 West Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+VALUES ('50 West Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
-VALUES ('Fretboard', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+VALUES ('Fretboard', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
-VALUES ('High Grain Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+VALUES ('High Grain Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
-VALUES ('Nine-Giant Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+VALUES ('Nine Giant Brewery', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
-VALUES ('Rhinegheist', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+VALUES ('Rhinegeist', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active)
-VALUES ('Braxton', 'Covington, Ky', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
+VALUES ('Braxton', 'Covington, Ky', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true);
 
 CREATE TABLE brewers (
 	brewer_id int CONSTRAINT fk_users REFERENCES users(user_id),
@@ -126,7 +133,7 @@ CREATE TABLE beers(
 
 
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
-VALUES ('Shade', 4.6, 'sour', 
+VALUES ('Madtree beer 1', 4.6, 'sour', 
 	   (SELECT brewery_id
 	   FROM breweries
 	   WHERE brewery_name = 'Madtree Brewing'), 10, 'Perle', 'A sour beer from Madtree');
