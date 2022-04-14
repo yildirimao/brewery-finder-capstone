@@ -12,7 +12,6 @@ export default {
   components: { BeerCard },
   props:['id'],
   created(){
-    console.log("id is: " + this.id)
     this.$store.commit("GET_LIST_BEERS_FROM_BREWERY", this.id);
   }
 }
