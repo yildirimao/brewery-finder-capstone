@@ -6,15 +6,18 @@
     <button id="a-btn">This button is for Admins</button>
     <!-- <p>You must be authenticated to see this</p> -->
     <brewery-list />
+    <div></div>
     <brewery-form v-if="ifAdmin()"/>
+    <brewery-update-form v-if="ifBrewer()"/>
   </div>
 </template>
 
 <script>
 import BreweryForm from '../components/BreweryForm.vue';
 import BreweryList from "../components/BreweryList.vue";
+import BreweryUpdateForm from '../components/BreweryUpdateForm.vue';
 export default {
-  components: { BreweryList, BreweryForm },
+  components: { BreweryList, BreweryForm, BreweryUpdateForm },
   name: "home",
   mounted(){
     let user = this.$store.state.user;
@@ -37,6 +40,16 @@ export default {
         return false;
       }
       if(this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'){
+        return true;
+      }else {
+        return false;
+      }
+    },
+    ifBrewer(){
+      if(this.$store.state.user.authorities == undefined){
+        return false;
+      }
+      if(this.$store.state.user.authorities[0].name == 'ROLE_BREWER'){
         return true;
       }else {
         return false;

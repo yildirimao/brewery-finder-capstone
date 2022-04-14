@@ -4,6 +4,9 @@
       <div id="home">
         <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
       </div>
+      <div id="admin">
+        <router-link v-bind:to="{ name: 'admin' }">Admin</router-link>
+      </div>  
       <div id="nav-login">
         <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
@@ -27,7 +30,7 @@
     display: grid;
     top: 0;
     /* background-color: white; */
-    grid-template: " home  login";
+    grid-template: " home admin login";
     font-family: 'Playfair Display', serif;
     font-weight: 1000;
   }
@@ -42,6 +45,12 @@
     justify-content: flex-start;
     grid-area:"home";
     padding-left: 2em;
+  }
+
+  #admin{
+    display: flex;
+    justify-content: flex-start;
+    grid-area: "admin";
   }
 
   #nav-login{

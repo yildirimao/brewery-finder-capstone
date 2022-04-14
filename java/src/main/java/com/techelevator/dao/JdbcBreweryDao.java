@@ -20,7 +20,8 @@ public class JdbcBreweryDao implements BreweryDao {
     @Override
     public List<Brewery> listAll() {
         List<Brewery> breweries = new ArrayList<>();
-        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries;";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location, phone_number, hours_of_operation, " +
+                "address, bio, brewery_img, active FROM breweries;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {
             Brewery brewery = mapRowToBrewery(results);
@@ -31,7 +32,8 @@ public class JdbcBreweryDao implements BreweryDao {
 
     @Override
     public Brewery getBreweryById(int breweryId) {
-        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries WHERE brewery_id = ?;";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location, phone_number, hours_of_operation, " +
+                "address, bio, brewery_img, active FROM breweries WHERE brewery_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
         if(results.next()) {
             return mapRowToBrewery(results);
@@ -42,7 +44,8 @@ public class JdbcBreweryDao implements BreweryDao {
 
     @Override
     public Brewery findByName(String name) {
-        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries WHERE brewery_name = ?;";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location, phone_number, hours_of_operation, " +
+                "address, bio, brewery_img, active FROM breweries WHERE brewery_name = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, name);
         if (results.next()) {
             return mapRowToBrewery(results);
@@ -54,7 +57,8 @@ public class JdbcBreweryDao implements BreweryDao {
     @Override
     public List<Brewery> findByLocation(String location) {
         List<Brewery> breweries = new ArrayList<>();
-        String sql = "SELECT brewery_id, brewery_name, brewery_location FROM breweries WHERE brewery_location = ?;";
+        String sql = "SELECT brewery_id, brewery_name, brewery_location, phone_number, hours_of_operation, " +
+                "address, bio, brewery_img, active FROM breweries WHERE brewery_location = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, location);
         while(results.next()) {
             breweries.add(mapRowToBrewery(results));
@@ -63,9 +67,12 @@ public class JdbcBreweryDao implements BreweryDao {
     }
 
     @Override
-    public Brewery create(String name, String location) {
-        String sql = "INSERT INTO breweries (brewery_name, brewery_location) VALUES (?,?) RETURNING brewery_id;";
-        int newId = jdbcTemplate.queryForObject(sql, int.class, name, location);
+    public Brewery create(String name, String location, String phoneNumber, String hoursOfOperation, String address,
+                          String bio, String imgUrl, boolean active) {
+        String sql = "INSERT INTO breweries (brewery_name, brewery_location, phone_number, " +
+                "hours_of_operation, address, bio, brewery_img, active) VALUES (?,?,?,?,?,?,?,?) RETURNING brewery_id;";
+        int newId = jdbcTemplate.queryForObject(sql, int.class, name, location, phoneNumber, hoursOfOperation, address,
+                bio, imgUrl, active);
         return getBreweryById(newId);
     }
 
@@ -74,6 +81,12 @@ public class JdbcBreweryDao implements BreweryDao {
         brewery.setId(rs.getInt("brewery_id"));
         brewery.setName(rs.getString("brewery_name"));
         brewery.setLocation(rs.getString("brewery_location"));
+        brewery.setAddress(rs.getString("address"));
+        brewery.setHoursOfOperation(rs.getString("hours_of_operation"));
+        brewery.setPhoneNumber(rs.getString("phone_number"));
+        brewery.setBio(rs.getString("bio"));
+        brewery.setImgUrl("brewery_img");
+        brewery.setActive(rs.getBoolean("active"));
         return brewery;
     }
 }

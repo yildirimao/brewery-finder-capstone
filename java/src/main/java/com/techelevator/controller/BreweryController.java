@@ -31,5 +31,6 @@ public class BreweryController {
     @ResponseStatus(code = HttpStatus.CREATED)
     @RequestMapping(path = "/breweries", method = RequestMethod.POST)
     public Brewery createBrewery(@RequestBody Brewery brewery){
-        return breweryDao.create(brewery.getName(), brewery.getLocation());}
+        return breweryDao.create(brewery.getName(), brewery.getLocation(), brewery.getPhoneNumber(),
+                brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive());}
 }
