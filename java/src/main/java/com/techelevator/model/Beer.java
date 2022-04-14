@@ -10,6 +10,7 @@ public class Beer {
     private String description;
     private String abv;
     private String type;
+    private int breweryID;
 
     public Beer(){
 
@@ -70,6 +71,14 @@ public class Beer {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getBreweryID() {
+        return breweryID;
+    }
+
+    public void setBreweryID(int breweryID) {
+        this.breweryID = breweryID;
     }
 
     @Override
