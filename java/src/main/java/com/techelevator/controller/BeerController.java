@@ -39,7 +39,7 @@ public class BeerController {
         return beerDao.getBeerById(beer_id);
     }
 
-    //TODO:Finish "brewer path" for this method
+    //TODO:Finish "brewer path" for this method //needs a way to look up brewer id for a user.
     @PreAuthorize("hasRole('ADMIN', BREWER)")
     @ResponseStatus(code = HttpStatus.CREATED)
     @RequestMapping(path = "/beers", method = RequestMethod.POST)

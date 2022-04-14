@@ -22,7 +22,8 @@ public class JdbcBeerDao implements BeerDao{
     @Override
     public List<Beer> listAll() {
         List<Beer> beers = new ArrayList<>();
-        String sql = "SELECT beer_id, beer_name, abv, beer_type, brewery_id FROM beers;";
+        String sql = "SELECT beer_id, beer_name, abv, beer_type, ibu, hops, description, beer_img, malts, available, brewery_id " +
+                     "FROM beers;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {
             Beer beer = mapRowToBeer(results);
@@ -34,7 +35,8 @@ public class JdbcBeerDao implements BeerDao{
     @Override
     public List<Beer> getListByBrewery(int breweryId) {
         List<Beer> beers = new ArrayList<>();
-        String sql = "SELECT beer_id, beer_name, abv, beer_type, brewery_id FROM beers " +
+        String sql = "SELECT beer_id, beer_name, abv, beer_type, ibu, hops, description, beer_img, malts, available, brewery_id " +
+                "FROM beers " +
                 "WHERE brewery_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
         while(results.next()) {
@@ -52,7 +54,8 @@ public class JdbcBeerDao implements BeerDao{
     @Override
     public Beer getBeerById(int beerId) {
         Beer beer = null;
-        String sql = "SELECT beer_id, beer_name, abv, beer_type, brewery_id FROM beers " +
+        String sql = "SELECT beer_id, beer_name, abv, beer_type, ibu, hops, description, beer_img, malts, available, brewery_id " +
+                "FROM beers " +
                 "WHERE beer_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, beerId);
         if(results.next()) {
@@ -67,9 +70,10 @@ public class JdbcBeerDao implements BeerDao{
      * @return returns null if not found.
      */
     @Override
-    public Beer findByName(String name) {
+    public Beer getBeerByName(String name) {
         Beer beer = null;
-        String sql = "SELECT beer_id, beer_name, abv, beer_type, brewery_id FROM beers " +
+        String sql = "SELECT beer_id, beer_name, abv, beer_type, ibu, hops, description, beer_img, malts, available, brewery_id " +
+                "FROM beers" +
                 "WHERE LOWER(beer_name) LIKE LOWER('%?%');";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, name);
         if(results.next()) {
@@ -80,13 +84,19 @@ public class JdbcBeerDao implements BeerDao{
 
     @Override
     public Beer create(Beer beerToCreate) {
-        String sql = "INSERT INTO Beers (beer_name, abv, beer_type, brewery_id) " +
-                     "VALUES (?,?,?,?) " +
-                     "RETURNING beer_id, beer_name, abv, beer_type, brewery_id;";
+        String sql = "INSERT INTO Beers (beer_name, abv, beer_type, ibu, hops, description, beer_img, malts, available, brewery_id) " +
+                     "VALUES (?,?,?,?,?,?,?,?,?,?) " +
+                     "RETURNING beer_id, beer_name, abv, beer_type, ibu, hops, description, beer_img, malts, available, brewery_id;";
         Beer newBeer = jdbcTemplate.queryForObject(sql, Beer.class,
                 beerToCreate.getName(),
                 beerToCreate.getAbv(),
                 beerToCreate.getType(),
+                beerToCreate.getIbu(),
+                beerToCreate.getHops(),
+                beerToCreate.getDescription(),
+                beerToCreate.getBeer_img(),
+                beerToCreate.getMalts(),
+                beerToCreate.isAvailable(),
                 beerToCreate.getBreweryID());
         return newBeer;
     }
@@ -103,10 +113,14 @@ public class JdbcBeerDao implements BeerDao{
         Beer beer = new Beer();
         beer.setId(rs.getInt("beer_id"));
         beer.setName(rs.getString("beer_name"));
-        beer.setBeer_img(rs.getString("beer_img"));
-        beer.setDescription(rs.getString("beer_description"));
         beer.setAbv(rs.getFloat("abv"));
         beer.setType(rs.getString("beer_type"));
+        beer.setIbu(rs.getInt("ibu"));
+        beer.setHops(rs.getString("hops"));
+        beer.setDescription(rs.getString("description"));
+        beer.setBeer_img(rs.getString("beer_img"));
+        beer.setMalts(rs.getString("malts"));
+        beer.setAvailable(rs.getBoolean("available"));
         beer.setBreweryID(rs.getInt("brewery_id"));
         return beer;
     }

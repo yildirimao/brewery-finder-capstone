@@ -9,12 +9,9 @@
         
         <div id="info">
           <p>{{brewery.phone}}</p>
-          <dl>{{brewery.history}}is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, <br>
-           when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap <br>
-            into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,<br>
-             and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</dl>
-          <p>{{brewery.imagery}}brewery imagery</p>
-          <p>{{brewery.time}}4PM-9PM</p>
+          <dl>{{brewery.bio}}</dl>
+          <p>{{brewery.brewery_img}}brewery imagery</p>
+          <p>{{brewery.hours_of_operation}}4PM-9PM</p>
           <p>555 main street {{brewery.location}}</p>
           <p></p>
           <p></p>
