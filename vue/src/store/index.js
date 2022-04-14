@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import BreweryService from '@/services/BreweryService.js'
+import BeerService from '../services/BeerService'
 
 Vue.use(Vuex)
 
@@ -22,50 +23,7 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     breweries: [],
-    beers:[
-      {
-        id:0,
-        name: "beer 0",
-        abv: "100%",
-        type: "beer",
-        picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
-      },
-      {
-        id:1,
-        name: "beer 1",
-        abv: "100%",
-        type: "beer",
-        picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
-      },
-      {
-        id:2,
-        name: "beer 2",
-        abv: "100%",
-        type: "beer",
-        picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
-      },
-      {
-        id:3,
-        name: "beer 3",
-        abv: "100%",
-        type: "beer",
-        picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
-      },
-      {
-        id:4,
-        name: "beer 4",
-        abv: "100%",
-        type: "beer",
-        picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
-      },
-      {
-        id:5,
-        name: "beer 5",
-        abv: "100%",
-        type: "beer",
-        picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
-      },
-    ]
+    beers:[]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -88,6 +46,22 @@ export default new Vuex.Store({
       BreweryService.getListBreweries().then(response => {
         if(response.status === 200){
           state.breweries = response.data;
+        }
+      })
+      .catch(error => {
+        if(error.response){
+          console.log("response error");
+        } else if(error.request){
+          console.log("request error");
+        } else {
+          console.log("other error");
+        }
+      })
+    },
+    GET_LIST_BEERS_FROM_BREWERY(state, breweryId){
+      BeerService.getBeerByBreweryId(breweryId).then(response => {
+        if(response.status === 200){
+          state.beers = response.data;
         }
       })
       .catch(error => {

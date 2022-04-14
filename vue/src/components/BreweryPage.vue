@@ -20,7 +20,7 @@
       </div>
     </div>
     <div>
-      <beer-list/>
+      <beer-list v-bind:id="this.$route.params.id"/>
     </div>
 
   </div>
@@ -38,9 +38,11 @@ export default {
     }
   },
   created(){
-    this.brewery = this.$store.state.breweries[this.$route.params.id];
-
-    if(this.brewery.id == undefined){
+    if(this.$store.state.breweries.length > 0){
+      this.brewery = this.$store.state.breweries.find(b => {
+        return b.id == this.$route.params.id;
+      });
+    } else {
       BreweryService.getBrewery(this.$route.params.id).then((response) => {
         if(response.status == 200){
           this.brewery = response.data;

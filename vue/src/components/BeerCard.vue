@@ -1,5 +1,6 @@
 <template>
-  <div id="background" v-bind:style="`background-image: url(${beer.picture})`">
+<!-- v-bind:style="`background-image: url(${beer.picture})`" -->
+  <div id="background" >
       <div id="text">
           {{beer.name}} <br>
           {{beer.abv}} <br>
