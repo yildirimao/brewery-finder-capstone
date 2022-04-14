@@ -14,6 +14,7 @@ public interface BreweryDao {
 
     List<Brewery> findByLocation(String location);
 
-    Brewery create(String name, String location);
+    Brewery create(String name, String location, String phoneNumber, String hoursOfOperation, String address,
+                   String bio, String imgUrl, boolean active);
 
 }
