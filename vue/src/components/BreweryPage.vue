@@ -17,6 +17,8 @@
 
 <script>
 import BeerList from './BeerList.vue'
+import BreweryService from '@/services/BreweryService.js'
+
 export default {
   components: { BeerList },
   data(){
@@ -26,6 +28,14 @@ export default {
   },
   created(){
     this.brewery = this.$store.state.breweries[this.$route.params.id];
+
+    if(this.brewery.id == undefined){
+      BreweryService.getBrewery(this.$route.params.id).then((response) => {
+        if(response.status == 200){
+          this.brewery = response.data;
+        }
+      });
+    }
   }
 }
 </script>
