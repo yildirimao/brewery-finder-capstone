@@ -13,7 +13,7 @@
           <input type="text" name="brewery-bio" v-model="brewery.bio"/><br>
           <label for="brewery-images">Enter an https:// URL for images:</label> <br />
           <input type="url" name="brewery-img" placeholder="https://exampleimg.com"  pattern="https://.*" size="20"
-       required v-model="brewery.brewery_img" /> <br />
+       required v-model="brewery.imgUrl" /> <br />
           <p>Brewery Status:</p>
           <label for="active">Active</label>
           <input type="checkbox" name="active" checked="Active" v-model="brewery.isActive"/>

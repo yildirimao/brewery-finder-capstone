@@ -5,6 +5,7 @@ import com.techelevator.model.Brewery;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -33,4 +34,9 @@ public class BreweryController {
     public Brewery createBrewery(@RequestBody Brewery brewery){
         return breweryDao.create(brewery.getName(), brewery.getLocation(), brewery.getPhoneNumber(),
                 brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive());}
+
+    @RequestMapping(path = "/update/{brewery_id}", method = RequestMethod.PUT)
+    public void updateBrewery(@Valid @RequestBody Brewery brewery, @PathVariable int brewery_id){
+        breweryDao.update(brewery.getPhoneNumber(), brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive(), brewery_id);
+    }
 }
