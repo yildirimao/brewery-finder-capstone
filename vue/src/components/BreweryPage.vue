@@ -12,7 +12,6 @@
             <p>{{brewery.address}}</p>
             <p>{{brewery.phoneNumber}}</p>
           </div>
-          
 
           <p id="b-bio">{{brewery.bio}}</p>
 
@@ -21,10 +20,12 @@
               {{day}}
             </li>
           </ul>
+          
         </div>
         
       </div>
     </div>
+    <brewery-pictures v-bind:pics="brewery.imgUrl"/>
     <div>
       <beer-list v-bind:id="this.$route.params.id"/>
     </div>
@@ -35,9 +36,10 @@
 <script>
 import BeerList from './BeerList.vue'
 import BreweryService from '@/services/BreweryService.js'
+import BreweryPictures from './BreweryPictures.vue'
 
 export default {
-  components: { BeerList },
+  components: { BeerList, BreweryPictures },
   data(){
     return {
       brewery:{}
