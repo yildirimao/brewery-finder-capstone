@@ -1,7 +1,8 @@
 <template>
   <div id="beer-grid">
     <router-link v-for="beer in this.$store.state.beers" :key="beer.id" v-bind:to="{ name: 'beer', params:{id:beer.id}}">
-      <beer-card v-bind:beer="beer"/>
+      <beer-card v-if="beer.available" v-bind:beer="beer"/>
+      <beer-card v-else v-bind:beer="beer" style="filter: grayscale(100%)" v-text="beer.name + ' is unavailable'"/>
     </router-link>
   </div>
 </template>
