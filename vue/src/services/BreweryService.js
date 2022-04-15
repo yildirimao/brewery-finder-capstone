@@ -15,7 +15,7 @@ export default {
   },
   
   updateBrewery(id, brewery) {
-    return axios.put(`/update/:id`, brewery)
+    return axios.put(`/update/${id}`, brewery)
   }
   
 }
