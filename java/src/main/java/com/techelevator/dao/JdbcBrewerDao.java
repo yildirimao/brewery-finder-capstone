@@ -55,7 +55,7 @@ public class JdbcBrewerDao implements BrewerDao {
     @Override
     public Brewer createBrewer(int brewerId, int breweryId) {
         String sql = "INSERT INTO brewers (brewer_id, brewery_id) VALUES (?,?) RETURNING brewer_id;";
-        int id = jdbcTemplate.queryForObject(sql, int.class, brewerId, brewerId);
+        int id = jdbcTemplate.queryForObject(sql, int.class, brewerId, breweryId);
         return getBrewerByBrewerId(id);
     }
 

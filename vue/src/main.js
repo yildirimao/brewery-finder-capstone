@@ -5,8 +5,10 @@ import store from './store/index'
 import axios from 'axios'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import BootstrapVue from 'bootstrap-vue'
 
 Vue.config.productionTip = false
+Vue.use(BootstrapVue)
 
 axios.defaults.baseURL = process.env.VUE_APP_REMOTE_API;
 

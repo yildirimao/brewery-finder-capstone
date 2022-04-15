@@ -1,62 +1,68 @@
 <template>
-  <div id="brwry-pic-dis">
-        <button id="prev-btn" @click="previousPicture()">previous</button>
-        
-        <div id="image-container">
-            <img v-for="n in pics.length" :key="n"
-            v-bind:src="pics[n]" 
-            v-show="currentSlide == n - 1">
-        </div>
-        
-        <button id="prev-btn" @click="nextPicture()">next</button>
-
-        <span class="badge badge-light" style="color: pink">New</span>
+  <div id="carousel-wrapper">
+    <b-carousel
+      id="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators
+      img-width="500"
+      img-height="200"
+      style="text-shadow: 1px 1px 2px #333"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+      <b-carousel-slide
+        v-for="pic in pics" :key="pic"
+        v-bind:img-src="pic"
+        class="slide-custom"
+      ></b-carousel-slide>
+    </b-carousel>
   </div>
 </template>
 
 <script>
-export default {
-    name:"brewery-pictures",
+  export default {
+    name: "brewery-pictures",
     //props:["pics"],
-    data(){
-        return {
-            currentSlide:0,
-            pics:[
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Un1.svg/180px-Un1.svg.png",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Deux.svg/180px-Deux.svg.png",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Trois.svg/800px-Trois.svg.png",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Quatre.svg/180px-Quatre.svg.png",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cinq.svg/180px-Cinq.svg.png"
-            ]
-        }
+    data() {
+      return {
+        slide: 0,
+        sliding: null,
+        pics: [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Un1.svg/180px-Un1.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Deux.svg/180px-Deux.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Trois.svg/800px-Trois.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Quatre.svg/180px-Quatre.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cinq.svg/180px-Cinq.svg.png",
+        ],
+      }
     },
-    methods:{
-        nextPicture(){
-            //iterate
-            this.currentSlide++;
-
-            //clamp
-            if(this.currentSlide > this.pics.length - 1){
-                this.currentSlide = 0;
-            }
-        },
-        previousPicture(){
-            //iterate
-            this.currentSlide--;
-
-            //clamp
-            if(this.currentSlide < 0){
-                this.currentSlide = this.pics.length - 1;
-            }
-        }
+    methods: {
+      onSlideStart() {
+        this.sliding = true
+      },
+      onSlideEnd() {
+        this.sliding = false
+      }
     }
-}
+  }
 </script>
 
 <style>
-#brwry-pic-dis{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 2em;
+#carousel-wrapper{
+    height: 50vh;
+    margin: 0 16em 2em;
+}
+
+.slide-custom img{
+    height: 50vh;
+    max-width: min-content;
+    margin:0 auto;
+    border-radius: 15px;
+}
+
+#carousel-1{
+    border-radius: 15px;
 }
 </style>

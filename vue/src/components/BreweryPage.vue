@@ -25,7 +25,9 @@
         
       </div>
     </div>
+
     <brewery-pictures v-bind:pics="brewery.imgUrl"/>
+    
     <div>
       <beer-list v-bind:id="this.$route.params.id"/>
     </div>
