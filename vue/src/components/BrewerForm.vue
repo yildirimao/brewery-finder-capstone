@@ -27,7 +27,7 @@
 export default {
     data(){
         return {
-            showForm: 'false'
+            showForm: false
         }
     },
     methods: {
