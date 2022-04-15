@@ -3,34 +3,62 @@
         <button @click="toggleForm()">Show/Hide Brewer Form</button>
         <form class="brewer-form" v-show="this.showForm">
             <h1>Add Brewer Form</h1>
-            <label for="user">Username:</label><br>
-            <input type="text" name="user"><br>
+
+            <label for="username">Username:</label><br>
+            <select name="username" id="username">
+                <option :value="user" v-for="user
+                    in this.$store.state.users" :key="user.id">
+                        {{ user.username }}
+                </option>
+            </select><br>
+
             <label for="brewery">Brewery Name:</label><br>
-            <input type="text" name="brewery"><br>
-            <button >Submit</button>
+            <select name="brewery" id="brewery">
+                <option :value="brewery.id" v-for="brewery 
+                    in this.$store.state.breweries" :key="brewery.id">
+                        {{ brewery.name }}
+                </option>
+            </select><br>
+
+            <button @click="submitBrewer">Submit</button>
         </form>    
     </div>    
 </template>
 
 <script>
 
-
-// TO-DO:
-// -check for valid username entry
-// -check for valid brewery name entry
-
 // update user role to brewer
 // add userid and breweryid to brewer table
 
-
-
 export default {
+    created() {
+        this.$store.commit("GET_LIST_BREWERY");
+        this.$store.commit("GET_LIST_USER")
+    },
     data(){
         return {
+            user: {
+                id: -1,
+                username: '',
+                zipCode: '',
+                email: '',
+                authorities: [
+                    {
+                    name: ''
+                    }
+                ]
+            },
+            brewer: {
+                brewer_id: -1,
+                brewery_id: -1
+            },
             showForm: 'false'
         }
     },
     methods: {
+        submitBrewer(){
+            
+        },
         toggleForm() {
             this.showForm = !this.showForm;
         }

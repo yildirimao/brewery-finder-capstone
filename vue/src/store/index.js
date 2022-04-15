@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import BreweryService from '@/services/BreweryService.js'
 import BeerService from '../services/BeerService'
+import AuthService from '../services/AuthService.js'
 
 Vue.use(Vuex)
 
@@ -22,6 +23,7 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
+    users:[],
     breweries: [],
     beers:[]
   },
@@ -41,6 +43,16 @@ export default new Vuex.Store({
       state.token = '';
       state.user = {};
       axios.defaults.headers.common = {};
+    },
+    GET_LIST_USER(state){
+      AuthService.getListUsers().then(response => {
+        if(response.status === 200){
+          state.users = response.data;
+        }
+      })
+      .catch(error => {
+        console.log(error);
+      })
     },
     GET_LIST_BREWERY(state){
       BreweryService.getListBreweries().then(response => {

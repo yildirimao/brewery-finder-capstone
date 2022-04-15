@@ -5,7 +5,7 @@
         <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
       </div>
       <div id="admin">
-        <router-link v-bind:to="{ name: 'admin' }">Admin</router-link>
+        <router-link v-bind:to="{ name: 'admin' }" v-if="ifAdmin()">Admin</router-link>
       </div>  
       <div id="nav-login">
         <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
@@ -17,6 +17,24 @@
     <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    ifAdmin(){
+      if(this.$store.state.user.authorities == undefined){
+        return false;
+      }
+      if(this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'){
+        return true;
+      }else {
+        return false;
+      }
+    }
+  }  
+}
+</script>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
