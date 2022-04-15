@@ -1,5 +1,5 @@
 <template>
-  <div id="background" v-bind:style="`background-image: url(${beer.beer_img})`">
+  <div id="background" v-bind:style="`background-image: url(${beer.beer_img}; background-size: cover`">
       <div id="text">
           {{beer.name}} <br>
           {{beer.abv}} <br>
