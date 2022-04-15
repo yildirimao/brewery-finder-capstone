@@ -132,197 +132,197 @@ CREATE TABLE beers(
 );
 
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Madtree beer 1', 4.6, 'sour', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'Perle', 'A sour beer from Madtree');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'Perle', 'A sour beer from Madtree', 'https://s3-us-east-2.amazonaws.com/cincylabwp/wp-content/uploads/20180802194151/madtree-logo.png');
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Madtree beer 2', 6.0, 'pilsner', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A pilsner from Madtree');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A pilsner from Madtree', 'https://s3-us-east-2.amazonaws.com/cincylabwp/wp-content/uploads/20180802194151/madtree-logo.png');
 	
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Madtree beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree', 'https://s3-us-east-2.amazonaws.com/cincylabwp/wp-content/uploads/20180802194151/madtree-logo.png');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Madtree beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree', 'https://s3-us-east-2.amazonaws.com/cincylabwp/wp-content/uploads/20180802194151/madtree-logo.png');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Great lakes beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'https://untappd.akamaized.net/site/brewery_logos_hd/brewery-3125_6b7ee_hd.jpeg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Great lakes beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'https://untappd.akamaized.net/site/brewery_logos_hd/brewery-3125_6b7ee_hd.jpeg');
 	 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Great lakes beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'https://untappd.akamaized.net/site/brewery_logos_hd/brewery-3125_6b7ee_hd.jpeg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Great lakes beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'https://untappd.akamaized.net/site/brewery_logos_hd/brewery-3125_6b7ee_hd.jpeg');
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('50 west beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west');
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'https://fiftywestbrew.com/wp-content/uploads/sites/90/2018/04/50W-Logo.png');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('50 west beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west');
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'https://fiftywestbrew.com/wp-content/uploads/sites/90/2018/04/50W-Logo.png');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('50 west beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west');	 
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'https://fiftywestbrew.com/wp-content/uploads/sites/90/2018/04/50W-Logo.png');	 
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('50 west beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west');
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'https://fiftywestbrew.com/wp-content/uploads/sites/90/2018/04/50W-Logo.png');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Fretboard beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard');
+	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'https://cdn.myportfolio.com/c095b82c-a3b5-48f0-84f0-ec13c96e1627/563cf9b3-9856-4127-8560-6d4c421b796b_rwc_0x0x3000x3000x3000.jpg?h=a46f98ae91c1d837371792cecf3c8188');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Fretboard beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard');
+	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'https://cdn.myportfolio.com/c095b82c-a3b5-48f0-84f0-ec13c96e1627/563cf9b3-9856-4127-8560-6d4c421b796b_rwc_0x0x3000x3000x3000.jpg?h=a46f98ae91c1d837371792cecf3c8188');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Fretboard beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard');
+	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'https://cdn.myportfolio.com/c095b82c-a3b5-48f0-84f0-ec13c96e1627/563cf9b3-9856-4127-8560-6d4c421b796b_rwc_0x0x3000x3000x3000.jpg?h=a46f98ae91c1d837371792cecf3c8188');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('Fretboard beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard');
+	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'https://cdn.myportfolio.com/c095b82c-a3b5-48f0-84f0-ec13c96e1627/563cf9b3-9856-4127-8560-6d4c421b796b_rwc_0x0x3000x3000x3000.jpg?h=a46f98ae91c1d837371792cecf3c8188');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('High Grain beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'https://untappd.akamaized.net/venuelogos/venue_8983189_dccbebe7.png?v=1');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('High Grain beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'https://untappd.akamaized.net/venuelogos/venue_8983189_dccbebe7.png?v=1');
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('High Grain beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'https://untappd.akamaized.net/venuelogos/venue_8983189_dccbebe7.png?v=1');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
 VALUES ('High Grain beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'https://untappd.akamaized.net/venuelogos/venue_8983189_dccbebe7.png?v=1');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Nine Giant beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant');	
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'https://untappd.akamaized.net/venuelogos/venue_2951948_e77b523b.png?v=1');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Nine Giant beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant');		
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'https://untappd.akamaized.net/venuelogos/venue_2951948_e77b523b.png?v=1');		
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Nine Giant beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant');
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'https://untappd.akamaized.net/venuelogos/venue_2951948_e77b523b.png?v=1');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Nine Giant beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant');		
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'https://untappd.akamaized.net/venuelogos/venue_2951948_e77b523b.png?v=1');		
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Rhinegeist beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist');	
+	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'https://www.pngfind.com/pngs/m/688-6884712_rhinegeist-brewery-logo-hd-png-download.png');	
 	  
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Rhinegeist beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist');
+	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'https://www.pngfind.com/pngs/m/688-6884712_rhinegeist-brewery-logo-hd-png-download.png');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Rhinegeist beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist');	
+	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'https://www.pngfind.com/pngs/m/688-6884712_rhinegeist-brewery-logo-hd-png-download.png');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Rhinegeist beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist');	
+	   WHERE brewery_name = 'Rhinegeist Brewery'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'https://www.pngfind.com/pngs/m/688-6884712_rhinegeist-brewery-logo-hd-png-download.png');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Braxton beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton');	
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'https://absolutebeer.com/wp-content/uploads/2020/02/AB-Breweries-Braxton-Brewing-Company-Logo-1.jpg');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Braxton beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton');
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'https://absolutebeer.com/wp-content/uploads/2020/02/AB-Breweries-Braxton-Brewing-Company-Logo-1.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Braxton beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton');
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'https://absolutebeer.com/wp-content/uploads/2020/02/AB-Breweries-Braxton-Brewing-Company-Logo-1.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description)	   
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)	   
 VALUES ('Braxton beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton');
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'https://absolutebeer.com/wp-content/uploads/2020/02/AB-Breweries-Braxton-Brewing-Company-Logo-1.jpg');
 	   
 CREATE SEQUENCE seq_review_id
  INCREMENT BY 1
