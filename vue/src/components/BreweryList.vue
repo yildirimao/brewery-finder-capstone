@@ -1,7 +1,8 @@
 <template>
-  <div id="brewery-grid">
-    <router-link v-for="brewery in this.$store.state.breweries" :key="brewery.id" v-bind:to="{ name: 'brewery', params:{id:brewery.id}}">
-      <brewery-card v-bind:brewery="brewery"/>
+  <div id="brewery-grid" >
+    <router-link  v-for="brewery in this.$store.state.breweries" :key="brewery.id" v-bind:to="{ name: 'brewery', params:{id:brewery.id}}">
+      <brewery-card  v-if= "brewery.active" v-bind:brewery="brewery"/>
+      <brewery-card v-else v-bind:brewery="brewery" style="filter: blur(8px)"/>
     </router-link>
   </div>
 </template>
