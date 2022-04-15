@@ -149,197 +149,197 @@ CREATE TABLE beers(
 );
 
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Madtree beer 1', 4.6, 'sour', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'Perle', 'A sour beer from Madtree', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'Perle', 'A sour beer from Madtree', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Madtree beer 2', 4.6, 'sour', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A pilsner from Madtree', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A pilsner from Madtree', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Madtree beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Madtree beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Madtree Brewing'), 10, 'test hops', 'A placeholder beer from Madtree', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Great lakes beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Great lakes beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Great lakes beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Great lakes beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Great Lakes Brewering Company'), 10, 'test hops', 'A placeholder beer from Great lakes', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('50 west beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('50 west beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('50 west beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	 
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	 
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('50 west beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = '50 West Brewery'), 10, 'test hops', 'A placeholder beer from 50 west', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Fretboard beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Fretboard'), 10, 'test hops', 'A placeholder beer from Fretboard', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Fretboard beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Fretboard'), 10, 'test hops', 'A placeholder beer from Fretboard', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Fretboard beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Fretboard'), 10, 'test hops', 'A placeholder beer from Fretboard', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Fretboard beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Fretboard Brewery'), 10, 'test hops', 'A placeholder beer from Fretboard', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Fretboard'), 10, 'test hops', 'A placeholder beer from Fretboard', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('High Grain beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('High Grain beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('High Grain beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('High Grain beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'High Grain Brewery'), 10, 'test hops', 'A placeholder beer from High Grain', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Nine Giant beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Nine Giant beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');		
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');		
 
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Nine Giant beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Nine Giant beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');		
+	   WHERE brewery_name = 'Nine Giant Brewery'), 10, 'test hops', 'A placeholder beer from Nine Giant', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');		
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Rhinegeist beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
+	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
 	  
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Rhinegeist beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Rhinegeist beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
+	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Rhinegeist beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
+	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Braxton beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Braxton beer 2', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Braxton beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', true,'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, beer_img)
+INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Braxton beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   WHERE brewery_name = 'Braxton'), 10, 'test hops', 'A placeholder beer from Braxton', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
 CREATE SEQUENCE seq_review_id
  INCREMENT BY 1
