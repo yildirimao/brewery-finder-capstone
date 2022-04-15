@@ -9,7 +9,7 @@ import BreweryDisplay from '../views/BreweryDisplay.vue'
 import BeerDisplay from '../views/BeerDisplay.vue'
 import store from '../store/index'
 import Admin from '../views/Admin.vue'
-import Brewer from '../views/Brewer.vue'
+
 
 
 Vue.use(Router)
@@ -92,14 +92,6 @@ const router = new Router({
         requiresAuth: true
       }
     },
-    {
-      path: "/brewer",
-      name: "brewer",
-      component: Brewer,
-      meta: {
-        requiresAuth: true
-      }
-    }
   ]
 })
 
