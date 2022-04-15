@@ -1,19 +1,26 @@
 <template>
   <div>
-    <!-- v-bind:style="`background:no-repeat url(${brewery.picture}); background-position:center;`" -->
-    <div id="brewery-picture" >
-      <div id="contrast">
-        <div>
-            <h1>{{brewery.name}} {{this.$route.params.id}}</h1>
-        </div>
-        
+    <div class="brewery-picture" v-bind:style="`background:no-repeat url(${brewery.imgUrl}); background-position:center;`">
+      <div class="contrast">        
         <div id="inf">
-          <p>{{brewery.phone}}</p>
-          <dl>{{brewery.bio}}</dl>
-          <p>{{brewery.hoursOfOperation}}</p>
-          <p>{{brewery.location}}</p>
-          <p></p>
-          <p></p>
+          <div id="b-name">
+            <h1 style="margin-bottom:0;">{{brewery.name}}</h1>
+            <p style="margin-top:0;">{{brewery.location}}</p>
+          </div>
+          
+          <div id="b-contact">
+            <p>{{brewery.address}}</p>
+            <p>{{brewery.phoneNumber}}</p>
+          </div>
+          
+
+          <p id="b-bio">{{brewery.bio}}</p>
+
+          <ul id="b-hours">
+            <li v-for="day in brewery.hoursOfOperation.split(',')" :key="day">
+              {{day}}
+            </li>
+          </ul>
         </div>
         
       </div>
@@ -52,33 +59,78 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
 
-#brewery-picture{
+.brewery-picture{
   background-image: url("https://media.istockphoto.com/photos/draught-beer-in-glasses-picture-id1040303026");
   display: flex;
   justify-content: center;
   width: fit-content;
   margin: 0 auto;
   margin-bottom: 1em;
-  padding: 1em 5em;
+  padding: 1em 3em;
   border-radius: 15px;
 }
-#contrast{
+
+.contrast{
   font-family: "Playfair Display", serif;
-  background-color: #ffffff80;
+  background-color: #ffffffc0;
   width: fit-content;
   height: fit-content;
   border-radius: 15px;
   margin: 1em;
   padding: 1em;
+  animation: colorin 1s;
 }
+
 #inf{
-  opacity: 0;
-  transition: opacity 2s ease 0s;
+  display: grid;
+  grid-template-areas: 
+  "name name name"
+  "hours bio bio"
+  "hours bio bio"
+  "contact contact contact";
+  animation: fadein 3s;
 }
-#inf:hover{
-  opacity: 1;
+
+@keyframes fadein{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes colorin{
+  from {background-color: transparent;}
+  to {background-color: #ffffffc0;}
+}
+
+#b-name{
+  grid-area:name;
+}
+
+#b-name h1{
+  margin-bottom: 0;
+  border-bottom: 1px black solid;
+}
+
+#b-name p{
+  margin-top: 0;
+}
+
+#b-contact{
+  grid-area:contact;
+}
+
+#b-bio{
+  grid-area:bio;
+  padding-left: 2em;
+  margin-left: 0;
+}
+
+#b-hours{
+  grid-area:hours;
+  padding-right: 2em;
+  margin-right: 0;
+  border-right: black 1px solid;
 }
 </style>

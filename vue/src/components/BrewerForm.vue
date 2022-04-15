@@ -37,22 +37,7 @@ export default {
     },
     data(){
         return {
-            user: {
-                id: -1,
-                username: '',
-                zipCode: '',
-                email: '',
-                authorities: [
-                    {
-                    name: ''
-                    }
-                ]
-            },
-            brewer: {
-                brewer_id: -1,
-                brewery_id: -1
-            },
-            showForm: 'false'
+            showForm: false
         }
     },
     methods: {
