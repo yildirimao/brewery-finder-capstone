@@ -41,7 +41,7 @@ export default {
                 imgUrl: '',
                 isActive: true
             },
-            showForm: 'false'
+            showForm: false
         }
     },
     methods: {
