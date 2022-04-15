@@ -9,8 +9,10 @@
         
         <div id="inf">
           <p>{{brewery.phone}}</p>
-          <dl>{{brewery.bio}}</dl>
-          <p>{{brewery.hoursOfOperation}}</p>
+          <p>{{brewery.bio}}</p>
+          <p v-for="day in brewery.hoursOfOperation.split(',')" :key="day">
+            {{day}}
+          </p>
           <p>{{brewery.location}}</p>
           <p></p>
           <p></p>
@@ -65,6 +67,7 @@ export default {
   padding: 1em 5em;
   border-radius: 15px;
 }
+
 #contrast{
   font-family: "Playfair Display", serif;
   background-color: #ffffff80;
@@ -74,11 +77,13 @@ export default {
   margin: 1em;
   padding: 1em;
 }
+
 #inf{
-  opacity: 0;
-  transition: opacity 2s ease 0s;
+  animation: fadein 2s;
 }
-#inf:hover{
-  opacity: 1;
+
+@keyframes fadein{
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 </style>
