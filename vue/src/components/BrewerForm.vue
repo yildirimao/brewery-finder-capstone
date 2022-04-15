@@ -5,22 +5,22 @@
             <h1>Add Brewer Form</h1>
 
             <label for="username">Username:</label><br>
-            <select name="username" id="username">
-                <option :value="user" v-for="user
-                    in this.$store.state.users" :key="user.id">
+            <select name="username" id="username" v-model="brewer.brewerId">
+                <option :value="user.id" v-for="user
+                    in this.$store.state.users" :key="user.username">
                         {{ user.username }}
                 </option>
             </select><br>
 
             <label for="brewery">Brewery Name:</label><br>
-            <select name="brewery" id="brewery">
+            <select name="brewery" id="brewery" v-model="brewer.breweryId">
                 <option :value="brewery.id" v-for="brewery 
                     in this.$store.state.breweries" :key="brewery.id">
                         {{ brewery.name }}
                 </option>
             </select><br>
 
-            <button @click="submitBrewer">Submit</button>
+            <button @click.prevent="submitBrewer">Submit</button>
         </form>    
     </div>    
 </template>
@@ -29,6 +29,7 @@
 
 // update user role to brewer
 // add userid and breweryid to brewer table
+import BrewerService from '../services/BrewerService'
 
 export default {
     created() {
@@ -37,12 +38,17 @@ export default {
     },
     data(){
         return {
+            brewer: {
+                brewerId: -1,
+                breweryId: -1
+            },
             showForm: false
         }
     },
     methods: {
         submitBrewer(){
-            
+            console.log(this.brewer);
+            BrewerService.createBrewer(this.brewer)
         },
         toggleForm() {
             this.showForm = !this.showForm;

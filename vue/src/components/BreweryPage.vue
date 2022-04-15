@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="brewery-picture" v-bind:style="`background:no-repeat url(${brewery.imgUrl}); background-position:center;`">
+    <div class="brewery-picture" v-bind:style="`background:no-repeat url(${brewery.imgUrl}); background-position:center; background-size:cover`">
       <div class="contrast">        
         <div id="inf">
           <div id="b-name">

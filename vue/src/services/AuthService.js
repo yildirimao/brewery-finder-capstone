@@ -12,5 +12,9 @@ export default {
   
   getListUsers() {
     return axios.get('/users')
+  },
+
+  findUserByUsername(username) {
+    return axios.get(`/users/${username}`)
   }
 }
