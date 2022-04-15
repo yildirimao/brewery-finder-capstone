@@ -49,9 +49,9 @@ CREATE TABLE breweries (
 	brewery_name varchar(50) UNIQUE NOT NULL,
 	brewery_location varchar(60) NOT NULL,
 	phone_number varchar(20) NOT NULL,
-	hours_of_operation varchar(300) NOT NULL,
+	hours_of_operation varchar(1000) NOT NULL,
 	address varchar(300) NOT NULL,
-	bio varchar(50000) NOT NULL,
+	bio varchar(100000) NOT NULL,
 	brewery_img varchar(10000) NOT NULL,
 	active boolean NOT NULL,
 	CONSTRAINT PK_brewery PRIMARY KEY (brewery_id)
@@ -59,35 +59,23 @@ CREATE TABLE breweries (
 
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('MadTree', 'Cincinnati, OH', '513-836-8733', 'Thursday: 11AM–11PM; Friday: 11AM–12AM; Saturday: 10AM–12AM; Sunday: 10AM–11PM;
-Monday: 11AM–11PM; Tuesday: 11AM–11PM; Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209',
-'MadTree puts purpose in every pour. Founded in 2013, MadTree has always been driven to craft great beer - but more importantly - to build something bigger than themselves and the high-quality beer they produce. 
-Since the beginning, MadTree has cared deeply about creating meaningful connections with their communities. They embrace their namesake and work to celebrate and protect nature while reducing their impact on the environment. 
-They are proud members of 1% for the Planet, with a commitment to donate 1% of sales to non-profits focused on environmental sustainability. The craftspeople at MadTree wake up every day to connect people to nature and each other.
-MadTree. Inspiring Madness. Rooted in Purpose', 
+VALUES ('MadTree', 'Cincinnati, OH', '513-836-8733', 'Thursday: 11AM–11PM; Friday: 11AM–12AM; Saturday: 10AM–12AM; Sunday: 10AM–11PM; Monday: 11AM–11PM; Tuesday: 11AM–11PM; Wednesday: 11AM–11PM', '3301 Madison Road Cincinnati, OH 45209',
+'MadTree puts purpose in every pour. Founded in 2013, MadTree has always been driven to craft great beer - but more importantly - to build something bigger than themselves and the high-quality beer they produce. Since the beginning, MadTree has cared deeply about creating meaningful connections with their communities. They embrace their namesake and work to celebrate and protect nature while reducing their impact on the environment. They are proud members of 1% for the Planet, with a commitment to donate 1% of sales to non-profits focused on environmental sustainability. The craftspeople at MadTree wake up every day to connect people to nature and each other. MadTree. Inspiring Madness. Rooted in Purpose', 
 true, 'https://cincinnatiusa.com/sites/default/files/styles/Array/public/Venues/MadTree-00.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Great Lakes', 'Cleveland, OH', '216-771-4404', 'Friday: 12–11PM; Saturday: 11:30AM–11PM; Sunday: Closed; 
-Monday: 12–10PM; Tuesday: 12–10PM; Wednesday: 12–10PM; Thursday: 12–10PM', '2516 Market Ave, Cleveland, OH 44113', 
-'From the beginning, we have aspired to craft our beloved and award-winning beers in a socially and environmentally responsible way. As we continue to grow and expand, we will do so with care and respect for our products, employees, customers, and planet. 
-Our employees are our most valued asset, so we have brewed a careful selection process to hire only the best ambassadors for our company.
-We seek driven, enthusiastic people who share a dedication to our core values: passion for product, respect for resources, the fostering of relationships, and the sharing of success. 
-We continuously strive to grow our innovative and resourceful team of individuals with high standards, integrity, and vision—and who can also appreciate sharing a little camaraderie or a pint with their co-workers. ', 
+VALUES ('Great Lakes', 'Cleveland, OH', '216-771-4404', 'Friday: 12–11PM; Saturday: 11:30AM–11PM; Sunday: Closed; Monday: 12–10PM; Tuesday: 12–10PM; Wednesday: 12–10PM; Thursday: 12–10PM', '2516 Market Ave, Cleveland, OH 44113', 
+'From the beginning, we have aspired to craft our beloved and award-winning beers in a socially and environmentally responsible way. As we continue to grow and expand, we will do so with care and respect for our products, employees, customers, and planet. Our employees are our most valued asset, so we have brewed a careful selection process to hire only the best ambassadors for our company. We seek driven, enthusiastic people who share a dedication to our core values: passion for product, respect for resources, the fostering of relationships, and the sharing of success. We continuously strive to grow our innovative and resourceful team of individuals with high standards, integrity, and vision—and who can also appreciate sharing a little camaraderie or a pint with their co-workers. ', 
 true, 'https://d1ynl4hb5mx7r8.cloudfront.net/wp-content/uploads/2020/02/17140001/great-lakes-1024x633.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('50 West', 'Cincinnati, OH', '513-834-8789', 'Friday: 11AM–11PM; Saturday: 11AM–11PM; Sunday: 11AM–9PM; Monday: 11AM–10PM; 
-Tuesday: 11AM–10PM; Wednesday: 11AM–10PM; Thursday: 11AM–10PM', '1010 Street Address, City, State 01010', 
-'Located in a former roadside speakeasy on US Route 50 heading west into the city of Cincinnati, Fifty West Brewing Company first opened its doors in November of 2012. 
-Stretching across the country, U.S.Route 50 passes through 12 states from Ocean City, Maryland to Sacramento, California. It’s our pleasure at the Fifty West to serve you tastes of Americana from this fabled road trip. 
-We thrive to provide each customer an experience as fond and memorable as a long haul across the country with your co-pilot riding shotgun. 
-At Fifty West, every beer is a journey. Join us for the ride.', 
+VALUES ('50 West', 'Cincinnati, OH', '513-834-8789', 'Friday: 11AM–11PM; Saturday: 11AM–11PM; Sunday: 11AM–9PM; Monday: 11AM–10PM; Tuesday: 11AM–10PM; Wednesday: 11AM–10PM; Thursday: 11AM–10PM', '7605 Wooster Pike, Cincinnati, OH 45227', 
+'Located in a former roadside speakeasy on US Route 50 heading west into the city of Cincinnati, Fifty West Brewing Company first opened its doors in November of 2012. Stretching across the country, U.S.Route 50 passes through 12 states from Ocean City, Maryland to Sacramento, California. It’s our pleasure at the Fifty West to serve you tastes of Americana from this fabled road trip. We thrive to provide each customer an experience as fond and memorable as a long haul across the country with your co-pilot riding shotgun. At Fifty West, every beer is a journey. Join us for the ride.', 
 true, 'https://media1.citybeat.com/citybeat/imager/u/original/12086253/copy_of_20180412_4e9a2481.5c9e70e104fc3.png');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Fretboard', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
-Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://www.gannett-cdn.com/presto/2021/11/03/PCIN/49bf6db3-ff37-4b74-b615-fab35b87d110-Fretboard.jpg');
+VALUES ('Fretboard', 'Cincinnati, OH', '513-914-4677', 'Friday: 12PM–12AM; Saturday: 12PM–12AM; Sunday: 12–8PM; Monday: 3–10PM; Tuesday: 3–10PM; Wednesday: 3–10PM; Thursday: 3–10PM', '5800 Creek Rd, Cincinnati, OH 45242', 
+		'Novum latine in sea, sit ad menandri praesent, eum mutat altera invidunt cu. Te mei quando persius patrioque, vix ex amet utinam propriae. Munere fabulas ancillae no pro, cu appetere placerat delicata pro, no altera equidem dissentiet mea. Ex malis vocibus duo, pro ea appetere percipitur interpretaris, vide luptatum explicari no cum. Nibh assum consequuntur sed in, solet tempor qui ex. Meliore dolorem mea an, tempor incorrupte theophrastus vim in, ad qui wisi nusquam vulputate. Stet vivendo fastidii vix ut, ignota repudiare quo ne, quo electram complectitur no.', true, 'https://www.gannett-cdn.com/presto/2021/11/03/PCIN/49bf6db3-ff37-4b74-b615-fab35b87d110-Fretboard.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('High Grain', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
@@ -310,10 +298,10 @@ VALUES ('Nine Giant beer 4', 5.5, 'Blonde Ale',
 	   WHERE brewery_name = 'Nine Giant'), 10, 'test hops', 'A placeholder beer from Nine Giant', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');		
 	   
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Rhinegeist beer 1', 5.5, 'Blonde Ale', 
+VALUES ('Truth', 7.2, 'IPA', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist'), 10, 'test hops', 'A placeholder beer from Rhinegeist', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');	
+	   WHERE brewery_name = 'Rhinegeist'), 75, 'Amarillo, Citra, Simcoe, Centennial', 'Rare are moments of truth, when you’ve struck the last match, belting out tunes with your friends, staring deep into the campfire – times when you feel infinite. Our Truth is found in the scintillating brilliance of hops. Brewed with a nod to the Pacific, hops sizzle with tropical fruit aroma, grapefruit and mango notes and a dry finish.', true, 'https://rhinegeist.com/wp-content/uploads/2019/04/Truth_2019-9-576x3;p[80.jpg');	
 	  
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Rhinegeist beer 2', 5.5, 'Blonde Ale', 
