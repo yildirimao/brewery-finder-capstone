@@ -3,11 +3,10 @@
     <button @click="toggleForm()">Show/Hide Form</button>
     <form class="brewery-update-form" v-show="this.showForm">
       <h1>Brewery Update Form</h1>
-       <input type="text" name="brewery-location" v-model="brewery.location"/><br>
           <label for="brewery-phone">Phone Number:</label><br>
-          <input type="text" name="brewery-phone" v-model="brewery.phone_number"/><br>
+          <input type="text" name="brewery-phone" v-model="brewery.phoneNumber"/><br>
           <label for="brewery-hours">Hours of Operation:</label><br>
-          <input type="text" name="brewery-hours" v-model="brewery.hours_of_operation"/><br>
+          <input type="text" name="brewery-hours" v-model="brewery.hoursOfOperation"/><br>
           <label for="brewery-address">Address:</label><br>
           <input type="text" name="brewery-address" v-model="brewery.address"/><br>
           <label for="brewery-bio">History:</label><br>
@@ -17,10 +16,10 @@
        required v-model="brewery.brewery_img" /> <br />
           <p>Brewery Status:</p>
           <label for="active">Active</label>
-          <input type="checkbox" name="active" checked="Active" v-model="brewery.active"/>
+          <input type="checkbox" name="active" checked="Active" v-model="brewery.isActive"/>
           <label for="active">Inactive</label>
-          <input type="checkbox" name="inactive" checked="Inactive" v-model="brewery.active"/><br>
-          <button @click="submitBrewery">Submit</button>
+          <input type="checkbox" name="inactive" checked="Inactive" v-model="brewery.isActive"/><br>
+          <button @click="changeBreweryInfo">Update</button>
     </form>
   </div>
 </template>
@@ -32,15 +31,15 @@ export default {
    data(){
         return {
             brewery: {
-                brewery_id: -1,
-                brewery_name: '',
-                brewery_location: '',
-                phone_number: '',
-                hours_of_operation: '',
+                id: -1,
+                name: '',
+                location: '',
+                phoneNumber: '',
+                hoursOfOperation: '',
                 address: '',
                 bio: '',
-                brewery_img: '',
-                active: false
+                imgUrl: '',
+                isActive: true
             },
             showForm: 'false'
         }
@@ -48,19 +47,19 @@ export default {
     methods: {
         changeBreweryInfo(){
             const  brewery = {
-                brewery_id: this.brewery_id,
-                brewery_name: this.brewery_name,
-                brewery_location: this.brewery_location,
-                phone_number: this.phone_number,
-                hours_of_operation: this.hours_of_operation,
+                id: this.id,
+                name: this.name,
+                location: this.location,
+                phoneNumber: this.phoneNumber,
+                hoursOfOperation: this.hoursOfOperation,
                 address: this.address,
                 bio: this.bio,
-                brewery_img: this.brewery_img,
-                active: this.active
+                imgUrl: this.imgUrl,
+                isActive: this.isActive
             };
-            BreweryService.updateBrewery(brewery.brewery_id, brewery).then(response => {
+            BreweryService.updateBrewery(brewery.id, brewery).then(response => {
                 if(response.status == 200){
-                    this.$router.push({name: 'Brewery', params: {id: brewery.brewery_id}});
+                    this.$router.push({name: 'Brewery', params: {id: brewery.id}});
                 }
                 
             }).catch(error => {

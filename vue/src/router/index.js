@@ -11,6 +11,7 @@ import store from '../store/index'
 import Admin from '../views/Admin.vue'
 
 
+
 Vue.use(Router)
 
 /**
@@ -74,6 +75,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
+    
     {
       path: "/beer/:id",
       name: "beer",

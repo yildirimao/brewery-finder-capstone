@@ -7,12 +7,11 @@
             <h1>{{brewery.name}} {{this.$route.params.id}}</h1>
         </div>
         
-        <div id="info">
+        <div id="inf">
           <p>{{brewery.phone}}</p>
           <dl>{{brewery.bio}}</dl>
-          <p>{{brewery.brewery_img}}brewery imagery</p>
-          <p>{{brewery.hours_of_operation}}4PM-9PM</p>
-          <p>555 main street {{brewery.location}}</p>
+          <p>{{brewery.hoursOfOperation}}</p>
+          <p>{{brewery.location}}</p>
           <p></p>
           <p></p>
         </div>
@@ -75,11 +74,11 @@ export default {
   margin: 1em;
   padding: 1em;
 }
-#info{
+#inf{
   opacity: 0;
   transition: opacity 2s ease 0s;
 }
-#info:hover{
+#inf:hover{
   opacity: 1;
 }
 </style>
