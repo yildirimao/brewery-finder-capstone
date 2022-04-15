@@ -3,15 +3,16 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.BrewerDao;
 import com.techelevator.model.Brewer;
-import com.techelevator.model.Brewery;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @CrossOrigin
 public class BrewerController {
+
     private BrewerDao brewerDao;
 
     public BrewerController(BrewerDao brewerDao) {
@@ -35,7 +36,7 @@ public class BrewerController {
 
     @ResponseStatus(code = HttpStatus.CREATED)
     @RequestMapping(path = "/brewers", method = RequestMethod.POST)
-    public Brewer createBrewer(@RequestBody Brewer brewer) {
+    public Brewer createBrewer(@Valid @RequestBody Brewer brewer) {
         return brewerDao.createBrewer(brewer.getBrewerId(), brewer.getBreweryId());
     }
 }
