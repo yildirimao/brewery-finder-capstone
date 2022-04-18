@@ -50,7 +50,7 @@
         type="checkbox"
         name="active"
         checked="Active"
-        v-model="brewery.isActive"
+        v-model="brewery.active"
         @click="toggleActivity()"
       /> <br>
       <button @click="submitBrewery">Submit</button>
@@ -72,7 +72,7 @@ export default {
         address: "",
         bio: "",
         imgUrl: "",
-        isActive: true,
+        active: true,
       },
       showForm: false,
     };
@@ -93,8 +93,8 @@ export default {
       this.showForm = !this.showForm;
     },
     toggleActivity(){ 
-        console.log(this.isActive);
-        this.isActive = !this.isActive;
+        console.log(this.active);
+        this.active = !this.active;
     }
   
   },

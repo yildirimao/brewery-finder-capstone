@@ -6,7 +6,7 @@
 
             <label for="username">Username:</label><br>
             <select name="username" id="username" v-model="brewer.brewerId">
-                <option :value="user.id" v-for="user
+                <option :value="user.id" v-for="user 
                     in this.$store.state.users" :key="user.username">
                         {{ user.username }}
                 </option>
