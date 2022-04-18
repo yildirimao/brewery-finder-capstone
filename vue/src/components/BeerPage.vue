@@ -3,8 +3,11 @@
     <div id="beer-picture" v-bind:style="`background:url(${beer.picture}); background-position:center;`">
       <div id="contrast">
         <h1>{{beer.name}} {{this.$route.params.id}}</h1>
-        <p>{{beer.abv}}</p>
-        <p>{{beer.type}}</p>
+        <p>Type: {{beer.type}}</p>
+        <p>ABV: {{beer.abv}}%</p>
+        <p>IBU: {{beer.ibu}}</p>
+        <p>Hops: {{beer.hops}}</p>
+        <p>{{beer.description}}</p>
       </div>
     </div>
     <h1>reviews go here!</h1>
@@ -23,7 +26,7 @@ export default {
     return {
       beer:{
         name: "Ahmets tea",
-        abv: "100%",
+        abv: "100",
         type: "tea",
         picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
       }
