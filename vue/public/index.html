@@ -4,10 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>final-vue-capstone-seed</title>
   </head>
   <body>
+    <div id="bubble-background">
+      <canvas id = "canvas-custom"></canvas>
+    </div>
+    
     <noscript>
       <strong>We're sorry but final-vue-capstone-seed doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
@@ -16,8 +19,34 @@
   </body>
   <style>
     body{
-      background-color: tan;
       margin: 0;
+      background: linear-gradient(-7deg, black -14%, transparent);
+      background-color: transparent !important;
+      min-height: 100vh;
+    }
+
+    #app{
+      z-index: 3;
+      padding: 0 2em 2em;
+    }
+
+    #bubble-background{
+      position: fixed;
+      min-height: 100vh;
+      min-width: 100vw;
+      background: linear-gradient(#f0f0f0 5em, orange 15em);
+      z-index: -1;
+    }
+
+    #canvas-custom{
+      position:fixed;
+      top:0;
+      left:0;
+      width: 100vw;
+      height: 100%;
+      z-index: 2;
     }
   </style>
+
+  <script src="./Javascript/Bubbles.js"></script>
 </html>
