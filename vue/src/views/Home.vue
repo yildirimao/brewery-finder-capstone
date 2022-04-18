@@ -2,24 +2,22 @@
   <div class="home">
     <h1>The Brewery Finder 🍻</h1>
     <button id="bl-btn">This button is for Beer lovers</button>
-    <router-link v-bind:to="{ name: 'brewer' }">
-      <button id="b-btn">This button is for Brewers</button>
-    </router-link>
+
+    <button id="b-btn">This button is for Brewers</button>
+
     <button id="a-btn">This button is for Admins</button>
     <!-- <p>You must be authenticated to see this</p> -->
     <brewery-list />
     <div></div>
     <brewery-form v-if="ifAdmin()" />
-    <brewery-update-form v-if="ifBrewer()" />
   </div>
 </template>
 
 <script>
 import BreweryForm from "../components/BreweryForm.vue";
 import BreweryList from "../components/BreweryList.vue";
-import BreweryUpdateForm from "../components/BreweryUpdateForm.vue";
 export default {
-  components: { BreweryList, BreweryForm, BreweryUpdateForm },
+  components: { BreweryList, BreweryForm },
   name: "home",
   mounted() {
     let user = this.$store.state.user;
@@ -46,16 +44,7 @@ export default {
         return false;
       }
     },
-    ifBrewer() {
-      if (this.$store.state.user.authorities == undefined) {
-        return false;
-      }
-      if (this.$store.state.user.authorities[0].name == "ROLE_BREWER") {
-        return true;
-      } else {
-        return false;
-      }
-    },
+
   },
 };
 </script>

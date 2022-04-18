@@ -31,7 +31,9 @@
     <div>
       <beer-list v-bind:id="this.$route.params.id"/>
     </div>
-
+    <div>
+      <brewery-update-form v-if="ifBrewer()" />
+    </div>
   </div>
 </template>
 
@@ -39,9 +41,9 @@
 import BeerList from './BeerList.vue'
 import BreweryService from '@/services/BreweryService.js'
 import BreweryPictures from './BreweryPictures.vue'
-
+import BreweryUpdateForm from "../components/BreweryUpdateForm.vue";
 export default {
-  components: { BeerList, BreweryPictures },
+  components: { BeerList, BreweryPictures, BreweryUpdateForm},
   data(){
     return {
       brewery:{}
@@ -59,6 +61,18 @@ export default {
         }
       });
     }
+  },
+  methods: {
+        ifBrewer() {
+      if (this.$store.state.user.authorities == undefined) {
+        return false;
+      }
+      if (this.$store.state.user.authorities[0].name == "ROLE_BREWER") {
+        return true;
+      } else {
+        return false;
+      }
+    },
   }
 }
 </script>

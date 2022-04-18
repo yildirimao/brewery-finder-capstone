@@ -35,7 +35,7 @@ public class BreweryController {
         return breweryDao.create(brewery.getName(), brewery.getLocation(), brewery.getPhoneNumber(),
                 brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive());}
 
-    @RequestMapping(path = "/update/{brewery_id}", method = RequestMethod.PUT)
+    @RequestMapping(path = "/breweries/{brewery_id}", method = RequestMethod.PUT)
     public void updateBrewery(@Valid @RequestBody Brewery brewery, @PathVariable int brewery_id){
         breweryDao.update(brewery.getPhoneNumber(), brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive(), brewery_id);
     }
