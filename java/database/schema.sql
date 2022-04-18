@@ -301,7 +301,7 @@ INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description,
 VALUES ('Truth', 7.2, 'IPA', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'Rhinegeist'), 75, 'Amarillo, Citra, Simcoe, Centennial', 'Rare are moments of truth, when you’ve struck the last match, belting out tunes with your friends, staring deep into the campfire – times when you feel infinite. Our Truth is found in the scintillating brilliance of hops. Brewed with a nod to the Pacific, hops sizzle with tropical fruit aroma, grapefruit and mango notes and a dry finish.', true, 'https://rhinegeist.com/wp-content/uploads/2019/04/Truth_2019-9-576x3;p[80.jpg');	
+	   WHERE brewery_name = 'Rhinegeist'), 75, 'Amarillo, Citra, Simcoe, Centennial', 'Rare are moments of truth, when you’ve struck the last match, belting out tunes with your friends, staring deep into the campfire – times when you feel infinite. Our Truth is found in the scintillating brilliance of hops. Brewed with a nod to the Pacific, hops sizzle with tropical fruit aroma, grapefruit and mango notes and a dry finish.', true, 'https://rhinegeist.com/wp-content/uploads/2019/04/Truth_2019-9-576x380.jpg');	
 	  
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Rhinegeist beer 2', 5.5, 'Blonde Ale', 

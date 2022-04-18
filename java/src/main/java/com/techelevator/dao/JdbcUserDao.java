@@ -98,6 +98,14 @@ public class JdbcUserDao implements UserDao {
         return userCreated;
     }
 
+    @Override
+    public void update(String role, int id){
+        String sql = "UPDATE users" +
+                "SET role = ?" +
+                "WHERE user_id = ?;";
+        jdbcTemplate.update(sql, role, id);
+    }
+
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getLong("user_id"));
