@@ -59,12 +59,9 @@ export default {
   },
   computed: {
       filterUsers() {
-          return this.$store.state.users.filter(user => {
-              return user.authorities.filter(authority => {
-                  authority.name != "ROLE_ADMIN"
-                  console.log(authority);
-                  })
-    })
+         return this.$store.state.users.filter(user => {
+             return user.authorities.filter(authority => authority.name == "ROLE_ADMIN")
+         }); 
   }
   }
 }
