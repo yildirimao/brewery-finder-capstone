@@ -1,9 +1,13 @@
 <template>
   <div id="background" v-bind:style="`background-image: url(${beer.beer_img}; background-size: cover`">
       <div id="text">
-          {{beer.name}} <br>
-          {{beer.abv}} <br>
-          {{beer.type}}
+          <ul id="beer">
+            <li id="name">{{beer.name}} </li>
+            <li>Type: {{beer.type}} </li>
+            <li>ABV: {{beer.abv}}% </li>
+            <li>IBU: {{beer.ibu}} </li>
+            <li>Hops: {{beer.hops}} </li>
+          </ul>  
       </div>
   </div>
 </template>
@@ -28,10 +32,23 @@ export default {
     border-radius: 1em;
 }
 
+#beer{
+    list-style-type: none;
+    padding: 1em;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+#name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 #text{
-    color: black;
+    color: rgb(0, 0, 0);
     background-color: #ffffff80;
     padding: 1em;
+    margin: 1em;
     border-radius: 15px;
 }
 #background:hover, #text:hover{
