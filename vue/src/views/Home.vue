@@ -50,9 +50,9 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
 .home {
-  font-family: "Playfair Display", serif;
+  font-family: 'Kanit', sans-serif;
 }
 button {
   margin: 1em;

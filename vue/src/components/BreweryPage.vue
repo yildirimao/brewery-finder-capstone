@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700&display=swap');
 
 .brewery-picture{
   background-image: url("https://media.istockphoto.com/photos/draught-beer-in-glasses-picture-id1040303026");
@@ -92,7 +92,7 @@ export default {
 }
 
 .contrast{
-  font-family: "Playfair Display", serif;
+  font-family: 'Kanit', sans-serif;
   background-color: #ffffffc0;
   width: fit-content;
   height: fit-content;
