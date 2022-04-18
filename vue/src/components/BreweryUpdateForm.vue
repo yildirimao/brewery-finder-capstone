@@ -80,6 +80,7 @@ export default {
         .then((response) => {
           if (response.status == 200) {
               console.log(response.status)
+              alert("Brewery updated successfully!")
             this.$router.push({ name: "brewery", params: {id: this.brewery.id} });
           }
         })
