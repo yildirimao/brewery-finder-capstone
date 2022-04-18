@@ -29,6 +29,7 @@ export default {
 .forms{
     display: grid;
     grid-template: "brewery brewer";
+    gap: 3em;
 }
 .brewery{
     grid-area: "brewery";
@@ -37,6 +38,9 @@ export default {
     grid-area: "brewer";
 }
 
-
+.forms > div{
+    background-color:#ffffff80;
+    border-radius: 15px;
+}
 
 </style>

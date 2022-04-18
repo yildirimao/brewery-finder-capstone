@@ -17,7 +17,9 @@
         name="brewery-phone"
         v-model="brewery.phoneNumber"
       /><br />
-      <label for="brewery-hours">Hours of Operation:</label><br />
+      <label for="brewery-hours">Hours of Operation:<br>
+        <span style="font-size:14px">Note: Separate days by a semi-colon. (;)</span>
+      </label><br />
       <input
         type="text"
         name="brewery-hours"
@@ -31,7 +33,9 @@
       /><br />
       <label for="brewery-bio">History:</label><br />
       <input type="text" name="brewery-bio" v-model="brewery.bio" /><br />
-      <label for="brewery-images">Enter an https:// URL for images:</label>
+      <label for="brewery-images">Enter an https:// URL for images: <br>
+        <span style="font-size:14px">Note: Separate extra images by a semi-colon. (;)</span>
+      </label>
       <br />
       <input
         type="url"

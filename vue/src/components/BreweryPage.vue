@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="brewery-picture" v-bind:style="`background:no-repeat url(${brewery.imgUrl}); background-position:center; background-size:cover`">
+    <div class="brewery-picture" v-bind:style="`background:no-repeat url(${brewery.imgUrl.split(';')[0]}); background-position:center; background-size:cover`">
       <div class="contrast">        
         <div id="inf">
           <div id="b-name">
@@ -16,7 +16,7 @@
           <p id="b-bio">{{brewery.bio}}</p>
 
           <ul id="b-hours">
-            <li v-for="day in brewery.hoursOfOperation.split(',')" :key="day">
+            <li v-for="day in brewery.hoursOfOperation.split(';')" :key="day">
               {{day}}
             </li>
           </ul>
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <brewery-pictures v-bind:pics="brewery.imgUrl"/>
+    <brewery-pictures v-if="brewery.imgUrl.includes(';')" v-bind:pics="brewery.imgUrl"/>
     
     <div>
       <beer-list v-bind:id="this.$route.params.id"/>

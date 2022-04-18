@@ -13,7 +13,7 @@
       @sliding-end="onSlideEnd"
     >
       <b-carousel-slide
-        v-for="pic in pics" :key="pic"
+        v-for="pic in pics.split(';')" :key="pic"
         v-bind:img-src="pic"
         class="slide-custom"
       ></b-carousel-slide>
@@ -24,18 +24,11 @@
 <script>
   export default {
     name: "brewery-pictures",
-    //props:["pics"],
+    props:["pics"],
     data() {
       return {
         slide: 0,
-        sliding: null,
-        pics: [
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Un1.svg/180px-Un1.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Deux.svg/180px-Deux.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Trois.svg/800px-Trois.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Quatre.svg/180px-Quatre.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cinq.svg/180px-Cinq.svg.png",
-        ],
+        sliding: null
       }
     },
     methods: {

@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateMouse(e){
-        mousePosition.x = e.pageX;
-        mousePosition.y = e.pageY;
+        mousePosition.x = e.clientX;
+        mousePosition.y = e.clientY;
     }
 
     function drawParticle(p){
