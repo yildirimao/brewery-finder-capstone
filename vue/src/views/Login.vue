@@ -38,9 +38,9 @@
       </section>
 
       <section>
-      <button type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <br>
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link class="badge bg-secondary" :to="{ name: 'register' }">Need an account?</router-link>
       </section>
     </form>
   </div>
@@ -85,6 +85,13 @@ export default {
 </script>
 
 <style scoped>
+  #login{
+    margin:1em 4em;
+    padding:1em 3em;
+    background: #ffffff80;
+    border-radius: 15px;
+  }
+
   section, button{
     margin-bottom: 1em;
   }

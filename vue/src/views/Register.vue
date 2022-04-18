@@ -71,7 +71,7 @@
           Create Account
         </button>
         <br>
-        <router-link :to="{ name: 'login' }">Have an account?</router-link>
+        <router-link class="badge bg-secondary" :to="{ name: 'login' }">Have an account?</router-link>
       </section>
       
     </form>
@@ -117,7 +117,11 @@ export default {
             const response = error.response;
             this.registrationErrors = true;
             if (response.status === 400) {
-              this.registrationErrorMsg = 'Bad Request: Validation Errors';
+              if(error.response.data.message == "User Already Exists."){
+                this.registrationErrorMsg = "That username is already taken. 😔";
+              } else{
+                this.registrationErrorMsg = 'Bad Request: Validation Errors';
+              }
             }
           });
       }
@@ -131,6 +135,12 @@ export default {
 </script>
 
 <style scoped>
+  #register{
+    margin:1em 4em;
+    padding:1em 3em;
+    background: #ffffff80;
+    border-radius: 15px;
+  }
   section, button{
     margin-bottom: 1em;
   }
