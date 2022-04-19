@@ -44,6 +44,7 @@ export default {
   }
   #nav{
     margin: 0;
+    margin-bottom: 8px;
     position: sticky;
     display: grid;
     top: 0;

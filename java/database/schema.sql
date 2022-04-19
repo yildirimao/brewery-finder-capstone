@@ -142,7 +142,7 @@ CREATE SEQUENCE seq_beer_id
   CACHE 1;
 CREATE TABLE beers(
 	beer_id int DEFAULT nextval('seq_beer_id'::regclass) NOT NULL,
-	beer_name varchar(50) UNIQUE NOT NULL,
+	beer_name varchar(50) NOT NULL,
 	abv decimal NOT NULL,
 	beer_type varchar(30) NOT NULL,
 	ibu int NOT NULL,
@@ -399,16 +399,13 @@ CREATE TABLE reviews(
 	review_id int DEFAULT nextval('seq_review_id'::regclass) NOT NULL,
 	review varchar(10000) NOT NULL,
 	rating int NOT NULL CHECK (rating >= 5),
-	beer_id int CONSTRAINT fk_beers REFERENCES beers(beer_id),
+	beer_id int CONSTRAINT fk_beers REFERENCES beers(beer_id) NOT NULL,
 	reviewer_id int CONSTRAINT fk_users REFERENCES users(user_id)
 );
 
 
 INSERT INTO reviews (review, rating, beer_id, reviewer_id)
-VALUES ('That is one good beer!', 5, (
-SELECT beer_id
-FROM beers
-WHERE beer_name = 'Shade'),(
+VALUES ('That is one good beer!', 5, 1,(
 SELECT user_id
 FROM users
 WHERE username = 'Zach'));
