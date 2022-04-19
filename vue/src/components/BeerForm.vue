@@ -16,9 +16,9 @@
             <label for="description">Description:</label><br>
             <input type="text" name="description" v-model="beer.description"><br>
             <label for="beer-img">Image URL:</label><br>
-            <input type="url" name="beer-img" v-model="beer.img"><br>
+            <input type="url" name="beer-img" v-model="beer.beer_img"><br>
             <label for="brewery-id">Brewery Id:</label><br>
-            <input type="number" name="brewery-id" v-model="beer.breweryId"><br>
+            <input type="number" name="brewery-id" v-model="beer.breweryID"><br>
             <label for="beer-available">Available: </label>
             <input type="checkbox" name="beer-available" checked="Available" v-model="beer.available" @click="toggleActivity()"><br>
             <button @click="submitBeer">Submit</button>
@@ -34,13 +34,14 @@ export default {
             beer: {
                 id: -1,
                 name: "",
-                abv: "",
+                abv: 0,
                 type: "",
-                ibu: "",
+                ibu: 0,
                 hops: "",
                 description: "",
-                img: "",
-                breweryId: "",
+                beer_img: "",
+                malts: "",
+                breweryID: -1,
                 available: true
             },
             showForm: false,
@@ -69,7 +70,7 @@ export default {
 </script>
 
 <style>
-    form {
+    form .beer-form {
         background-color:#ffffff80;
         border-radius: 15px;
         padding: 1em;
