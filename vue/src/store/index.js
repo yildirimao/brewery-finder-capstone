@@ -84,7 +84,16 @@ export default new Vuex.Store({
         } else {
           console.log("other error");
         }
-      })
+      }).then(() => {
+        //this sorts the unavailable beers to the bottom of the array.
+        state.beers.sort(function(a,b){
+          if(a.available ^ b.available){
+            return a.available ? -1 : 1;
+          } 
+          return 0;
+        });
+      });
+      
     }
   }
 })
