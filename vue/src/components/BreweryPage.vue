@@ -69,11 +69,7 @@ export default {
       });
     }
 
-     if(this.$store.state.breweries.length > 0) {
-     this.brewer = this.$store.state.brewers.find(b => {
-       return b.brewerId == this.$route.params.breweryId
-     });
-      } else {
+     
         BrewerService.getBrewer(this.$store.state.user.id).then(response => {
           if(response.status == 200){
             this.brewer = response.data
@@ -81,7 +77,7 @@ export default {
             console.log(response.data)
           }
         })
-      }
+  
       console.log(this.brewer)
   },
   methods: {
