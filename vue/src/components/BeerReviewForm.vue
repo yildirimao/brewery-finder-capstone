@@ -1,21 +1,21 @@
 <template>
   <div> 
-    <button class="toggle-review-form" @click="toggleForm()">Review this Beer!</button>
-    <form class="beer-review-form" style="color: white">
+    <button @click="toggleForm()">Share your opinion about that beer with other beer lovers!</button>
+    <form class="beer-review-form" style="color: white" v-show="this.showForm">
       <div class="rating">
         <label for="rating"> Rating:</label> <br>
-        <select name="rating" id="rating">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
+        <select name="rating" id="rating" style="width: 100px: ">
           <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
         </select>
       </div>
       <br />
       <div class="reviewText">
         <label for="reviewText" style="padding: 10px"> Review: </label> <br>
-        <input type="text" style="width: 400px; height: 100px">
+        <textarea name="reviewText" id="reviewText" cols="30" rows="5"></textarea>
       </div>
       <button class="submit" style="margin-top: 20px">Submit</button>
     </form>
@@ -49,6 +49,7 @@ export default {
     },
     toggleForm(){
       this.showForm = !this.showForm
+      console.log(this.showForm)
     }
   }
 };
