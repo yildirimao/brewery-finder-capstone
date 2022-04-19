@@ -59,6 +59,14 @@ public class JdbcBrewerDao implements BrewerDao {
         return getBrewerByBrewerId(id);
     }
 
+    @Override
+    public void updateRole(int id){
+        String sql = "UPDATE users " +
+                "SET role = 'ROLE_BREWER' " +
+                "WHERE user_id = ?;";
+        jdbcTemplate.update(sql, id);
+    }
+
     private Brewer mapRowToBrewer(SqlRowSet rs) {
         Brewer brewer = new Brewer();
         brewer.setBrewerId(rs.getInt("brewer_id"));
