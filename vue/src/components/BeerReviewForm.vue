@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <form class="beer-review-form">
-      <div class="reviewer">
-        <h2>{{ newReview.reviewer }}}</h2>
-      </div>
+  <div> 
+    <button class="toggle-review-form" @click="toggleForm()">Review this Beer!</button>
+    <form class="beer-review-form" style="color: white">
       <div class="rating">
+        <label for="rating"> Rating:</label> <br>
         <select name="rating" id="rating">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -14,9 +13,11 @@
         </select>
       </div>
       <br />
-      <div class="date">
-         <p>{{review.date}}</p>
+      <div class="reviewText">
+        <label for="reviewText" style="padding: 10px"> Review: </label> <br>
+        <input type="text" style="width: 400px; height: 100px">
       </div>
+      <button class="submit" style="margin-top: 20px">Submit</button>
     </form>
   </div>
 </template>
@@ -26,13 +27,16 @@ import BeerReviewService from '@/services/BeerReviewService.js'
 export default {
   data() {
     return {
+      reviewer: this.$store.state.user.username,
       newReview: {
         reviewId: -1,
         review: "",
         rating: -1,
         beerId: this.$route.params.beerId,
-        reviewerId: this.$store.state.user.id
+        reviewerId: this.$store.state.user.id,
+        date: new Date()
       },
+      showForm: false
     };
   },
   methods: {
@@ -42,6 +46,9 @@ export default {
           this.$router.push({name: 'beer', params:{id: this.$route.params.id}})
         }
       })
+    },
+    toggleForm(){
+      this.showForm = !this.showForm
     }
   }
 };
