@@ -16,7 +16,6 @@ import java.util.List;
 public class BrewerController {
 
     private BrewerDao brewerDao;
-    private UserDao userDao;
 
     public BrewerController(BrewerDao brewerDao) {
         this.brewerDao = brewerDao;
@@ -40,7 +39,9 @@ public class BrewerController {
     @ResponseStatus(code = HttpStatus.CREATED)
     @RequestMapping(path = "/brewers", method = RequestMethod.POST)
     public Brewer createBrewer(@Valid @RequestBody Brewer brewer) {
-        userDao.update("ROLE_Brewer", brewer.getBrewerId());
+        this.brewerDao.updateRole(brewer.getBrewerId());
         return brewerDao.createBrewer(brewer.getBrewerId(), brewer.getBreweryId());
     }
+
+
 }
