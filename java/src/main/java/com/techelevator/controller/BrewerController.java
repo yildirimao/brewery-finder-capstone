@@ -2,7 +2,9 @@ package com.techelevator.controller;
 
 
 import com.techelevator.dao.BrewerDao;
+import com.techelevator.dao.UserDao;
 import com.techelevator.model.Brewer;
+import com.techelevator.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,7 @@ import java.util.List;
 public class BrewerController {
 
     private BrewerDao brewerDao;
+    private UserDao userDao;
 
     public BrewerController(BrewerDao brewerDao) {
         this.brewerDao = brewerDao;
@@ -37,6 +40,7 @@ public class BrewerController {
     @ResponseStatus(code = HttpStatus.CREATED)
     @RequestMapping(path = "/brewers", method = RequestMethod.POST)
     public Brewer createBrewer(@Valid @RequestBody Brewer brewer) {
+        userDao.update("ROLE_Brewer", brewer.getBrewerId());
         return brewerDao.createBrewer(brewer.getBrewerId(), brewer.getBreweryId());
     }
 }
