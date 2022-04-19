@@ -21,13 +21,18 @@ public class Beer {
 
     }
 
-    public Beer(int id, String name, String imgURL, String description, float abv, String type) {
+    public Beer(int id, String name, float abv, String type, int ibu, String hops, String description, String beer_img, String malts, int breweryId, boolean available) {
         this.id = id;
         this.name = name;
-        this.beer_img = imgURL;
-        this.description = description;
         this.abv = abv;
         this.type = type;
+        this.ibu = ibu;
+        this.hops = hops;
+        this.description = description;
+        this.beer_img = beer_img;
+        this.malts = malts;
+        this.breweryId = breweryId;
+        this.available = available;
     }
 
     public int getId() {
