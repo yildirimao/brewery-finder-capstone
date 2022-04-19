@@ -31,8 +31,9 @@
     <div>
       <beer-list v-bind:id="this.$route.params.id"/>
     </div>
-    <div>
-      <brewery-update-form v-if="ifBrewer()" />
+    <div class="forms">
+      <brewery-update-form v-if="ifBrewer()" id="brewery-form"/>
+      <beer-form v-if="ifBrewer()" id="beer-form"/>
     </div>
   </div>
 </template>
@@ -42,8 +43,9 @@ import BeerList from './BeerList.vue'
 import BreweryService from '@/services/BreweryService.js'
 import BreweryPictures from './BreweryPictures.vue'
 import BreweryUpdateForm from "../components/BreweryUpdateForm.vue";
+import BeerForm from "../components/BeerForm.vue"
 export default {
-  components: { BeerList, BreweryPictures, BreweryUpdateForm},
+  components: { BeerList, BreweryPictures, BreweryUpdateForm, BeerForm},
   data(){
     return {
       brewery:{}
@@ -151,4 +153,12 @@ export default {
   margin-right: 0;
   border-right: black 1px solid;
 }
+
+.forms{
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
 </style>
