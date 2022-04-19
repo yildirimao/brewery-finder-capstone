@@ -1,16 +1,29 @@
 <template>
   <div>
-    <div id="beer-picture" v-bind:style="`background:url(${beer.picture}); background-position:center;`">
+    <div id="beer-picture" v-bind:style="`background:url(${beer.beer_img});`">
       <div id="contrast">
-        <h1>{{beer.name}} {{this.$route.params.id}}</h1>
-        <p>Type: {{beer.type}}</p>
-        <p>ABV: {{beer.abv}}%</p>
-        <p>IBU: {{beer.ibu}}</p>
-        <p>Hops: {{beer.hops}}</p>
-        <p>{{beer.description}}</p>
+        <h1>{{beer.name}}</h1>
+        <div>
+          <p v-if="beer.type">
+            Type: {{beer.type}}
+          </p>
+          <p v-if="beer.abv">
+            ABV: {{beer.abv}}%
+          </p>
+          <p v-if="beer.ibu">
+            IBU: {{beer.ibu}}
+          </p>
+          <p v-if="beer.hops">
+            Hops: {{beer.hops}}
+          </p>
+          <p v-if="beer.malts">
+            Malts: {{beer.malts}}
+          </p>
+        </div>
+        
+        <p id="beer_description">{{beer.description}}</p>
       </div>
     </div>
-    <h1>reviews go here!</h1>
     <review/>
     <review/>
     <review/>
@@ -20,26 +33,35 @@
 
 <script>
 import Review from './Review.vue'
+import BeerService from '@/services/BeerService.js'
+
 export default {
   components: { Review },
   data(){
     return {
-      beer:{
-        name: "Ahmets tea",
-        abv: "100",
-        type: "tea",
-        picture: "https://media.istockphoto.com/photos/glass-of-fresh-and-cold-beer-on-dark-background-picture-id1058117688?s=612x612"
-      }
+      beer:{}
     }
+  },
+  created(){
+    if(this.beer.id == undefined){
+      BeerService.getBeerById(this.$route.params.id).then((response) => {
+        if(response.status == 200){
+          this.beer = response.data;
+        }
+      });
+    }
+    
   }
 }
 </script>
 
 <style>
 #beer-picture{
+  background-size: cover !important;
+  background-position:center !important;
   display: flex;
   justify-content: center;
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
   margin-bottom: 1em;
   padding: 1em 5em;
@@ -52,5 +74,25 @@ export default {
   border-radius: 15px;
   margin: 1em;
   padding: 1em;
+
+  display: grid;
+  grid-template-areas: 
+  "name name"
+  "info desc";
 }
+#contrast > h1{
+  grid-area: name;
+  border-bottom: 1px black solid;
+  }
+#contrast > div{
+  grid-area: info;
+  padding-right: 1em;
+  border-right:1px black solid
+  }
+#contrast > #beer_description{
+  grid-area: desc;
+  padding-left:1em;
+  align-self: center;
+  text-align: center;
+  }
 </style>
