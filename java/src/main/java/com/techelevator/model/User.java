@@ -18,10 +18,11 @@ public class User {
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
+   private Long breweryId = -1L;
 
    public User() { }
 
-   public User(Long id, String username, String password, String zipCode, String email, String authorities) {
+   public User(Long id, String username, String password, String zipCode, String email, String authorities, Long breweryId) {
       this.id = id;
       this.username = username;
       this.password = password;
@@ -29,6 +30,7 @@ public class User {
       this.email = email;
       this.activated = true;
       if (StringUtils.hasText(authorities)) this.setAuthorities(authorities);
+      this.breweryId = breweryId;
    }
 
    public Long getId() {
@@ -93,6 +95,14 @@ public class User {
          String authority = role.contains("ROLE_") ? role : "ROLE_" + role;
          this.authorities.add(new Authority(authority));
       }
+   }
+
+   public Long getBreweryId() {
+      return breweryId;
+   }
+
+   public void setBreweryId(Long breweryId) {
+      this.breweryId = breweryId;
    }
 
    @Override

@@ -10,5 +10,5 @@ public interface BrewerDao {
     Brewer getBrewerByBrewerId(int brewerId);
     List<Brewer> listBrewersByBreweryId(int breweryId);
     Brewer createBrewer(int brewerId, int breweryId);
-
+     void updateRole(int id);
 }

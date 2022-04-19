@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>The Brewery Finder 🍻</h1>
+    <h1>The Brewery Finder <img src="../../public/Icon.png" style="height:1em; width:1em"></h1>
     <button id="bl-btn">This button is for Beer lovers</button>
 
     <button id="b-btn">This button is for Brewers</button>

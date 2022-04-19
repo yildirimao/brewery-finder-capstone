@@ -34,7 +34,7 @@ VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 
 
 INSERT INTO users (username, password_hash, zipcode, email, role) 
 VALUES ('Zach','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 
-		'45236', 'zach@email.com', 'ROLE_BREWER');
+		'45236', 'zach@email.com', 'ROLE_USER');
 		
 insert into users(username, password_hash, role)
 values ('brewer', '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC', 'ROLE_BREWER');
@@ -120,17 +120,16 @@ CREATE TABLE brewers (
 INSERT INTO brewers (brewer_id, brewery_id)
 VALUES ((SELECT user_id
 		FROM users 
-		WHERE username= 'Zach'),
+		WHERE username= 'brewer'),
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name ='Madtree Brewery'));
-	   
-VALUES ((SELECT user_id
+	   WHERE brewery_name ='MadTree')),
+	   ((SELECT user_id
 		FROM users 
 		WHERE username= 'brewer'),
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name ='Great Lakes Brewery'));
+	   WHERE brewery_name ='Great Lakes'));
 
 CREATE SEQUENCE seq_beer_id
  INCREMENT BY 1

@@ -44,11 +44,16 @@ import BreweryService from '@/services/BreweryService.js'
 import BreweryPictures from './BreweryPictures.vue'
 import BreweryUpdateForm from "../components/BreweryUpdateForm.vue";
 import BeerForm from "../components/BeerForm.vue"
+import BrewerService from "@/services/BrewerService"
 export default {
   components: { BeerList, BreweryPictures, BreweryUpdateForm, BeerForm},
   data(){
     return {
-      brewery:{}
+      brewery:{},
+      brewer:{
+        brewerId: -1,
+        breweryId: -1
+      }
     }
   },
   created(){
@@ -63,6 +68,17 @@ export default {
         }
       });
     }
+
+     
+        BrewerService.getBrewer(this.$store.state.user.id).then(response => {
+          if(response.status == 200){
+            this.brewer = response.data
+            this.brewerId = response.data.brewerId
+            console.log(response.data)
+          }
+        })
+  
+      console.log(this.brewer)
   },
   methods: {
         ifBrewer() {
