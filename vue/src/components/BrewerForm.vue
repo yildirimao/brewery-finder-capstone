@@ -6,7 +6,7 @@
 
       <label for="username">Username:</label><br />
       <select name="username" id="username" v-model="brewer.brewerId">
-        <option :value="user.id" v-for="user in filterUsers" :key="user.username">
+        <option :value="user.id" v-for="user in filterUsers" :key="user.id">
           {{ user.username }}
         </option></select
       ><br />
@@ -21,7 +21,6 @@
           {{ brewery.name }}
         </option></select
       ><br />
-
       <button @click.prevent="submitBrewer">Submit</button>
     </form>
   </div>
@@ -39,7 +38,6 @@ export default {
   },
   data() {
     return {
-    
       brewer: {
         brewerId: -1,
         breweryId: -1,
@@ -51,18 +49,35 @@ export default {
     submitBrewer() {
       console.log(this.brewer);
       BrewerService.createBrewer(this.brewer);
+    //   BrewerService.switchToBrewer()
       alert("The user appointed as Brewer successfully")
     },
     toggleForm() {
       this.showForm = !this.showForm;
     },
+    test(){
+        return this.$store.state.users.forEach(user => {
+            user.authorities.forEach(authority => {
+                if(authority.name == "ROLE_USER"){
+                    console.log(user.username)
+                }
+            })
+        });
+        // console.log(this.$store.state.user.authorities[0].name)
+    }
   },
   computed: {
       filterUsers() {
-         return this.$store.state.users.filter(user => {
-             return user.authorities.filter(authority => authority.name == "ROLE_ADMIN")
-         }); 
+        let arr = [];
+        this.$store.state.users.forEach(user => {
+            user.authorities.forEach(authority => {
+                if(authority.name == "ROLE_USER"){
+                    arr.push(user)
+                }
+            })
+        });
+        return arr;        
   }
-  }
+  },
 }
 </script>

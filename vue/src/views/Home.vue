@@ -7,7 +7,7 @@
 
     <button id="a-btn">This button is for Admins</button>
     <!-- <p>You must be authenticated to see this</p> -->
-    <brewery-list />
+    <brewery-list  />
     <div></div>
     <brewery-form v-if="ifAdmin()" />
   </div>

@@ -58,12 +58,12 @@
       <br />
       <div class="brewery-status">
         <br>
-        <label for="brewery-status">Brewery Status:</label> <br>
+        <!-- <label for="brewery-status">Brewery Status:</label> <br>
         <select name="brewery-status" id="brewery-status" @change="toggleActivity()">
           <option value="active" >Inactive</option>
           <option value="inactive" >Active</option>
-        </select>
-        <!-- <p>Brewery Status:</p>
+        </select> -->
+        <p>Brewery Status:</p>
       <label for="active">Active</label>
       <input
         type="checkbox"
@@ -72,7 +72,7 @@
         v-model="brewery.active"
         @click="toggleActivity()"
         required
-      /> -->
+      />
       
       </div>
       <div class="brewery-update" style="padding: 20px;">
