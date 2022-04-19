@@ -50,15 +50,15 @@ import BreweryService from "@/services/BreweryService.js";
 import BreweryPictures from "./BreweryPictures.vue";
 import BreweryUpdateForm from "../components/BreweryUpdateForm.vue";
 import BeerForm from "../components/BeerForm.vue";
-import BrewerService from "@/services/BrewerService";
+// import BrewerService from "@/services/BrewerService";
 export default {
   components: { BeerList, BreweryPictures, BreweryUpdateForm, BeerForm },
   data() {
     return {
       brewery: {},
       brewer: {
-        breweryId:-1
-      }
+        breweryId: -1,
+      },
     };
   },
   created() {
@@ -73,35 +73,38 @@ export default {
         }
       });
     }
-    
-    
 
     // console.log(this.brewer.breweryId);
   },
   methods: {
     ifBrewer() {
-      BrewerService.getBrewer(this.$store.state.user.id).then((response) => {
-      if (response.status == 200) {
-        this.brewer= response.data;
-        this.breweryId = response.data.breweryId
-        // console.log(this.breweryId);
-        console.log(this.breweryId)
-      if (this.$store.state.user.authorities == undefined) {
-        console.log(this.breweryId)
+      // BrewerService.getBrewer(this.$store.state.user.id).then((response) => {
+      //   if (response.status == 200) {
+      //     this.brewer = response.data;
+      //     this.breweryId = response.data.breweryId;
+      //     // console.log(this.breweryId);
+      //     console.log(this.breweryId);
+      //     if (this.$store.state.user.authorities == undefined) {
+      //       console.log(this.breweryId);
+      //       return false;
+      //     }
+      //     if (this.$store.state.user.authorities[0].name == "ROLE_BREWER") {
+      //       if (this.breweryId == this.$route.params.id) {
+      //         return true;
+      //       }
+      //     } else {
+      //       return false;
+      //     }
+      //   }
+      // });
+      if(this.$store.state.user.authorities == undefined){
         return false;
-      }
-      if (this.$store.state.user.authorities[0].name == "ROLE_BREWER") {
-        if(this.breweryId == this.$route.params.id){
-          
-          return true;
-        }
+      }else if(this.$store.state.user.authorities[0].name == "ROLE_BREWER"){
+        return true;
       } else {
-        
         return false;
       }
-      }
-    });
-      
+
     },
   },
 };
