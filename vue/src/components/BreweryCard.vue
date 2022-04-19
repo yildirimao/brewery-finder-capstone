@@ -28,7 +28,9 @@ export default {
     align-items: center;
     justify-content: center;
     border-radius: 1em;
+    
 }
+
 #text{
     color: black;
     background-color: #ffffff80;
@@ -37,5 +39,6 @@ export default {
 }
 #background:hover, #text:hover{
     cursor: pointer;
+    
 }
 </style>

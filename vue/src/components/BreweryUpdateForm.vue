@@ -1,34 +1,51 @@
 <template>
   <div>
-    <button @click="toggleForm()">Brewery Update Form</button>
+    <div class="toggle-form">
+      <button @click="toggleForm()">Brewery Update Form</button>
+    </div>   
     <form class="brewery-update-form" v-show="this.showForm">
-      <h1>Brewery Update Form</h1>
-      <label for="brewery-phone">Phone Number:</label><br />
-      <input
-        type="text"
-        name="brewery-phone"
-        v-model="brewery.phoneNumber"
-        required
-      /><br />
-      <label for="brewery-hours">Hours of Operation:</label><br />
-      <input
-        type="text"
-        name="brewery-hours"
-        v-model="brewery.hoursOfOperation"
-        required
-      /><br />
-      <label for="brewery-address">Address:</label><br />
-      <input
-        type="text"
-        name="brewery-address"
-        v-model="brewery.address"
-        required
-      /><br />
-      <label for="brewery-bio">History:</label><br />
-      <input type="text" name="brewery-bio" v-model="brewery.bio" required/><br />
-      <label for="brewery-images">Enter an https:// URL for images:</label>
+      <div class="header">
+        <h1>Brewery Update Form</h1>
+      </div>
+      <div class="brewery-phone">
+        <label for="brewery-phone">Phone Number:</label><br />
+        <input
+          type="text"
+          name="brewery-phone"
+          v-model="brewery.phoneNumber"
+          required
+        />
+      </div>
       <br />
-      <input
+      <div class="brewery-hours">
+        <label for="brewery-hours">Hours of Operation:</label><br />
+        <input
+          type="text"
+          name="brewery-hours"
+          v-model="brewery.hoursOfOperation"
+          required
+        />
+      </div>
+      <br />
+      <div class="brewery-address">
+        <label for="brewery-address">Address:</label><br />
+        <input
+          type="text"
+          name="brewery-address"
+          v-model="brewery.address"
+          required
+        />
+      </div>
+      <br />
+      <div class="brewery-bio" >
+        <label for="brewery-bio" style="padding: 10px;">History:</label><br />
+        <input type="text" name="brewery-bio" v-model="brewery.bio" required />
+      </div>
+      <br />
+      <div class="brewery-images">
+        <label for="brewery-images" style="padding: 10px;">Enter an https:// URL for images:</label>
+        <br>
+         <input
         type="url"
         name="brewery-img"
         placeholder="https://exampleimg.com"
@@ -37,8 +54,16 @@
         v-model="brewery.imgUrl"
         required
       />
+      </div>
       <br />
-      <p>Brewery Status:</p>
+      <div class="brewery-status">
+        <br>
+        <label for="brewery-status">Brewery Status:</label> <br>
+        <select name="brewery-status" id="brewery-status" @change="toggleActivity()">
+          <option value="active" >Inactive</option>
+          <option value="inactive" >Active</option>
+        </select>
+        <!-- <p>Brewery Status:</p>
       <label for="active">Active</label>
       <input
         type="checkbox"
@@ -47,9 +72,13 @@
         v-model="brewery.active"
         @click="toggleActivity()"
         required
-      /> <br>
+      /> -->
       
-      <button @click="changeBreweryInfo()">Update</button>
+      </div>
+      <div class="brewery-update" style="padding: 20px;">
+        <button @click="changeBreweryInfo()">Update</button>
+      </div>
+      
     </form>
   </div>
 </template>
@@ -79,9 +108,12 @@ export default {
       BreweryService.updateBrewery(this.brewery.id, this.brewery)
         .then((response) => {
           if (response.status == 200) {
-              console.log(response.status)
-              alert("Brewery updated successfully!")
-            this.$router.push({ name: "brewery", params: {id: this.brewery.id} });
+            console.log(response.status);
+            alert("Brewery updated successfully!");
+            this.$router.push({
+              name: "brewery",
+              params: { id: this.brewery.id },
+            });
           }
         })
         .catch((error) => {
@@ -91,13 +123,46 @@ export default {
     toggleForm() {
       this.showForm = !this.showForm;
     },
-    toggleActivity(){
-        this.active = !this.active;
-        console.log(this.active);
-    }
+    toggleActivity() {
+      this.active = !this.active;
+      console.log(this.active);
+    },
   },
 };
 </script>
 
 <style>
+
+.brewery-update-form {
+  display: grid;
+  color: white ;
+  grid-template-areas:"head head head"
+                      "phone hours address"
+                      "history images status"
+                      "update update update";
+}
+.header{
+  grid-area: head;
+}
+.brewery-phone {
+  grid-area: phone;
+}
+.brewery-hours {
+  grid-area: hours;
+}
+.brewery-address {
+  grid-area: address;
+}
+.brewery-bio {
+  grid-area: history;
+}
+.brewery-images {
+  grid-area: images;
+}
+.brewery-status {
+  grid-area: status;
+}
+.brewery-update {
+  grid-area: update;
+}
 </style>
