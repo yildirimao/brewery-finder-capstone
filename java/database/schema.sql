@@ -75,44 +75,40 @@ true, 'https://media1.citybeat.com/citybeat/imager/u/original/12086253/copy_of_2
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
 VALUES ('Fretboard', 'Cincinnati, OH', '513-914-4677', 'Friday: 12PM–12AM; Saturday: 12PM–12AM; Sunday: 12–8PM; Monday: 3–10PM; Tuesday: 3–10PM; Wednesday: 3–10PM; Thursday: 3–10PM', '5800 Creek Rd, Cincinnati, OH 45242', 
-		'Fretboard Brewing Company is an award-winning brewery & live music venue in Blue Ash, OH. #brewsintune.', true, 'https://www.gannett-cdn.com/presto/2021/11/03/PCIN/49bf6db3-ff37-4b74-b615-fab35b87d110-Fretboard.jpg');
+		'Novum latine in sea, sit ad menandri praesent, eum mutat altera invidunt cu. Te mei quando persius patrioque, vix ex amet utinam propriae. Munere fabulas ancillae no pro, cu appetere placerat delicata pro, no altera equidem dissentiet mea. Ex malis vocibus duo, pro ea appetere percipitur interpretaris, vide luptatum explicari no cum. Nibh assum consequuntur sed in, solet tempor qui ex. Meliore dolorem mea an, tempor incorrupte theophrastus vim in, ad qui wisi nusquam vulputate. Stet vivendo fastidii vix ut, ignota repudiare quo ne, quo electram complectitur no.', true, 'https://www.gannett-cdn.com/presto/2021/11/03/PCIN/49bf6db3-ff37-4b74-b615-fab35b87d110-Fretboard.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('High Grain', 'Cincinnati, OH', '513-791-7000', 'Monday: 3PM-10PM; Tuesday: 3PM-10PM; Wednesday: 3PM-10PM; Thursday: 3PM–10PM; Friday: 12PM–11PM; Saturday: 11AM–11PM; Sunday: 11PM–8PM',
- '6860 Plainfield Road, Cincinnati, OH, 45236', 'We’re a brewery with a scratch kitchen making sustainable choices from the onset of each project. We love beer and believe beer is best with a good meal with locally sourced food. Our seasonally rotating menu includes vegan options and local foods from Cincy farms such as Gorman Heritage Farm and Perch Farms.', true, 'https://media.bizj.us/view/img/11339109/highgrain29*1200xx1800-1013-0-94.jpg');
+VALUES ('High Grain', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://media.bizj.us/view/img/11339109/highgrain29*1200xx1800-1013-0-94.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Nine Giant', 'Cincinnati, OH', '513-366-4550', 
-'Monday: CLOSED; Tuesday: 11:30AM–10PM; Wednesday: 11:30AM–10PM; Thursday: 11:30PM–10PM; Friday: 11:30PM–10PM; Saturday: 11:30AM–11PM; Sunday: 11:30PM–9PM', '6095 Montgomery Rd, Cincinnati, OH 45213', 
-'Our crack team of beer wizards crafts award-winning small batch beers to delight any tummy. Our beers change frequently so there’s always something new and delicious to indulge in.', true, 'https://www.gannett-cdn.com/media/2016/06/23/Cincinnati/Cincinnati/636022930752296332-062316-NINE-GIANT-335.jpg?width=640');
+VALUES ('Nine Giant', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 
+'They make beers', true, 'https://www.gannett-cdn.com/media/2016/06/23/Cincinnati/Cincinnati/636022930752296332-062316-NINE-GIANT-335.jpg?width=640');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Rhinegeist', 'Cincinnati, OH', '513-381-1367', 
-'Monday: 3PM-10PM; Tuesday: 3PM-10PM; Wednesday: 3PM-10PM; Thursday: 3PM-10PM; Friday: 12PM–12AM; Saturday: 12PM–12AM; Sunday: 12PM–9PM', 
-'1910 Elm St, Cincinnati, OH 45202', 'Rhinegeist is located in the historic Over-the-Rhine neighborhood in Cincinnati, Ohio. Our 25,000 square foot, active brewing facility is housed in the former bottling plant of Christian Moerlein Brewing Co., a formidable pre-Prohibition beermaker. We cant wait to meet ya!', true, 'https://media-exp1.licdn.com/dms/image/C4E1BAQGCkrtCNsSMMg/company-background_10000/0/1578514862862?e=2147483647&v=beta&t=Tbeps4MHeNRqWXULVPPqvyG_fYdFIBf3bT3_twwQgXg');
+VALUES ('Rhinegeist', 'Cincinnati, OH', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://media-exp1.licdn.com/dms/image/C4E1BAQGCkrtCNsSMMg/company-background_10000/0/1578514862862?e=2147483647&v=beta&t=Tbeps4MHeNRqWXULVPPqvyG_fYdFIBf3bT3_twwQgXg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Braxton', 'Covington, KY', '859-261-5600', 
-'Monday: 3PM-9PM; Tuesday: 11AM-10PM; Wednesday: 11AM-10PM; Thursday: 11AM-10PM; Friday: 11AM-12AM; Saturday: 11AM-12AM; Sunday: 11AM–9PM', 
- '27 West 7th Street, Covington, KY 41011', 'Welcome to Braxton Brewing Company. You’re witnessing a dream coming to life. A place where ideas are born and fermented. It’s a great deal of work, but hell, that’s what makes a dream worth pursuing. This brewery celebrates determination, knowledge, and the humble pride we wave like a battle flag.', true, 'https://www.americanway.com/public/uploads/Cincinnati-Braxton-Brewing-Co-courtesy.jpg');
+VALUES ('Braxton', 'Covington, Ky', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', true, 'https://www.americanway.com/public/uploads/Cincinnati-Braxton-Brewing-Co-courtesy.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Cartridge Brewing', 'Maineville, OH', '513-697-3434', 
-'Monday: CLOSED; Tuesday: 4PM-10PM; Wednesday: 4PM-10PM; Thursday: 4PM-10PM; Friday: 11AM-11PM; Saturday: 11AM-11PM; Sunday: 11AM–9PM', 
-'1411 Grandin Rd, Maineville, OH 45039', 'Opened in 1916, the historic Peters Cartridge Factory was once a community hub and the heart of Kings Mills. The space is now fully restored and is home to Cartridge Brewing. Built on the banks of the Little Miami River, Cartridge Brewing is a veteran-owned business focused on celebrating the traditional craft of brewing. Cartridge is proud to serve a selection of old world beers alongside easy-drinking specialty styles – all brewed on-site in our 15 bbl brewhouse.', true, 'https://cartridgebrewing.com/assets/general/_1200x630_crop_center-center_82_none/CTG_Hero.jpg?mtime=1531776428');
-
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Sonder Brewing', 'Mason, OH', '513-779-2739', 
-'Monday: 11AM-10PM; Tuesday: 11AM-10PM; Wednesday: 11AM-10PM; Thursday: 11AM-10PM; Friday: 11AM-12AM; Saturday: 11AM-12AM; Sunday: 10AM–9PM',  
-'8584 Duke Blvd, Mason, OH 45040', 'Just like every person has a unique story, so does every beer. The story of Sonder beer begins with our unique, high-quality beer selection brewed on site at the Sonder Brewing production facility and taproom located in the Cincinnati area at 8584 Duke Boulevard in Mason, Ohio. The 15,200-square-foot building holds a 30-barrel brew house with American-made equipment and features 2,000-square-feet of taproom space. The Sonder brewing team, led by Chase Legler, has over 20 years of craft brewing experience, with a passion for quality and flavor that showcases throughout the Sonder beer lineup.', true, 'https://images.squarespace-cdn.com/content/v1/58c814d2414fb5205e266a1c/1573761869001-9UZJOYSOWTIT0S32URDZ/Beer+Garden+Sunet.jpg?format=1000w');
-
-
-INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Fake Brewery 3', 'City, State', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM; Sunday: 10AM–11PM,
+VALUES ('Fake Brewery 1', 'City, State', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
 Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', false, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
 INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
-VALUES ('Fake Brewery 4', 'City, State', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM; Sunday: 10AM–11PM,
+VALUES ('Fake Brewery 2', 'City, State', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', false, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+
+
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
+VALUES ('Fake Brewery 3', 'City, State', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
+Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', false, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
+
+INSERT INTO breweries (brewery_name, brewery_location, phone_number,hours_of_operation, address, bio, active, brewery_img)
+VALUES ('Fake Brewery 4', 'City, State', '555-555-5555', 'Thursday: 11AM–11PM, Friday: 11AM–12AM, Saturday: 10AM–12AM, Sunday: 10AM–11PM,
 Monday: 11AM–11PM, Tuesday: 11AM–11PM, Wednesday: 11AM–11PM', '1010 Street Address, City, State 01010', 'They make beers', false, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chandler-San_Tan_Brewery-2007.jpg/1200px-Chandler-San_Tan_Brewery-2007.jpg');
 
 CREATE TABLE brewers (
@@ -127,13 +123,14 @@ VALUES ((SELECT user_id
 		WHERE username= 'brewer'),
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name ='MadTree')),
-	   ((SELECT user_id
+	   WHERE brewery_name ='MadTree'));
+	   
+VALUES ((SELECT user_id
 		FROM users 
 		WHERE username= 'brewer'),
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name ='Great Lakes'));
+	   WHERE brewery_name ='Great Lakes Brewery'));
 
 CREATE SEQUENCE seq_beer_id
  INCREMENT BY 1
@@ -142,7 +139,7 @@ CREATE SEQUENCE seq_beer_id
   CACHE 1;
 CREATE TABLE beers(
 	beer_id int DEFAULT nextval('seq_beer_id'::regclass) NOT NULL,
-	beer_name varchar(50) NOT NULL,
+	beer_name varchar(50) UNIQUE NOT NULL,
 	abv decimal NOT NULL,
 	beer_type varchar(30) NOT NULL,
 	ibu int NOT NULL,
@@ -157,71 +154,29 @@ CREATE TABLE beers(
 
 
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('42 Mile', 5.6, 'Cider', 
+VALUES ('Madtree beer 1', 4.6, 'sour', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 0.0, '', 'A semi-sweet cider brewed with apples grown locally at Beiersdorfer Orchard.', true, 'https://untappd.akamaized.net/photos/2021_10_24/c9088acfac56d856fa18a955247bd770_640x640.jpg');
+	   WHERE brewery_name = 'MadTree'), 10, 'Perle', 'A sour beer from Madtree', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Bockaveli', 7.6, 'Bock', 
+VALUES ('Madtree beer 2', 4.6, 'sour', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 18.0, '', 'Single / Traditional', true, 'https://untappd.akamaized.net/photos/2022_04_15/688fff70a4f25671639c141d911fb943_raw.jpg');
+	   WHERE brewery_name = 'MadTree'), 10, 'test hops', 'A pilsner from Madtree', true, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Born To Be Mild', 3.5, 'Mild', 
+VALUES ('Madtree beer 3', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 22.0, '', 'Bready, toasty malt with noticeable but not overpowering black tea notes.', true, 'https://untappd.akamaized.net/photos/2022_02_27/47add1842f940a5d2ae2ca780c4eb2eb_640x640.jpg');
+	   WHERE brewery_name = 'MadTree'), 10, 'test hops', 'A placeholder beer from Madtree', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
 	   
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Burning Apparition', 6.66, 'Peanut Butter Porter', 
+VALUES ('Madtree beer 4', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 0.0, 'N/A', 'Peanut Butter Porter', true, 'https://untappd.akamaized.net/photos/2022_03_18/32ec0528e92a4417d64fc2a1057b9d58_640x640.jpg');
-
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Espressoself', 4.9, 'Brown Ale', 
-	   (SELECT brewery_id
-	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 17.0, '', 'Light bodied brown ale brewed with Deeper Roots coffee. Espresso coffee knows chocolate and Caramel note clean and let a dry finish.', true, 'https://untappd.akamaized.net/photos/2022_03_24/306c9af049188407f4ed01447bba4b68_640x640.jpg');
-
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Fable', 7.0, 'Porter', 
-	   (SELECT brewery_id
-	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 30.0, '', 'Baltic', true, 'https://untappd.akamaized.net/photos/2022_04_06/ccc8278d572052689b74ca3933b50070_raw.jpg');
-
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Fiesta Forever', 4.6, 'Fruit Tart Ale', 
-	   (SELECT brewery_id
-	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 18.0, '', 'A margarita version of Shade with a boost of lime juice and sea salt.', true, 'https://untappd.akamaized.net/photos/2021_07_06/bf20e6d1e208e0d8d0dc6499e1d70a21_640x640.jpg');
-
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Galaxy High', 9.5, 'IPA', 
-	   (SELECT brewery_id
-	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 120.0, '', 'Join two Australian hops as you encounter a crazy collection of tropical and dank flavors throughout this Imperial IPA. It’s big on your palate… disruptive even. Think "trophic cascades" disruptive.', true, 'https://cdn2.cincinnatimagazine.com/wp-content/uploads/sites/5/2015/03/Galaxy-High-01-e1426528515292.jpg');
-
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Happy Amber', 6.0, 'Red Ale', 
-	   (SELECT brewery_id
-	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 30.0, '', '2018 GABF Gold Medal Winner | This dry-hopped ale combines caramel and biscuit malt flavors in happy equilibrium with late addition American hops. The approachable balance is intentional although the name is a “hoppy” accident.', true, 'https://pbs.twimg.com/media/FNl84_yXIAY0-gF?format=jpg&name=large');
-
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Its October Somewhere', 5.7, 'Lager - Amber', 
-	   (SELECT brewery_id
-	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 17.0, '', '', true, 'https://untappd.akamaized.net/photos/2022_04_13/e612bf38977213957c572ab70343de0a_640x640.jpg');
-
-INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
-VALUES ('Legendary Lager', 4.2, 'Lager', 
-	   (SELECT brewery_id
-	   FROM breweries
-	   WHERE brewery_name = 'MadTree'), 15.0, '', '', true, 'https://www.gannett-cdn.com/presto/2021/03/08/PCIN/a8100e77-63ef-4c46-9887-ab30532d35c6-20210301_191851.jpg');
-
+	   WHERE brewery_name = 'MadTree'), 10, 'test hops', 'A placeholder beer from Madtree', false, 'http://www.piedmont.org/media/BlogImages/iStock_000049664402_470x260.jpg');
+	   
 INSERT INTO beers(beer_name, abv, beer_type, brewery_id, ibu, hops, description, available, beer_img)
 VALUES ('Great lakes beer 1', 5.5, 'Blonde Ale', 
 	   (SELECT brewery_id
@@ -399,13 +354,16 @@ CREATE TABLE reviews(
 	review_id int DEFAULT nextval('seq_review_id'::regclass) NOT NULL,
 	review varchar(10000) NOT NULL,
 	rating int NOT NULL CHECK (rating >= 5),
-	beer_id int CONSTRAINT fk_beers REFERENCES beers(beer_id) NOT NULL,
+	beer_id int CONSTRAINT fk_beers REFERENCES beers(beer_id),
 	reviewer_id int CONSTRAINT fk_users REFERENCES users(user_id)
 );
 
 
 INSERT INTO reviews (review, rating, beer_id, reviewer_id)
-VALUES ('That is one good beer!', 5, 1,(
+VALUES ('That is one good beer!', 5, (
+SELECT beer_id
+FROM beers
+WHERE beer_name = 'Truth'),(
 SELECT user_id
 FROM users
 WHERE username = 'Zach'));
