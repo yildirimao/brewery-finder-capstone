@@ -138,7 +138,7 @@ CREATE SEQUENCE seq_beer_id
   CACHE 1;
 CREATE TABLE beers(
 	beer_id int DEFAULT nextval('seq_beer_id'::regclass) NOT NULL,
-	beer_name varchar(50) UNIQUE NOT NULL,
+	beer_name varchar(50) NOT NULL,
 	abv decimal NOT NULL,
 	beer_type varchar(30) NOT NULL,
 	ibu int NOT NULL,
