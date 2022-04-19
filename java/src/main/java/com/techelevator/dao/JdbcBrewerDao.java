@@ -31,7 +31,7 @@ public class JdbcBrewerDao implements BrewerDao {
 
     @Override
     public Brewer getBrewerByBrewerId(int brewerId) {
-        String sql = "SELECT brewer_id, brewery_id FROM brewers WHERE brewer_id = ?;";
+        String sql = "SELECT brewer_id, brewery_id FROM brewers WHERE brewer_id = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, brewerId);
         if(results.next()) {
             return mapRowToBrewer(results);
@@ -43,8 +43,8 @@ public class JdbcBrewerDao implements BrewerDao {
     @Override
     public List<Brewer> listBrewersByBreweryId(int breweryId) {
         List<Brewer> brewers = new ArrayList<>();
-        String sql = "SELECT brewer_id, brewery_id FROM brewers WHERE brewery_id = ?;";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        String sql = "SELECT brewer_id, brewery_id FROM brewers WHERE brewery_id = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, breweryId);
         while(results.next()) {
             Brewer brewer = mapRowToBrewer(results);
             brewers.add(brewer);

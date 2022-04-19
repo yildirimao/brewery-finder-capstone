@@ -13,10 +13,9 @@ public class Beer {
     private String description;
     private String beer_img;
     private String malts;
+    private int breweryId;
     private boolean available;
-    private int brewery_id;
 
-    private int breweryID;
 
     public Beer(){
 
@@ -80,11 +79,11 @@ public class Beer {
     }
 
     public int getBreweryID() {
-        return breweryID;
+        return breweryId;
     }
 
-    public void setBreweryID(int breweryID) {
-        this.breweryID = breweryID;
+    public void setBreweryID(int breweryId) {
+        this.breweryId = breweryId;
     }
 
     public int getIbu() {
@@ -119,14 +118,6 @@ public class Beer {
         this.available = available;
     }
 
-    public int getBrewery_id() {
-        return brewery_id;
-    }
-
-    public void setBrewery_id(int brewery_id) {
-        this.brewery_id = brewery_id;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -138,5 +129,10 @@ public class Beer {
                 Objects.equals(description, beer.description) &&
                 Objects.equals(abv, beer.abv) &&
                 Objects.equals(type, beer.type);
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + id + ", name: " + name + ", abu: " + abv + ", type: " + type + ", ibu: " + ibu + ", hops: " + hops + ", description: " + description + ", beer_img: " + beer_img + ", malts: " + malts + ", breweryId: " + breweryId;
     }
 }

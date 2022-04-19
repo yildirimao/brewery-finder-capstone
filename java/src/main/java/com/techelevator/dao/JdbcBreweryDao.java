@@ -21,7 +21,7 @@ public class JdbcBreweryDao implements BreweryDao {
     public List<Brewery> listAll() {
         List<Brewery> breweries = new ArrayList<>();
         String sql = "SELECT brewery_id, brewery_name, brewery_location, phone_number, hours_of_operation, " +
-                "address, bio, brewery_img, active FROM breweries;";
+                "address, bio, brewery_img, active FROM breweries";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {
             Brewery brewery = mapRowToBrewery(results);

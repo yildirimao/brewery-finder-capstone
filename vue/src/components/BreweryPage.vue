@@ -71,7 +71,9 @@ export default {
       }
       if (this.$store.state.user.authorities[0].name == "ROLE_BREWER") {
         return true;
-      } else {
+      } else if (this.$store.state.user.authorities[0].name == "ROLE_ADMIN") {
+        return true;
+      } else {  
         return false;
       }
     },
