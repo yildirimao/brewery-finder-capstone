@@ -16,7 +16,7 @@ export default {
 
     createBrewer(brewer) {
         return axios.post('/brewers', brewer)
-    }
+    },
     switchToBrewer(){
         
     }

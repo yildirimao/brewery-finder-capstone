@@ -123,14 +123,13 @@ VALUES ((SELECT user_id
 		WHERE username= 'Zach'),
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name ='Madtree Brewery'));
-	   
-VALUES ((SELECT user_id
+	   WHERE brewery_name ='MadTree')),
+	   ((SELECT user_id
 		FROM users 
 		WHERE username= 'brewer'),
 	   (SELECT brewery_id
 	   FROM breweries
-	   WHERE brewery_name ='Great Lakes Brewery'));
+	   WHERE brewery_name ='Great Lakes'));
 
 CREATE SEQUENCE seq_beer_id
  INCREMENT BY 1
