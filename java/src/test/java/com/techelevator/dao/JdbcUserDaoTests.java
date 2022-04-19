@@ -13,8 +13,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.List;
 
 public class JdbcUserDaoTests extends BaseDaoTests {
-    protected static final User USER_1 = new User(1L, "user", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_USER");
-    protected static final User USER_2 = new User(2L, "admin", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_ADMIN");
+    protected static final User USER_1 = new User(1L, "user", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_USER", -1L);
+    protected static final User USER_2 = new User(2L, "admin", "$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC", "55555", "example@email.com", "ROLE_ADMIN", -1L);
 
     private JdbcUserDao sut;
 
@@ -102,7 +102,7 @@ public class JdbcUserDaoTests extends BaseDaoTests {
 
     @Test
     public void create_user_creates_a_user() {
-        User newUser = new User(-1L, "new", "user", "55555", "example@email.com", "ROLE_USER");
+        User newUser = new User(-1L, "new", "user", "55555", "example@email.com", "ROLE_USER", -1L);
 
         boolean userWasCreated = sut.create(newUser.getUsername(), newUser.getPassword(), newUser.getZipCode(), newUser.getEmail(), "USER");
 

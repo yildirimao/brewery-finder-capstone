@@ -49,7 +49,8 @@ public class JdbcUserDao implements UserDao {
     @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
-        String sql = "select * from users";
+        String sql = "select * from users " +
+                     "left join brewers ON brewers.brewer_id = users.user_id;";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {
@@ -108,6 +109,10 @@ public class JdbcUserDao implements UserDao {
         user.setEmail(rs.getString("email"));
         user.setAuthorities(rs.getString("role"));
         user.setActivated(true);
+        user.setBreweryId(rs.getLong("brewery_id"));
+        if(user.getBreweryId() == 0){
+            user.setBreweryId(-1L);
+        }
         return user;
     }
 }
