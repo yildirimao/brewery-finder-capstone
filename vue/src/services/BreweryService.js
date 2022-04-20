@@ -16,6 +16,9 @@ export default {
   
   updateBrewery(id, brewery) {
     return axios.put(`/breweries/${id}`, brewery)
+  },
+
+  searchForBreweries(searchTerms){
+    return axios.post(`/breweries/search`, searchTerms)
   }
-  
 }

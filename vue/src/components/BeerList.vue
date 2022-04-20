@@ -13,9 +13,12 @@ import BeerService from '@/services/BeerService';
 import BeerCard from './BeerCard.vue'
 export default {
   components: { BeerCard },
+  search_page:false,
   props:['id'],
   created(){
-    this.$store.commit("GET_LIST_BEERS_FROM_BREWERY", this.id);
+    if(!this.search_page){
+      this.$store.commit("GET_LIST_BEERS_FROM_BREWERY", this.id);
+    }
   },
   methods:{
     isBrewer(){

@@ -119,6 +119,23 @@ export default new Vuex.Store({
         return b.id == beerId;
       })
       foundBeer.available = !foundBeer.available;
+    },
+
+    SEARCH(state, payload){
+      if(payload.for == "breweries"){
+        BreweryService.searchForBreweries(payload.terms).then(response =>{
+          if(response.status == 200){
+            state.breweries = response.data;
+          } 
+        });
+      }
+      else if(payload.for == "beers"){
+        BeerService.searchForBeers(payload.terms).then(response =>{
+          if(response.status == 200){
+            state.beers = response.data;
+          } 
+        });
+      }
     }
   }
 })

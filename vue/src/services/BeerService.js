@@ -20,5 +20,9 @@ export default {
 
   toggleAvailability(id){
     return axios.put(`/beers/${id}/toggle`)
+  },
+
+  searchForBeers(searchTerms){
+    return axios.post(`/beers/search`, searchTerms)
   }
 }
