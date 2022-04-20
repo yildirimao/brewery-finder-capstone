@@ -30,8 +30,4 @@ public class ReviewController {
         return reviewDao.getReviewsByBeer(beer_id);
     }
 
-    @RequestMapping(path = "/reviews", method = RequestMethod.GET)
-    public List<Review> getReviews(){
-        return reviewDao.getReviewsByUser(3);
-    }
 }
