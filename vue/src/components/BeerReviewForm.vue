@@ -33,7 +33,7 @@ export default {
         rating: -1,
         beerId: this.$route.params.id,
         userId: this.$store.state.user.id,
-        date: "2012-04-23T18:25:43.511Z"
+        reviewDate: null
       },
       showForm: false
     };
