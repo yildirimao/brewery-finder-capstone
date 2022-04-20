@@ -13,6 +13,8 @@ public interface BeerDao {
 
     Beer getBeerByName(String name);
 
+    void toggleBeerAvailability(int beerId);
+
     Beer create(Beer beerToCreate);
 
     void deleteBeer(int beerId);

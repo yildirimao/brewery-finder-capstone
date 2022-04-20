@@ -24,7 +24,7 @@
         <p id="beer_description">{{beer.description}}</p>
       </div>
     </div>
-    <review v-for="review in reviews" :key="review.id" v-bind:review="review"/>
+    <review v-for="review in $store.state.reviews" :key="review.id" v-bind:review="review"/>
     <beer-review-form/>
   </div>
 </template>
@@ -33,38 +33,41 @@
 import Review from './Review.vue'
 import BeerService from '@/services/BeerService.js'
 import BeerReviewForm from './BeerReviewForm.vue'
-
+import BeerReviewService from '@/services/BeerReviewService.js'
 export default {
   components: { Review, BeerReviewForm },
   data(){
     return {
       beer:{},
-      reviews:[
-        {
-          reviewer:"Bob",
-          rating:5,
-          date:"04/20/2022",
-          review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        },
-        {
-          reviewer:"Bob",
-          rating:5,
-          date:"04/20/2022",
-          review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        },
-        {
-          reviewer:"Bob",
-          rating:5,
-          date:"04/20/2022",
-          review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        },
-        {
-          reviewer:"Bob",
-          rating:5,
-          date:"04/20/2022",
-          review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        }
-      ]
+      reviews: {
+
+      }
+      
+        // {
+        //   reviewer:"Bob",
+        //   rating:5,
+        //   date:"04/20/2022",
+        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
+        // },
+        // {
+        //   reviewer:"Bob",
+        //   rating:5,
+        //   date:"04/20/2022",
+        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
+        // },
+        // {
+        //   reviewer:"Bob",
+        //   rating:5,
+        //   date:"04/20/2022",
+        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
+        // },
+        // {
+        //   reviewer:"Bob",
+        //   rating:5,
+        //   date:"04/20/2022",
+        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
+        // }
+    
     }
   },
   created(){
@@ -74,6 +77,21 @@ export default {
           this.beer = response.data;
         }
       });
+      BeerReviewService.getReviewsByBeer(this.$route.params.id).then(response => {
+        if(response.status === 200){
+          this.reviews = response.data;
+          console.log(response.data)
+        }
+      })
+      .catch(error => {
+        if(error.response){
+          console.log("response error");
+        } else if(error.request){
+          console.log("request error");
+        } else {
+          console.log("other error");
+        }
+      })
     }
     
   }

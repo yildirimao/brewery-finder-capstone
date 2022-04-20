@@ -4,7 +4,7 @@ import axios from 'axios'
 import BreweryService from '@/services/BreweryService.js'
 import BeerService from '../services/BeerService'
 import AuthService from '../services/AuthService.js'
-import BrewerService from '@/services/BrewerService.js'
+import BeerReviewService from '@/services/BeerReviewService.js'
 Vue.use(Vuex)
 
 /*
@@ -25,7 +25,8 @@ export default new Vuex.Store({
     users:[],
     breweries: [],
     brewers: [],
-    beers:[]
+    beers:[],
+    reviews:[]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -70,10 +71,10 @@ export default new Vuex.Store({
         }
       })
     },
-    GET_BREWER(state, id){
-      BrewerService.getBrewer(id).then(response => {
+    GET_REVIEWS_BY_BEER(state, id){
+      BeerReviewService.getReviewsByBeer(id).then(response => {
         if(response.status === 200){
-          state.breweries = response.data;
+          state.reviews = response.data;
         }
       })
       .catch(error => {
@@ -111,6 +112,13 @@ export default new Vuex.Store({
         });
       });
       
+    },
+
+    TOGGLE_BEER_AVAILABILITY(state, beerId){
+      let foundBeer = this.state.beers.find(b => {
+        return b.id == beerId;
+      })
+      foundBeer.available = !foundBeer.available;
     }
   }
 })

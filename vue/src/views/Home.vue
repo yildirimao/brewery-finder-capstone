@@ -1,22 +1,20 @@
 <template>
   <div class="home">
-    <h3>Hello {{$store.state.user.username}}, welcome to</h3>
+    <h3>Hello{{$store.state.user.username != undefined ? " " + $store.state.user.username : ""}}, welcome to</h3>
     <h1>The Brewery Finder <img src="../../public/Icon.png" style="height:1em; width:1em"></h1>
-    <button id="bl-btn">This button is for Beer lovers</button>
 
-    <button id="b-btn">This button is for Brewers</button>
+    <search-bar/> <br>
 
-    <button id="a-btn">This button is for Admins</button>
     <!-- <p>You must be authenticated to see this</p> -->
     <brewery-list  />
-    <div></div>
   </div>
 </template>
 
 <script>
 import BreweryList from "../components/BreweryList.vue";
+import SearchBar from '../components/SearchBar.vue';
 export default {
-  components: { BreweryList},
+  components: { BreweryList, SearchBar},
   name: "home",
   mounted() {
     let user = this.$store.state.user;

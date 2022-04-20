@@ -37,9 +37,9 @@
     <div>
       <beer-list v-bind:id="this.$route.params.id" />
     </div>
-    <div class="forms">
-      <brewery-update-form v-if="ifBrewer()" id="brewery-form" />
-      <beer-form v-if="ifBrewer()" id="beer-form" />
+    <div class="forms" v-if="isBrewer()">
+      <brewery-update-form id="brewery-form" />
+      <beer-form  id="beer-form" />
     </div>
   </div>
 </template>
@@ -84,6 +84,15 @@ export default {
       }
 
     },
+    isBrewer(){
+      let cuser = this.$store.state.user
+        if(cuser.breweryId != undefined){
+        console.log(cuser.breweryId)
+        // renamed the user because user was overwritten in somewheer else
+        return cuser.authorities.some(a => a.name == "ROLE_BREWER") &&
+              cuser.breweryId == this.$route.params.id;
+      }
+    }
   },
 };
 </script>

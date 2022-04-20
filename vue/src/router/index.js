@@ -9,7 +9,8 @@ import BreweryDisplay from '../views/BreweryDisplay.vue'
 import BeerDisplay from '../views/BeerDisplay.vue'
 import store from '../store/index'
 import Admin from '../views/Admin.vue'
-import MyBrewery from '../views/MyBrewery.vue'
+import Search from '../views/Search.vue'
+
 
 
 Vue.use(Router)
@@ -93,11 +94,11 @@ const router = new Router({
       }
     },
     {
-      path: "/myBrewery",
-      name: "my-brewery",
-      component: MyBrewery,
+      path: "/Search",
+      name: "Search",
+      component: Search,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
   ]

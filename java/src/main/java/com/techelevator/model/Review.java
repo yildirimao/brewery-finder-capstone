@@ -6,19 +6,22 @@ public class Review {
     private int rating;
     private int beerId;
     private int userId;
-    private int reviewDate;
+    private String reviewDate;
 
 
     public Review(){
 
     }
 
-    public Review(int id, String review, int rating, int beerId, int userId){
+
+
+    public Review(int id, String review, int rating, int beerId, int userId, String reviewDate){
         this.id = id;
         this.review = review;
-        this. rating = rating;
+        this.rating = rating;
         this.beerId = beerId;
         this.userId = userId;
+        this.reviewDate = reviewDate;
     }
 
     public int getId() {
@@ -61,13 +64,14 @@ public class Review {
         this.userId = userId;
     }
 
-    public int getReviewDate() {
+    public String getReviewDate() {
         return reviewDate;
     }
 
-    public void setReviewDate(int reviewDate) {
+    public void setReviewDate(String reviewDate) {
         this.reviewDate = reviewDate;
     }
+
 }
 
 
