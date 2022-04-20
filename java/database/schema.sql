@@ -399,7 +399,7 @@ CREATE SEQUENCE seq_review_id
 CREATE TABLE reviews(
 	review_id int DEFAULT nextval('seq_review_id'::regclass) NOT NULL,
 	review varchar(10000) NOT NULL,
-	rating int NOT NULL CHECK (rating >= 5),
+	rating int NOT NULL CHECK (rating <= 5),
 	review_date TIMESTAMP,
 	beer_id int CONSTRAINT fk_beers REFERENCES beers(beer_id) NOT NULL,
 	reviewer_id int CONSTRAINT fk_users REFERENCES users(user_id)
