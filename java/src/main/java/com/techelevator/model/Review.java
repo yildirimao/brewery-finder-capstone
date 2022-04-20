@@ -6,6 +6,7 @@ public class Review {
     private int rating;
     private int beerId;
     private int userId;
+    private int reviewDate;
 
 
     public Review(){
@@ -58,6 +59,14 @@ public class Review {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public int getReviewDate() {
+        return reviewDate;
+    }
+
+    public void setReviewDate(int reviewDate) {
+        this.reviewDate = reviewDate;
     }
 }
 
