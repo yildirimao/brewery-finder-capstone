@@ -21,8 +21,11 @@ public class BreweryController {
     private BreweryDao breweryDao;
     private UserDao userDao;
     private BrewerDao brewerDao;
-    public BreweryController(BreweryDao breweryDao) {
+
+    public BreweryController(BreweryDao breweryDao, UserDao userDao, BrewerDao brewerDao) {
         this.breweryDao = breweryDao;
+        this.userDao = userDao;
+        this.brewerDao = brewerDao;
     }
 
     @RequestMapping(path = "/breweries", method = RequestMethod.GET)
@@ -62,6 +65,6 @@ public class BreweryController {
         } else {
             System.out.println("User does not have required authorities to update brewery."); //beerDao.create(beer);
         }
-        breweryDao.update(brewery.getPhoneNumber(), brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive(), brewery_id);
+       
     }
 }
