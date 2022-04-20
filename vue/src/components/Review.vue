@@ -1,12 +1,13 @@
 <template>
   <div>
-        <section id="review">
+        <section id="review" style="padding-right:100px; padding-left: 100px">
             <div id="reviewer">
                 <div id="info">
                     <h2 style="margin:0;">
                         {{this.review.reviewer}}
                     </h2>
-                    <p>{{this.review.date}}</p>
+                    <img src="https://image.shutterstock.com/image-photo/brewery-concept-happy-smiling-man-600w-1379996219.jpg" alt="beer drinker" style="width: 200px; border-radius: 70%">
+                    <p>review date: {{this.review.reviewDate}}</p>
                 </div>
             </div>
             
@@ -14,7 +15,7 @@
                 <span v-for="n in this.review.rating" :key="n">🍺</span>
             </p>
             
-            <p id="review-text">
+            <p id="review-text" style="font-size: 20px">
                 {{this.review.review}}
             </p>
         </section>
@@ -24,10 +25,6 @@
 <script>
 export default {
     props:["review"],
-    // created(){
-    //     this.$store.commit('GET_REVIEWS_BY_BEER', this.$route.params.id)
-    //     console.log(this.$route.params.id)
-    // }
 }
 </script>
 
