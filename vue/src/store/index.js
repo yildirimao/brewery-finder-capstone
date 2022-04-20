@@ -111,6 +111,13 @@ export default new Vuex.Store({
         });
       });
       
+    },
+
+    TOGGLE_BEER_AVAILABILITY(state, beerId){
+      let foundBeer = this.state.beers.find(b => {
+        return b.id == beerId;
+      })
+      foundBeer.available = !foundBeer.available;
     }
   }
 })
