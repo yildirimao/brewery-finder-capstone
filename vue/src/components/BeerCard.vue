@@ -5,8 +5,8 @@
             <li id="name">{{beer.name}} </li>
             <li>Type: {{beer.type}} </li>
             <li>ABV: {{beer.abv}}% </li>
-            <li>IBU: {{beer.ibu}} </li>
-            <li>Hops: {{beer.hops}} </li>
+            <li v-if="beer.ibu > 0">IBU: {{beer.ibu}} </li>
+            <li v-if="beer.hops !== ''">Hops: {{beer.hops}} </li>
           </ul>  
       </div>
   </div>
