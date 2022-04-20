@@ -4,10 +4,7 @@ import com.techelevator.dao.BeerDao;
 import com.techelevator.dao.BrewerDao;
 import com.techelevator.dao.BreweryDao;
 import com.techelevator.dao.UserDao;
-import com.techelevator.model.Authority;
-import com.techelevator.model.Beer;
-import com.techelevator.model.Brewer;
-import com.techelevator.model.User;
+import com.techelevator.model.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -94,5 +91,27 @@ public class BeerController {
             System.out.println("User does not have required authorities to add beer."); //beerDao.create(beer);
             return beer;
         }
+    }
+
+    @RequestMapping(path = "/beers/search/{terms}", method = RequestMethod.POST)
+    public List<Beer> searchBeers(@PathVariable String terms) {
+        List<Beer> beers = beerDao.listAll();
+        for (int i = 0; i < beers.size(); i++) {
+            Beer b = beers.get(i);
+
+            String mush = b.getDescription() +
+                    b.getHops() +
+                    b.getMalts() +
+                    b.getType() +
+                    b.getName();
+
+            if(!mush.toLowerCase().contains(terms.toLowerCase())){
+                beers.remove(i);
+                i--;
+                continue;
+            }
+        }
+
+        return beers;
     }
 }

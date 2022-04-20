@@ -3,10 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.BrewerDao;
 import com.techelevator.dao.BreweryDao;
 import com.techelevator.dao.UserDao;
-import com.techelevator.model.Authority;
-import com.techelevator.model.Brewer;
-import com.techelevator.model.Brewery;
-import com.techelevator.model.User;
+import com.techelevator.model.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -68,5 +65,25 @@ public class BreweryController {
 
     }
 
+    @RequestMapping(path = "/breweries/search/{terms}", method = RequestMethod.POST)
+    public List<Brewery> searchBreweries(@PathVariable String terms) {
+        List<Brewery> breweries = breweryDao.listAll();
+        for (int i = 0; i < breweries.size(); i++) {
+            Brewery b = breweries.get(i);
 
+            String mush = b.getAddress() +
+                    b.getBio() +
+                    b.getHoursOfOperation() +
+                    b.getLocation() +
+                    b.getName();
+
+            if(!mush.toLowerCase().contains(terms.toLowerCase())){
+                breweries.remove(i);
+                i--;
+                continue;
+            }
+        }
+
+        return breweries;
+    }
 }
