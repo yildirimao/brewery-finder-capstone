@@ -4,7 +4,7 @@ import axios from 'axios'
 import BreweryService from '@/services/BreweryService.js'
 import BeerService from '../services/BeerService'
 import AuthService from '../services/AuthService.js'
-
+import BrewerService from '@/services/BrewerService.js'
 Vue.use(Vuex)
 
 /*
@@ -56,6 +56,22 @@ export default new Vuex.Store({
     },
     GET_LIST_BREWERY(state){
       BreweryService.getListBreweries().then(response => {
+        if(response.status === 200){
+          state.breweries = response.data;
+        }
+      })
+      .catch(error => {
+        if(error.response){
+          console.log("response error");
+        } else if(error.request){
+          console.log("request error");
+        } else {
+          console.log("other error");
+        }
+      })
+    },
+    GET_BREWER(state, id){
+      BrewerService.getBrewer(id).then(response => {
         if(response.status === 200){
           state.breweries = response.data;
         }

@@ -1,7 +1,7 @@
 <template>
   <div>
       <div id="brewery-grid" >
-    <router-link  v-for="brewery in this.$store.state.breweries" :key="brewery.id" v-bind:to="{ name: 'brewery', params:{id:brewery.id}}">
+    <router-link  :key="brewery.id" v-bind:to="{ name: 'brewery', params:{id:brewery.id}}">
       <brewery-card  v-if="brewery.active" v-bind:brewery="brewery"/>
       <brewery-card v-else v-bind:brewery="brewery" style="filter: grayscale(100%);" v-text="brewery.name + ' is inactive'"/>
     </router-link>
@@ -13,20 +13,25 @@
 <script>
 import BreweryCard from '@/components/BreweryCard.vue'
 import BreweryPage from '../components/BreweryPage.vue'
-import BreweryService from '../services/BreweryService'
+// import BreweryService from '../services/BreweryService'
+import BrewerService from '../services/BrewerService'
 export default {
   components: { BreweryPage, BreweryCard },
     data(){
         return {
-            brewery: {}
+           brewer: {
+        breweryId: -1,
+        brewerId: -1
+      }
         }
     },
-    created(){
-        BreweryService.getBrewery(this.$route.params.id).then((response) => {
+    created(){      
+        BrewerService.getBrewer(this.$store.state.user.id).then((response) => {
         if (response.status == 200) {
-          this.brewery = response.data;
+          this.brewer = response.data;
         }
       });
+    
     }
 }
 </script>
