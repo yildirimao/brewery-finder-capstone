@@ -1,9 +1,9 @@
 <template>
   <div>
     <div class="toggle-form">
-      <button @click="toggleForm()">Brewery Update Form</button>
+      <button class="toggle-buf" @click="toggleForm()" >Brewery Update Form</button>
     </div>   
-    <form class="brewery-update-form" v-show="this.showForm">
+    <form class="brewery-update-form"  v-show="this.showForm">
       <div class="header">
         <h1>Brewery Update Form</h1>
       </div>
@@ -38,12 +38,12 @@
       </div>
       <br />
       <div class="brewery-bio" >
-        <label for="brewery-bio" style="padding: 10px;">History:</label><br />
+        <label for="brewery-bio">History:</label><br />
         <input type="text" name="brewery-bio" v-model="brewery.bio" required />
       </div>
       <br />
       <div class="brewery-images">
-        <label for="brewery-images" style="padding: 10px;">Enter an https:// URL for images:</label>
+        <label for="brewery-images" >Enter an https:// URL for images:</label>
         <br>
          <input
         type="url"
@@ -78,7 +78,6 @@
       <div class="brewery-update" style="padding: 20px;">
         <button @click="changeBreweryInfo()">Update</button>
       </div>
-      
     </form>
   </div>
 </template>
@@ -132,14 +131,47 @@ export default {
 </script>
 
 <style>
-
+.toggle-buf{
+  margin: 10px;
+  padding: 5px; 
+  border-radius: 15px
+}
+.header > h1 {
+  margin: 15px;
+  font-size: 25px;
+}
+.brewery-phone > label{
+  margin: 5px;
+}
+.brewery-hours > label{
+  margin: 5px;
+}
+.brewery-address > label{
+  margin: 5px;
+}
+.brewery-bio > label{
+  margin: 5px;
+}
+.brewery-images > label{
+  margin: 5px;
+}
+.brewery-status > p {
+  margin-bottom: 0px;
+}
 .brewery-update-form {
+  
+  background-color: #ffffff80; 
+  border-radius: 15px;
   display: grid;
-  color: white ;
-  grid-template-areas:"head head head"
-                      "phone hours address"
-                      "history images status"
-                      "update update update";
+  color: black ;
+  grid-template-areas:"head"
+                      "phone "
+                      "hours"
+                      "address"
+                      "history"
+                      "images"
+                      "status"
+                      "update";
 }
 .header{
   grid-area: head;
