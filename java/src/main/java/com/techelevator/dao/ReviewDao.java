@@ -11,6 +11,7 @@ public interface ReviewDao {
 
     List<Review> getReviewsByUser(int userId);
 
-    public List<Review> getReviewsByBrewery(String brewery);
+    List<Review> getReviewsByBrewery(String brewery);
 
+    Review createReview(String review, int rating, int beerId, int reviewerId);
 }

@@ -18,10 +18,10 @@ public class JdbcReviewDao implements ReviewDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @ Override
+    @Override
     public List<Review> getReviewsByBeer(int beerId){
         List<Review> reviewList = new ArrayList<>();
-        String sql = "SELECT review, rating, beer_id, reviewer_id " +
+        String sql = "SELECT review_id, review, rating, beer_id, reviewer_id, review_date " +
                 "FROM reviews " +
                 "WHERE beer_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, beerId);
@@ -35,9 +35,9 @@ public class JdbcReviewDao implements ReviewDao {
     @Override
     public List<Review> getReviewsByUser(int userId){
         List<Review> reviewList = new ArrayList<>();
-        String sql = "SELECT review, rating, beer_id, reviewer_id " +
+        String sql = "SELECT review_id, review, rating, beer_id, reviewer_id, review_date " +
                 "FROM reviews " +
-                "WHERE user_Id = ?;";
+                "WHERE reviewer_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
         while(results.next()){
             Review review = mapReviewToRow(results);
@@ -49,7 +49,7 @@ public class JdbcReviewDao implements ReviewDao {
     @Override
     public List<Review> getReviewsByBrewery(String brewery){
         List<Review> reviewList = new ArrayList<>();
-        String sql = "SELECT review, rating, reviews.beer_id, reviewer_id " +
+        String sql = "SELECT review_id, review, rating, reviews.beer_id, reviewer_id, review_date " +
         "FROM reviews " +
         "JOIN beers ON beers.beer_id = reviews.beer_id " +
         "JOIN breweries ON breweries.brewery_id = beers.brewery_id " +
@@ -64,7 +64,7 @@ public class JdbcReviewDao implements ReviewDao {
 
     @Override
     public Review getReviewByReviewId(int id) {
-        String sql = "SELECT review, rating, beer_id, reviewer_id " +
+        String sql = "SELECT review_id, review, rating, beer_id, reviewer_id, review_date " +
                 "FROM reviews " +
                 "WHERE review_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
@@ -75,6 +75,15 @@ public class JdbcReviewDao implements ReviewDao {
         }
     }
 
+    @Override
+    public Review createReview(String review, int rating, int beerId, int reviewerId){
+        String sql = "INSERT INTO reviews (review, rating, beer_id, reviewer_id) " +
+                "VALUES(?, ?, ?, ?) " +
+                "RETURNING review_id;";
+        int reviewId= jdbcTemplate.queryForObject(sql, int.class, review, rating, beerId, reviewerId);
+        return getReviewByReviewId(reviewId);
+    }
+
     public Review mapReviewToRow(SqlRowSet rs) {
         Review review = new Review();
         review.setId(rs.getInt("review_id"));
@@ -82,6 +91,7 @@ public class JdbcReviewDao implements ReviewDao {
         review.setRating(rs.getInt("rating"));
         review.setBeerId(rs.getInt("beer_id"));
         review.setUserId(rs.getInt("reviewer_id"));
+        review.setReviewDate(rs.getString("review_date"));
         return review;
     }
 }
