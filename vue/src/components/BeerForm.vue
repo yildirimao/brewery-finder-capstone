@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style>
-    form .beer-form {
+    .beer-form {
         background-color:#ffffff80;
         border-radius: 15px;
         padding: 1em;
