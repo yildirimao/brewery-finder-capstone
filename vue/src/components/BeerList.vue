@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import BeerService from '@/services/BeerService';
 import BeerCard from './BeerCard.vue'
 export default {
   components: { BeerCard },
@@ -18,17 +19,23 @@ export default {
   },
   methods:{
     isBrewer(){
-      let user = this.$store.state.user
-      return user.authorities.some(a => a.name == "ROLE_BREWER") &&
-             user.breweryId == this.id;
+      let u = this.$store.state.user
+        if(u.breweryId != undefined){
+        console.log(u.breweryId)
+        return u.authorities.some(a => a.name == "ROLE_BREWER") &&
+              u.breweryId == this.$route.params.id;
+      }
     },
     toggleAvail(beerId){
       console.log(beerId);
       //update beer on server side
-
-
-      //update beer on client side
-      this.$store.commit("TOGGLE_BEER_AVAILABILITY", beerId)
+      BeerService.toggleAvailability(beerId).then(response => {
+        if(response.status == 200){
+          this.$store.commit("TOGGLE_BEER_AVAILABILITY", beerId);
+        } else{
+          console.log(response.status);
+        }
+      });
     }
   }
 }

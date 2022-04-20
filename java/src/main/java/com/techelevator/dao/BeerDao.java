@@ -13,7 +13,7 @@ public interface BeerDao {
 
     Beer getBeerByName(String name);
 
-    Beer toggleBeerAvailability(int beerId);
+    void toggleBeerAvailability(int beerId);
 
     Beer create(Beer beerToCreate);
 
