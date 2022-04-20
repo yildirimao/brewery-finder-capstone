@@ -3,7 +3,7 @@
     <div id="nav">
       <div id="home">
         <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
-        <router-link v-bind:to="{ name: 'my-brewery'}" v-if="ifBrewer()">{{$store.state.user.username}}'s Brewery</router-link>
+
       </div>
       <div></div>  
       <div id="nav-login">

@@ -1,11 +1,17 @@
 package com.techelevator.controller;
 
+import com.techelevator.dao.BrewerDao;
 import com.techelevator.dao.BreweryDao;
+import com.techelevator.dao.UserDao;
+import com.techelevator.model.Authority;
+import com.techelevator.model.Brewer;
 import com.techelevator.model.Brewery;
+import com.techelevator.model.User;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -13,9 +19,13 @@ import java.util.List;
 public class BreweryController {
 
     private BreweryDao breweryDao;
+    private UserDao userDao;
+    private BrewerDao brewerDao;
 
-    public BreweryController(BreweryDao breweryDao) {
+    public BreweryController(BreweryDao breweryDao, UserDao userDao, BrewerDao brewerDao) {
         this.breweryDao = breweryDao;
+        this.userDao = userDao;
+        this.brewerDao = brewerDao;
     }
 
     @RequestMapping(path = "/breweries", method = RequestMethod.GET)
@@ -36,7 +46,25 @@ public class BreweryController {
                 brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive());}
 
     @RequestMapping(path = "/breweries/{brewery_id}", method = RequestMethod.PUT)
-    public void updateBrewery(@Valid @RequestBody Brewery brewery, @PathVariable int brewery_id){
-        breweryDao.update(brewery.getPhoneNumber(), brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive(), brewery_id);
+    public void updateBrewery(@Valid @RequestBody Brewery brewery, @PathVariable int brewery_id, Principal principal){
+        User user = userDao.findByUsername(principal.getName());
+        List<Brewer> brewers = brewerDao.listBrewersByBreweryId(brewery_id);
+        boolean isBrewer = false;
+        for (Brewer brewer : brewers) {
+            if (brewer.getBrewerId() == user.getId()) {
+                isBrewer = true;
+            }
+        };
+        //check if admin or brewer.
+        if(user.getAuthorities().contains(new Authority("ROLE_ADMIN"))) {
+            //admin path
+            System.out.println();
+            breweryDao.update(brewery.getPhoneNumber(), brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive(), brewery_id);
+        } else if (isBrewer) {
+            breweryDao.update(brewery.getPhoneNumber(), brewery.getHoursOfOperation(), brewery.getAddress(), brewery.getBio(), brewery.getImgUrl(), brewery.isActive(), brewery_id);
+        } else {
+            System.out.println("User does not have required authorities to update brewery."); //beerDao.create(beer);
+        }
+       
     }
 }

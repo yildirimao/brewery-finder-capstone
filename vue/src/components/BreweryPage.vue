@@ -84,6 +84,11 @@ export default {
       }
 
     },
+     isBrewer(){
+      let user = this.$store.state.user
+      return user.authorities.some(a => a.name == "ROLE_BREWER") &&
+             user.breweryId == this.id;
+    }
   },
 };
 </script>
