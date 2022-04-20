@@ -72,9 +72,6 @@ public class Review {
         this.reviewDate = reviewDate;
     }
 
-    public Review(String reviewDate) {
-        this.reviewDate = reviewDate;
-    }
 }
 
 

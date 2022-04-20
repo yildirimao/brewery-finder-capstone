@@ -30,5 +30,4 @@ public class ReviewController {
         return reviewDao.getReviewsByBeer(beer_id);
     }
 
-
 }
