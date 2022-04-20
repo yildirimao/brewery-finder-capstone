@@ -24,7 +24,7 @@
         <p id="beer_description">{{beer.description}}</p>
       </div>
     </div>
-    <review v-for="review in $store.state.reviews" :key="review.id" v-bind:review="review"/>
+    <review v-for="review in reviews" :key="review.id" v-bind:review="review"/>
     <beer-review-form/>
   </div>
 </template>
@@ -77,7 +77,9 @@ export default {
           this.beer = response.data;
         }
       });
-      BeerReviewService.getReviewsByBeer(this.$route.params.id).then(response => {
+      
+    }
+    BeerReviewService.getReviewsByBeer(this.$route.params.id).then(response => {
         if(response.status === 200){
           this.reviews = response.data;
           console.log(response.data)
@@ -92,9 +94,8 @@ export default {
           console.log("other error");
         }
       })
-    }
     
-  }
+  },
 }
 </script>
 

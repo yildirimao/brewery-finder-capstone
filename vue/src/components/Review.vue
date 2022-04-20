@@ -24,10 +24,10 @@
 <script>
 export default {
     props:["review"],
-    created(){
-        this.$store.commit('GET_REVIEWS_BY_BEER', this.$route.params.id)
-        console.log(this.$route.params.id)
-    }
+    // created(){
+    //     this.$store.commit('GET_REVIEWS_BY_BEER', this.$route.params.id)
+    //     console.log(this.$route.params.id)
+    // }
 }
 </script>
 
