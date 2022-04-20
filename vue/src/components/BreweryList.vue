@@ -12,8 +12,11 @@ import BreweryCard from './BreweryCard.vue'
 
 export default {
   components: { BreweryCard },
+  search_page:false,
   created(){
+    if(!this.search_page){
       this.$store.commit("GET_LIST_BREWERY");
+    }
   }
 }
 </script>
