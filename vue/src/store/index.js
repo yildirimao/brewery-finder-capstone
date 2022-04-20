@@ -14,7 +14,6 @@ Vue.use(Vuex)
  */
 const currentToken = localStorage.getItem('token')
 const currentUser = JSON.parse(localStorage.getItem('user'));
-
 if(currentToken != null) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
 }
@@ -25,6 +24,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     users:[],
     breweries: [],
+    brewers: [],
     beers:[]
   },
   mutations: {
@@ -70,6 +70,7 @@ export default new Vuex.Store({
         }
       })
     },
+
     GET_LIST_BEERS_FROM_BREWERY(state, breweryId){
       BeerService.getBeerByBreweryId(breweryId).then(response => {
         if(response.status === 200){

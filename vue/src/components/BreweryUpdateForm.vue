@@ -78,6 +78,9 @@
       <div class="brewery-update" style="padding: 20px;">
         <button @click="changeBreweryInfo()">Update</button>
       </div>
+      <div class="thanks">
+        <p>Thank you for update {{$store.state.user.username}} !</p>
+      </div>
     </form>
   </div>
 </template>

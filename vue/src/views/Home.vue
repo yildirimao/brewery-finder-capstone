@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <h3>Hello {{$store.state.user.username}}, welcome to</h3>
     <h1>The Brewery Finder <img src="../../public/Icon.png" style="height:1em; width:1em"></h1>
     <button id="bl-btn">This button is for Beer lovers</button>
 
@@ -9,15 +10,13 @@
     <!-- <p>You must be authenticated to see this</p> -->
     <brewery-list  />
     <div></div>
-    <brewery-form v-if="ifAdmin()" />
   </div>
 </template>
 
 <script>
-import BreweryForm from "../components/BreweryForm.vue";
 import BreweryList from "../components/BreweryList.vue";
 export default {
-  components: { BreweryList, BreweryForm },
+  components: { BreweryList},
   name: "home",
   mounted() {
     let user = this.$store.state.user;
@@ -35,15 +34,15 @@ export default {
   },
   methods: {
     ifAdmin() {
-      if (this.$store.state.user.authorities == undefined) {
-        return false;
-      }
+      // if (this.$store.state.user.authorities == undefined) {
+      //   return false;
+      // }
       if (this.$store.state.user.authorities[0].name == "ROLE_ADMIN") {
         return true;
       } else {
         return false;
       }
-    },
+    }
 
   },
 };
