@@ -4,7 +4,7 @@
     <form class="beer-review-form" style="color: white" v-show="this.showForm">
       <div class="rating">
         <label for="rating"> Rate that beer:</label> <br>
-        <select name="rating" id="rating" style="width: 100px; border-radius: 10px ">
+        <select name="rating" id="rating" style="width: 100px; border-radius: 10px " v-model="review.rating">
           <option value="5">5</option>
           <option value="4">4</option>
           <option value="3">3</option>
@@ -15,9 +15,9 @@
       <br />
       <div class="reviewText" >
         <label for="reviewText" style="padding: 10px"> Review: </label> <br>
-        <textarea name="reviewText" id="reviewText" cols="30" rows="5" style="border-radius: 10px"></textarea>
+        <textarea name="reviewText" id="reviewText" cols="30" rows="5" style="border-radius: 10px" v-model="review.review"></textarea>
       </div>
-      <button class="submit" style="margin-top: 20px">Submit Review</button>
+      <button class="submit" style="margin-top: 20px" @click.prevent="submitBeerReview(); resetForm()">Submit Review</button>
     </form>
   </div>
 </template>
@@ -27,29 +27,40 @@ import BeerReviewService from '@/services/BeerReviewService.js'
 export default {
   data() {
     return {
-      reviewer: this.$store.state.user.username,
-      newReview: {
+      review: {
         id: -1,
         review: "",
         rating: -1,
-        beerId: this.$route.params.beerId,
+        beerId: this.$route.params.id,
         userId: this.$store.state.user.id,
-        date: new Date()
+        date: "2012-04-23T18:25:43.511Z"
       },
       showForm: false
     };
   },
   methods: {
     submitBeerReview() {
-      BeerReviewService.createReview(this.newReview).then(response => {
+      BeerReviewService.createBeerReview(this.review).then(response => {
+        
         if(response.status == 201) {
+          console.log(response.status)
           this.$router.push({name: 'beer', params:{id: this.$route.params.id}})
+          
+        } else {
+          console.log('error')
         }
       })
+       .catch((error) => {
+          console.log(error);
+        });
     },
     toggleForm(){
       this.showForm = !this.showForm
       console.log(this.showForm)
+    },
+    resetForm(){
+      this.showForm = false;
+      this.review = {};
     }
   }
 };
