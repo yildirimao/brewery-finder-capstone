@@ -9,7 +9,7 @@ import BreweryDisplay from '../views/BreweryDisplay.vue'
 import BeerDisplay from '../views/BeerDisplay.vue'
 import store from '../store/index'
 import Admin from '../views/Admin.vue'
-
+import MyBrewery from '../views/MyBrewery.vue'
 
 
 Vue.use(Router)
@@ -75,7 +75,7 @@ const router = new Router({
         requiresAuth: false
       }
     },
-    
+
     {
       path: "/beer/:id",
       name: "beer",
@@ -92,6 +92,14 @@ const router = new Router({
         requiresAuth: true
       }
     },
+    {
+      path: "/myBrewery",
+      name: "my-brewery",
+      component: MyBrewery,
+      meta: {
+        requiresAuth: true
+      }
+    },
   ]
 })
 
@@ -101,10 +109,10 @@ router.beforeEach((to, from, next) => {
   const authorized = store.state.token === '';
   const is21 = localStorage.getItem("is21");
 
-  if(authorized && !is21 && to.name != "agefilter"){
+  if (authorized && !is21 && to.name != "agefilter") {
     //21+ filter
-    next("/agefilter"); 
-  }else if (requiresAuth && authorized) { 
+    next("/agefilter");
+  } else if (requiresAuth && authorized) {
     // If it does and they are not logged in, send the user to "/login"
     next("/login");
   } else {

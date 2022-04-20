@@ -3,11 +3,11 @@
     <div id="nav">
       <div id="home">
         <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
+        <router-link v-bind:to="{ name: 'my-brewery'}" v-if="ifBrewer()">{{$store.state.user.username}}'s Brewery</router-link>
       </div>
-      <div id="admin">
-        <router-link v-bind:to="{ name: 'admin' }" v-if="ifAdmin()">Admin</router-link>
-      </div>  
+      <div></div>  
       <div id="nav-login">
+        <router-link v-bind:to="{ name: 'admin' }" v-if="ifAdmin()">Admin </router-link>
         <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
         <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
         <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
@@ -26,6 +26,16 @@ export default {
         return false;
       }
       if(this.$store.state.user.authorities[0].name == 'ROLE_ADMIN'){
+        return true;
+      }else {
+        return false;
+      }
+    },
+    ifBrewer(){
+      if(this.$store.state.user.authorities == undefined){
+        return false;
+      }
+      if(this.$store.state.user.authorities[0].name == 'ROLE_BREWER'){
         return true;
       }else {
         return false;
@@ -66,11 +76,11 @@ export default {
     padding-left: 2em;
   }
 
-  #admin{
+  /* #admin{
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     grid-area: "admin";
-  }
+  } */
 
   #nav-login{
     display: flex;

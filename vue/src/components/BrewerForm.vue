@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="toggleForm()">Show/Hide Brewer Form</button>
+    <button @click="toggleForm()">Add New Brewer</button>
     <form class="brewer-form" v-show="this.showForm">
       <h1>Add Brewer Form</h1>
 

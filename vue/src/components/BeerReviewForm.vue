@@ -1,10 +1,10 @@
 <template>
   <div> 
-    <button @click="toggleForm()">Share your opinion about that beer with other beer lovers!</button>
+    <button @click="toggleForm()" style="border-radius: 10px">Share your opinion about that beer with other beer lovers!</button>
     <form class="beer-review-form" style="color: white" v-show="this.showForm">
       <div class="rating">
-        <label for="rating"> Rating:</label> <br>
-        <select name="rating" id="rating" style="width: 100px: ">
+        <label for="rating"> Rate that beer:</label> <br>
+        <select name="rating" id="rating" style="width: 100px; border-radius: 10px ">
           <option value="5">5</option>
           <option value="4">4</option>
           <option value="3">3</option>
@@ -13,11 +13,11 @@
         </select>
       </div>
       <br />
-      <div class="reviewText">
+      <div class="reviewText" >
         <label for="reviewText" style="padding: 10px"> Review: </label> <br>
-        <textarea name="reviewText" id="reviewText" cols="30" rows="5"></textarea>
+        <textarea name="reviewText" id="reviewText" cols="30" rows="5" style="border-radius: 10px"></textarea>
       </div>
-      <button class="submit" style="margin-top: 20px">Submit</button>
+      <button class="submit" style="margin-top: 20px">Submit Review</button>
     </form>
   </div>
 </template>
@@ -29,11 +29,11 @@ export default {
     return {
       reviewer: this.$store.state.user.username,
       newReview: {
-        reviewId: -1,
+        id: -1,
         review: "",
         rating: -1,
         beerId: this.$route.params.beerId,
-        reviewerId: this.$store.state.user.id,
+        userId: this.$store.state.user.id,
         date: new Date()
       },
       showForm: false
