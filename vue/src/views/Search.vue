@@ -9,7 +9,7 @@
 
 <script>
 import BreweryList from '../components/BreweryList.vue'
-import BeerList from '../components/BreweryList.vue'
+import BeerList from '../components/BeerList.vue'
 export default {
     components: { BreweryList, BeerList },
     data(){

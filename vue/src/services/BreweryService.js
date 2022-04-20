@@ -19,6 +19,6 @@ export default {
   },
 
   searchForBreweries(searchTerms){
-    return axios.post(`/breweries/search`, searchTerms)
+    return axios.post(`/breweries/search/${searchTerms}`)
   }
 }

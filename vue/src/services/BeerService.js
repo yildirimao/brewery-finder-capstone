@@ -23,6 +23,6 @@ export default {
   },
 
   searchForBeers(searchTerms){
-    return axios.post(`/beers/search`, searchTerms)
+    return axios.post(`/beers/search/${searchTerms}`)
   }
 }

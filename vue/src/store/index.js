@@ -123,17 +123,37 @@ export default new Vuex.Store({
 
     SEARCH(state, payload){
       if(payload.for == "breweries"){
+        state.breweries = [];
         BreweryService.searchForBreweries(payload.terms).then(response =>{
           if(response.status == 200){
             state.breweries = response.data;
           } 
+        })
+        .catch(error => {
+          if(error.response){
+            console.log("response error");
+          } else if(error.request){
+            console.log("request error");
+          } else {
+            console.log("other error");
+          }
         });
       }
       else if(payload.for == "beers"){
+        state.beers = [];
         BeerService.searchForBeers(payload.terms).then(response =>{
           if(response.status == 200){
             state.beers = response.data;
           } 
+        })
+        .catch(error => {
+          if(error.response){
+            console.log("response error");
+          } else if(error.request){
+            console.log("request error");
+          } else {
+            console.log("other error");
+          }
         });
       }
     }
