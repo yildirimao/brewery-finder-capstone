@@ -37,9 +37,9 @@
     <div>
       <beer-list v-bind:id="this.$route.params.id" />
     </div>
-    <div class="forms" v-if="isBrewer()">
-      <brewery-update-form  id="brewery-form" />
-      <beer-form id="beer-form" />
+    <div class="forms">
+      <brewery-update-form v-if="ifBrewer()" id="brewery-form" />
+      <beer-form v-if="ifBrewer()" id="beer-form" />
     </div>
   </div>
 </template>
@@ -74,13 +74,17 @@ export default {
   
   },
   methods: {
-      isBrewer(){
-      let user = this.$store.state.user
-      return user.authorities.some(a => a.name == "ROLE_BREWER") &&
-             user.breweryId == this.id;
-    }
+    ifBrewer() {
+      if(this.$store.state.user.authorities == undefined){
+        return false;
+      }else if(this.$store.state.user.authorities[0].name == "ROLE_BREWER"){
+        return true;
+      } else {
+        return false;
+      }
 
     },
+  },
 };
 </script>
 
