@@ -102,12 +102,10 @@ public class JdbcBeerDao implements BeerDao{
     }
 
     @Override
-    public Beer toggleBeerAvailability(int beerId){
+    public void toggleBeerAvailability(int beerId){
         String sql = "UPDATE beers SET available = NOT available " +
-                     "WHERE beer_id = 1 " +
-                     "RETURNING beer_id, beer_name, abv, beer_type, ibu, hops, description, beer_img, malts, available, brewery_id;";
-        Beer updatedBeer = jdbcTemplate.queryForObject(sql, Beer.class);
-        return updatedBeer;
+                     "WHERE beer_id = ? ";
+        jdbcTemplate.update(sql, beerId);
     }
 
     @Override

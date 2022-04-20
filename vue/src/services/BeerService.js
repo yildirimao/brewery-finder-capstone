@@ -16,5 +16,9 @@ export default {
 
   createBeer(beer){
       return axios.post('/beers', beer)
+  },
+
+  toggleAvailability(id){
+    return axios.put(`/beers/${id}/toggle`)
   }
 }

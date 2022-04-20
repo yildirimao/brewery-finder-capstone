@@ -84,12 +84,14 @@ export default {
       }
 
     },
-     isBrewer(){
+    isBrewer(){
       let cuser = this.$store.state.user
-      console.log(cuser.breweryId)
-      // renamed the user because user was overwritten in somewheer else
-      return cuser.authorities.some(a => a.name == "ROLE_BREWER") &&
-             cuser.breweryId == this.$route.params.id;
+        if(cuser.breweryId != undefined){
+        console.log(cuser.breweryId)
+        // renamed the user because user was overwritten in somewheer else
+        return cuser.authorities.some(a => a.name == "ROLE_BREWER") &&
+              cuser.breweryId == this.$route.params.id;
+      }
     }
   },
 };
