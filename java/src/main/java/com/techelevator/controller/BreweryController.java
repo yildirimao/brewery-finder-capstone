@@ -65,6 +65,6 @@ public class BreweryController {
         } else {
             System.out.println("User does not have required authorities to update brewery."); //beerDao.create(beer);
         }
-       
+
     }
 }
