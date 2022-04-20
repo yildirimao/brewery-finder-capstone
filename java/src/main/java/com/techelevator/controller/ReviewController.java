@@ -1,6 +1,7 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.ReviewDao;
+import com.techelevator.model.DisplayReview;
 import com.techelevator.model.Review;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,7 @@ public class ReviewController {
     }
 
     @RequestMapping(path = "/beers/{beer_id}/reviews", method = RequestMethod.GET)
-    public List<Review> getBeerReviews(@PathVariable int beer_id){
+    public List<DisplayReview> getBeerReviews(@PathVariable int beer_id){
         return reviewDao.getReviewsByBeer(beer_id);
     }
 

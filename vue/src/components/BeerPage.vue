@@ -83,6 +83,7 @@ export default {
         if(response.status === 200){
           this.reviews = response.data;
           console.log(response.data)
+          this.$router.push({name: 'beer', params: { id: this.$route.params.id}})
         }
       })
       .catch(error => {
