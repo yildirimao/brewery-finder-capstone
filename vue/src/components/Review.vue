@@ -4,7 +4,7 @@
             <div id="reviewer">
                 <div id="info">
                     <h2 style="margin:0;">
-                        {{this.review.reviewer}}
+                        {{this.review.username}}
                     </h2>
                     <img src="https://image.shutterstock.com/image-photo/brewery-concept-happy-smiling-man-600w-1379996219.jpg" alt="beer drinker" style="width: 200px; border-radius: 70%">
                     <p>review date: {{this.review.reviewDate}}</p>
