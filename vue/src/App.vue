@@ -13,7 +13,7 @@
       </div>
      
     </div>
-    <router-view />
+    <router-view style="padding:0 2em" />
   </div>
 </template>
 
