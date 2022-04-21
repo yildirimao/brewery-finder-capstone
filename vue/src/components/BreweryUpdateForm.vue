@@ -12,6 +12,7 @@
         <input
           type="text"
           name="brewery-phone"
+          value="phoneNumber"
           v-model="brewery.phoneNumber"
           required
         />
@@ -76,7 +77,7 @@
       
       </div>
       <div class="brewery-update" style="padding: 20px;">
-        <button @click="changeBreweryInfo()">Update</button>
+        <button @click.prevent="changeBreweryInfo()">Update</button>
       </div>
       <div class="thanks">
         <p>Thank you for update {{$store.state.user.username}} !</p>
@@ -95,25 +96,22 @@ export default {
         id: this.$route.params.id,
         name: "",
         location: "",
-        phoneNumber: "3",
+        phoneNumber: "",
         hoursOfOperation: "",
         address: "",
         bio: "",
         imgUrl: "",
         active: false,
       },
-      breweryForPreFill: {
-      },
       showForm: false,
     };
   },
-  created(){
+  method(){
       BreweryService.getBrewery(this.$route.params.id).then(response => {
         if(response.status == 201){
-          this.breweryForPreFill = response.data;
+          this.brewery = response.data;
         }
       });
-      console.log(this.breweryForPreFill);
   },
   methods: {
     changeBreweryInfo() {
