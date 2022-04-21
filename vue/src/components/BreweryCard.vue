@@ -1,7 +1,8 @@
 <template>
 <!--   this is for when/if we add custom pictures per brewery-->
-  <div id="background" v-bind:style="`background-image: url(${brewery.imgUrl}); background-size: cover;`">
+  <div id="background" v-bind:style="`background-image: url(${brewery.imgUrl}); ${brewery.active ? '' : 'filter: grayscale(100%);'}`">
       <div id="text">
+          <p style="font-size:0.75em; margin:0;" v-if="!brewery.active">Inactive 😢</p>
           <h1>{{brewery.name}}</h1>
           <p>{{brewery.location}}</p>
       </div>
@@ -18,6 +19,7 @@ export default {
 <style scoped>
 #background{
     background-image: url("https://media.istockphoto.com/photos/draught-beer-in-glasses-picture-id1040303026");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 20em;
