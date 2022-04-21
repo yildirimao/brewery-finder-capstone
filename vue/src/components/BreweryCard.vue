@@ -39,7 +39,7 @@ export default {
     padding: 1em;
     border-radius: 15px;
     text-transform: uppercase;
-    margin-top: 60%;
+    margin-top: 50%;
     transition: padding 1s, margin-top 1s, width 1s, height 1s;
 }
 
