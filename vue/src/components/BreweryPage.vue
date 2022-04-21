@@ -13,18 +13,23 @@
             <p style="margin-top: 0">{{ brewery.location }}</p>
           </div>
 
-          <div id="b-contact">
-            <p>{{ brewery.address }}</p>
-            <p>{{ brewery.phoneNumber }}</p>
+          <p id="b-bio" style="line-height: 1.8;">{{ brewery.bio }}</p>
+
+          <div id="b-info">
+            <ul id="b-hours">
+              <li v-for="day in brewery.hoursOfOperation.split(';')" :key="day">
+                {{ day }}
+              </li>
+            </ul>
+
+            <div id="b-contact">
+              <p>{{ brewery.address }}</p>
+              <p>{{ brewery.phoneNumber }}</p>
+            </div>
           </div>
+          
 
-          <p id="b-bio">{{ brewery.bio }}</p>
 
-          <ul id="b-hours">
-            <li v-for="day in brewery.hoursOfOperation.split(';')" :key="day">
-              {{ day }}
-            </li>
-          </ul>
         </div>
       </div>
     </div>
@@ -112,7 +117,8 @@ export default {
 
 .contrast {
   font-family: "Kanit", sans-serif;
-  background-color: #ffffffc0;
+  background-color: #000000c0;
+  color: white;
   width: fit-content;
   height: fit-content;
   border-radius: 15px;
@@ -125,9 +131,8 @@ export default {
   display: grid;
   grid-template-areas:
     "name name name"
-    "hours bio bio"
-    "hours bio bio"
-    "contact contact contact";
+    "info bio bio"
+    "info bio bio";
   animation: fadein 3s;
 }
 
@@ -145,7 +150,7 @@ export default {
     background-color: transparent;
   }
   to {
-    background-color: #ffffffc0;
+    background-color: #000000c0;
   }
 }
 
@@ -155,15 +160,19 @@ export default {
 
 #b-name h1 {
   margin-bottom: 0;
-  border-bottom: 1px black solid;
+  border-bottom: 1px white solid;
 }
 
 #b-name p {
   margin-top: 0;
 }
 
-#b-contact {
-  grid-area: contact;
+#b-info {
+  grid-area: info;
+  padding-right: 2em;
+  margin-right: 0;
+  margin-bottom: 2em;
+  border-right: white 1px solid;
 }
 
 #b-bio {
@@ -173,10 +182,7 @@ export default {
 }
 
 #b-hours {
-  grid-area: hours;
-  padding-right: 2em;
-  margin-right: 0;
-  border-right: black 1px solid;
+  text-align: left;
 }
 
 .forms {
