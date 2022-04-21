@@ -95,15 +95,25 @@ export default {
         id: this.$route.params.id,
         name: "",
         location: "",
-        phoneNumber: "",
+        phoneNumber: "3",
         hoursOfOperation: "",
         address: "",
         bio: "",
         imgUrl: "",
         active: false,
       },
+      breweryForPreFill: {
+      },
       showForm: false,
     };
+  },
+  created(){
+      BreweryService.getBrewery(this.$route.params.id).then(response => {
+        if(response.status == 201){
+          this.breweryForPreFill = response.data;
+        }
+      });
+      console.log(this.breweryForPreFill);
   },
   methods: {
     changeBreweryInfo() {
@@ -127,7 +137,7 @@ export default {
     },
     toggleActivity() {
       this.active = !this.active;
-      console.log(this.active);
+      console.log(this.$route.params.id);
     },
   },
 };
