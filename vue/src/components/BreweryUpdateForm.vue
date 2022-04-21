@@ -106,12 +106,16 @@ export default {
       showForm: false,
     };
   },
-  method(){
+  created(){
+    if(this.brewery.id == this.$route.params.id){
       BreweryService.getBrewery(this.$route.params.id).then(response => {
-        if(response.status == 201){
+        if(response.status == 200){
           this.brewery = response.data;
         }
       });
+    }
+  
+      
   },
   methods: {
     changeBreweryInfo() {
