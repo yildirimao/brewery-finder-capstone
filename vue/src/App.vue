@@ -64,13 +64,16 @@ export default {
   }
   #nav a {
     padding: 1em;
-    /* background-color: #ffffff80; */
-    padding: 1em;
     text-decoration: none;
     color: white;
     font-weight: 450;
-    border-radius: 15px;
+    transition: background-color 1s;
   }
+
+  #nav a:hover {
+    background-color: #34323280;
+  }
+
   #home{
     display: flex;
     justify-content: flex-start;

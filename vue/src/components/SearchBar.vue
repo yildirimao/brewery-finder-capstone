@@ -53,6 +53,7 @@ export default {
   border-bottom-right-radius: 15px;
   background-color: white;
   border: 1px black solid;
+  transition: background-color 0.5s;
 }
 
 #search-btn:hover{

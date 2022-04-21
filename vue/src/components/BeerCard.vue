@@ -46,13 +46,21 @@ export default {
 
 #text{
     color: rgb(247, 243, 243);
+    height: 50%;
+    width: 90%;
     background-color: #24222280;
     padding: 1em;
     border-radius: 15px;
     text-transform: uppercase;
-    margin-top: auto;
+    margin-top: 40%;
+    transition: padding 1s, margin-top 1s, width 1s, height 1s;
 }
-#background:hover, #text:hover{
+
+#background:hover #text, #text:hover{
+    padding: 30% 0 0 0;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 </style>
