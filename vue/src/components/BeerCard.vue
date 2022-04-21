@@ -46,13 +46,13 @@ export default {
 
 #text{
     color: rgb(247, 243, 243);
-    height: 50%;
+    height: 55%;
     width: 90%;
     background-color: #24222280;
     padding: 1em;
     border-radius: 15px;
     text-transform: uppercase;
-    margin-top: 40%;
+    margin-top: 35%;
     transition: padding 1s, margin-top 1s, width 1s, height 1s;
 }
 
