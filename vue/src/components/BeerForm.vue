@@ -17,8 +17,6 @@
             <input type="text" name="description" v-model="beer.description"><br>
             <label for="beer-img">Image URL:</label><br>
             <input type="url" name="beer-img" v-model="beer.beer_img"><br>
-            <label for="brewery-id">Brewery Id:</label><br>
-            <input type="number" name="brewery-id" v-model="beer.breweryID"><br>
             <label for="beer-available">Available: </label>
             <input type="checkbox" name="beer-available" checked="Available" v-model="beer.available" @click="toggleActivity()"><br>
             <button @click="submitBeer">Submit</button>
@@ -29,6 +27,7 @@
 <script>
 import BeerService from "../services/BeerService"
 export default {
+    props:["b_id"],
     data() {
         return {
             beer: {
@@ -49,6 +48,7 @@ export default {
     },
     methods: {
         submitBeer() {
+            this.beer.breweryID = this.b_id;
             BeerService.createBeer(this.beer)
                 .then((response) => {
                     if (response.status == 201) {

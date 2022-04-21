@@ -39,35 +39,7 @@ export default {
   data(){
     return {
       beer:{},
-      reviews: {
-
-      }
-      
-        // {
-        //   reviewer:"Bob",
-        //   rating:5,
-        //   date:"04/20/2022",
-        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        // },
-        // {
-        //   reviewer:"Bob",
-        //   rating:5,
-        //   date:"04/20/2022",
-        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        // },
-        // {
-        //   reviewer:"Bob",
-        //   rating:5,
-        //   date:"04/20/2022",
-        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        // },
-        // {
-        //   reviewer:"Bob",
-        //   rating:5,
-        //   date:"04/20/2022",
-        //   review:"Aliqua nisi ullamco reprehenderit adipisicing amet eiusmod deserunt occaecat aliqua fugiat cupidatat culpa culpa culpa. Incididunt non in in officia eu nisi sunt. Quis voluptate nisi mollit voluptate qui laboris quis dolore. Cillum consequat voluptate veniam dolore adipisicing mollit."
-        // }
-    
+      reviews: { }
     }
   },
   created(){
@@ -82,7 +54,6 @@ export default {
     BeerReviewService.getReviewsByBeer(this.$route.params.id).then(response => {
         if(response.status === 200){
           this.reviews = response.data;
-          console.log(response.data)
           this.$router.push({name: 'beer', params: { id: this.$route.params.id}})
         }
       })

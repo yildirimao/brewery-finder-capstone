@@ -43,7 +43,6 @@ export default {
       BeerReviewService.createBeerReview(this.review).then(response => {
         
         if(response.status == 201) {
-          console.log(response.status)
           this.$router.push({name: 'beer', params:{id: this.$route.params.id}})
           
         } else {

@@ -55,16 +55,6 @@ export default {
     toggleForm() {
       this.showForm = !this.showForm;
     },
-    test(){
-        return this.$store.state.users.forEach(user => {
-            user.authorities.forEach(authority => {
-                if(authority.name == "ROLE_USER"){
-                    console.log(user.username)
-                }
-            })
-        });
-        // console.log(this.$store.state.user.authorities[0].name)
-    }
   },
   computed: {
       filterUsers() {
