@@ -24,13 +24,11 @@ export default {
     isBrewer(){
       let u = this.$store.state.user
         if(u.breweryId != undefined){
-        console.log(u.breweryId)
         return u.authorities.some(a => a.name == "ROLE_BREWER") &&
               u.breweryId == this.$route.params.id;
       }
     },
     toggleAvail(beerId){
-      console.log(beerId);
       //update beer on server side
       BeerService.toggleAvailability(beerId).then(response => {
         if(response.status == 200){
