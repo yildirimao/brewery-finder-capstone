@@ -1,16 +1,15 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <div id="home">
-        <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;&nbsp;
-
+    <div id="nav" class="text-uppercase">
+      <div id="home"> 
+        <router-link v-bind:to="{ name: 'home' }"><img src="../public/img/home.png" width="15" height="15">Home</router-link>&nbsp;&nbsp;
       </div>
       <div></div>  
       <div id="nav-login">
-        <router-link v-bind:to="{ name: 'admin' }" v-if="ifAdmin()">Admin </router-link>
-        <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''">Register</router-link>
-        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
-        <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''">Login</router-link>
+        <router-link v-bind:to="{ name: 'admin' }" v-if="ifAdmin()"><img src="../public/img/admin.png" width="15" height="15">Admin </router-link>
+        <router-link v-bind:to="{ name: 'register' }" v-if="$store.state.token == ''"><img src="../public/img/register.png" width="15" height="15">Register</router-link>
+        <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''"><img src="../public/img/logout.png" width="15" height="15">Logout</router-link>
+        <router-link v-bind:to="{ name: 'login' }" v-if="$store.state.token == ''"><img src="../public/img/user.png" width="15" height="15">Login</router-link>
       </div>
      
     </div>
@@ -57,16 +56,19 @@ export default {
     margin-bottom: 8px;
     position: sticky;
     display: grid;
+    background-color: rgba(61, 37, 4, 0.63);
     top: 0;
-    /* background-color: white; */
     grid-template: " home admin login";
     font-family: 'Playfair Display', serif;
     font-weight: 1000;
   }
   #nav a {
     padding: 1em;
-    background-color: #ffffff80;
+    /* background-color: #ffffff80; */
     padding: 1em;
+    text-decoration: none;
+    color: white;
+    font-weight: 450;
     border-radius: 15px;
   }
   #home{
@@ -75,7 +77,11 @@ export default {
     grid-area:"home";
     padding-left: 2em;
   }
-
+  #nav img {
+    filter: invert(100%);
+    margin-right: 10px;
+    padding-bottom: 2px;
+  }
   /* #admin{
     display: flex;
     justify-content: flex-end;
