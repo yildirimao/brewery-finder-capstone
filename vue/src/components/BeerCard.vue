@@ -45,11 +45,12 @@ export default {
 }
 
 #text{
-    color: rgb(0, 0, 0);
-    background-color: #ffffff80;
+    color: rgb(247, 243, 243);
+    background-color: #24222280;
     padding: 1em;
-    margin: 1em;
     border-radius: 15px;
+    text-transform: uppercase;
+    margin-top: auto;
 }
 #background:hover, #text:hover{
     cursor: pointer;

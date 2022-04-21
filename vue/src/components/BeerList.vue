@@ -2,7 +2,7 @@
   <div id="beer-grid">
     <router-link v-for="beer in this.$store.state.beers" :key="beer.id" v-bind:to="{ name: 'beer', params:{id:beer.id}}">
       <beer-card v-show="beer.available" v-bind:beer="beer"/>
-      <beer-card v-show="isBrewer() && !beer.available" v-bind:beer="beer" style="filter: grayscale(100%)" v-text="beer.name + ' is unavailable'"/>
+      <beer-card v-show="isBrewer() && !beer.available" v-bind:beer="beer" style="filter: grayscale(100%)"/>
       <button v-show="isBrewer()" @click.prevent="toggleAvail(beer.id)">Mark {{beer.available ? "unavailable" : "available"}}</button>
     </router-link>
   </div>
