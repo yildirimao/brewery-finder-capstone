@@ -84,7 +84,8 @@ export default {
   border-radius: 15px;
 }
 #contrast{
-  background-color: #ffffff80;
+  background-color: #000000c0;
+  color: white;
   width: fit-content;
   height: fit-content;
   border-radius: 15px;
@@ -98,12 +99,12 @@ export default {
 }
 #contrast > h1{
   grid-area: name;
-  border-bottom: 1px black solid;
+  border-bottom: 1px white solid;
   }
 #contrast > div{
   grid-area: info;
   padding-right: 1em;
-  border-right:1px black solid
+  border-right:1px white solid
   }
 #contrast > #beer_description{
   grid-area: desc;
