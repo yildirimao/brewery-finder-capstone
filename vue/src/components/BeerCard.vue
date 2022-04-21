@@ -7,15 +7,41 @@
             <li>ABV: {{beer.abv}}% </li>
             <li v-if="beer.ibu > 0">IBU: {{beer.ibu}} </li>
             <li v-if="beer.hops !== ''">Hops: {{beer.hops}} </li>
+            <li>Average Rating: {{avgRating}}</li>
           </ul>  
       </div>
   </div>
 </template>
 
 <script>
+import BeerReviewService from '../services/BeerReviewService.js'
 export default {
     name:'beer-card',
-    props:['beer']
+    props:['beer'],
+    data(){
+        return {
+            avgRating:"N/A"
+        }
+    },
+    mounted(){
+        let reviews
+        BeerReviewService.getReviewsByBeer(this.beer.id).then(r => {
+            if(r.status == 200){
+                reviews = r.data
+            }
+        }).then(() =>{
+            let sum = 0;
+            for (const r of reviews) {
+                sum += r.rating;
+            }
+            this.avgRating = (sum / reviews.length).toFixed(2);
+
+            if(reviews == 0){
+                this.avgRating = "N/A"
+            }
+        });
+        
+    }
 }
 </script>
 
@@ -46,13 +72,13 @@ export default {
 
 #text{
     color: rgb(247, 243, 243);
-    height: 55%;
+    height: 12em;
     width: 90%;
     background-color: #24222280;
     padding: 1em;
     border-radius: 15px;
     text-transform: uppercase;
-    margin-top: 35%;
+    margin-top: 30%;
     transition: padding 1s, margin-top 1s, width 1s, height 1s;
 }
 
