@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div id="welcome-text">
-      <h3>Hello{{$store.state.user.username != undefined ? " " + $store.state.user.username : ""}}, welcome to</h3>
+      <h3>Hello{{$store.state.user.username != undefined ? " " + $store.state.user.username : ""}}! Welcome to</h3>
       <h1>The Brewery Finder <img src="../../public/Icon.png" style="height:1em; width:1em"></h1>
     </div>
 

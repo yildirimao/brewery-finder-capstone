@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="toggle-form">
-      <button class="toggle-buf" @click="toggleForm()" >Brewery Update Form</button>
-    </div>   
-    <form class="brewery-update-form"  v-show="this.showForm">
+      <button class="toggle-buf" @click="toggleForm()">
+        Brewery Update Form
+      </button>
+    </div>
+    <form class="brewery-update-form" v-show="this.showForm">
       <div class="header">
         <h1>Brewery Update Form</h1>
       </div>
@@ -38,49 +40,48 @@
         />
       </div>
       <br />
-      <div class="brewery-bio" >
+      <div class="brewery-bio">
         <label for="brewery-bio">History:</label><br />
         <input type="text" name="brewery-bio" v-model="brewery.bio" required />
       </div>
       <br />
       <div class="brewery-images">
-        <label for="brewery-images" >Enter an https:// URL for images:</label>
-        <br>
-         <input
-        type="url"
-        name="brewery-img"
-        placeholder="https://exampleimg.com"
-        pattern="https://.*"
-        size="20"
-        v-model="brewery.imgUrl"
-        required
-      />
+        <label for="brewery-images">Enter an https:// URL for images:</label>
+        <br />
+        <input
+          type="url"
+          name="brewery-img"
+          placeholder="https://exampleimg.com"
+          pattern="https://.*"
+          size="20"
+          v-model="brewery.imgUrl"
+          required
+        />
       </div>
       <br />
       <div class="brewery-status">
-        <br>
+        <br />
         <!-- <label for="brewery-status">Brewery Status:</label> <br>
         <select name="brewery-status" id="brewery-status" @change="toggleActivity()">
           <option value="active" >Inactive</option>
           <option value="inactive" >Active</option>
         </select> -->
         <p>Brewery Status:</p>
-      <label for="active">Active</label>
-      <input
-        type="checkbox"
-        name="active"
-        checked="Active"
-        v-model="brewery.active"
-        @click="toggleActivity()"
-        required
-      />
-      
+        <label for="active">Active</label>
+        <input
+          type="checkbox"
+          name="active"
+          checked="Active"
+          v-model="brewery.active"
+          @click="toggleActivity()"
+          required
+        />
       </div>
-      <div class="brewery-update" style="padding: 20px;">
-        <button @click.prevent="changeBreweryInfo()">Update</button>
+      <div class="brewery-update">
+        <button @click.prevent="changeBreweryInfo()">Update Brewery</button>
       </div>
       <div class="thanks">
-        <p>Thank you for update {{$store.state.user.username}} !</p>
+        <p>Thank you for update, {{ $store.state.user.username }} !</p>
       </div>
     </form>
   </div>
@@ -106,16 +107,14 @@ export default {
       showForm: false,
     };
   },
-  created(){
-    if(this.brewery.id == this.$route.params.id){
-      BreweryService.getBrewery(this.$route.params.id).then(response => {
-        if(response.status == 200){
+  created() {
+    if (this.brewery.id == this.$route.params.id) {
+      BreweryService.getBrewery(this.$route.params.id).then((response) => {
+        if (response.status == 200) {
           this.brewery = response.data;
         }
       });
     }
-  
-      
   },
   methods: {
     changeBreweryInfo() {
@@ -146,49 +145,49 @@ export default {
 </script>
 
 <style>
-.toggle-buf{
+.toggle-buf {
   margin: 10px;
-  padding: 5px; 
-  border-radius: 15px
+  padding: 5px;
+  border-radius: 15px;
 }
 .header > h1 {
   margin: 15px;
   font-size: 25px;
 }
-.brewery-phone > label{
+.brewery-phone > label {
   margin: 5px;
 }
-.brewery-hours > label{
+.brewery-hours > label {
   margin: 5px;
 }
-.brewery-address > label{
+.brewery-address > label {
   margin: 5px;
 }
-.brewery-bio > label{
+.brewery-bio > label {
   margin: 5px;
 }
-.brewery-images > label{
+.brewery-images > label {
   margin: 5px;
 }
 .brewery-status > p {
   margin-bottom: 0px;
 }
 .brewery-update-form {
-  
-  background-color: #ffffff80; 
+  background-color: #ffffff80;
   border-radius: 15px;
   display: grid;
-  color: black ;
-  grid-template-areas:"head"
-                      "phone "
-                      "hours"
-                      "address"
-                      "history"
-                      "images"
-                      "status"
-                      "update";
+  color: black;
+  grid-template-areas:
+    "head"
+    "phone "
+    "hours"
+    "address"
+    "history"
+    "images"
+    "status"
+    "update";
 }
-.header{
+.header {
   grid-area: head;
 }
 .brewery-phone {
@@ -211,5 +210,6 @@ export default {
 }
 .brewery-update {
   grid-area: update;
+  padding: 20px;
 }
 </style>
