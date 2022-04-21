@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <h3>Hello{{$store.state.user.username != undefined ? " " + $store.state.user.username : ""}}, welcome to</h3>
-    <h1>The Brewery Finder <img src="../../public/Icon.png" style="height:1em; width:1em"></h1>
+    <div id="welcome-text">
+      <h3>Hello{{$store.state.user.username != undefined ? " " + $store.state.user.username : ""}}, welcome to</h3>
+      <h1>The Brewery Finder <img src="../../public/Icon.png" style="height:1em; width:1em"></h1>
+    </div>
 
     <search-bar/> <br>
 
@@ -54,5 +56,10 @@ export default {
 button {
   margin: 1em;
 }
+
+#welcome-text{
+  text-shadow: 1px 1px white;
+}
+
 </style>
 
