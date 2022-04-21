@@ -25,7 +25,7 @@
       </div>
     </div>
     <review v-for="review in reviews" :key="review.id" v-bind:review="review"/>
-    <beer-review-form/>
+    <beer-review-form v-if="this.$store.state.user.id != undefined"/>
   </div>
 </template>
 
@@ -66,8 +66,7 @@ export default {
           console.log("other error");
         }
       })
-    
-  },
+  }
 }
 </script>
 
