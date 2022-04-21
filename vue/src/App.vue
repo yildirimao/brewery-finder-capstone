@@ -56,7 +56,7 @@ export default {
     margin-bottom: 8px;
     position: sticky;
     display: grid;
-    background-color: rgba(61, 37, 4, 0.63);
+    background-color:#24222280;
     top: 0;
     grid-template: " home admin login";
     font-family: 'Playfair Display', serif;
