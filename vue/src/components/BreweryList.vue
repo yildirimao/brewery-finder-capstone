@@ -29,4 +29,7 @@ export default {
     gap: 1em;
 }
 
+#brewery-grid a{
+  text-decoration: none !important;
+}
 </style>

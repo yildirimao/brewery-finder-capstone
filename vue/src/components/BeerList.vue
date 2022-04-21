@@ -49,4 +49,8 @@ export default {
     grid-template-rows: fit-content;
     gap: 1em;
 }
+
+#beer-grid a{
+  text-decoration: none !important;
+}
 </style>
