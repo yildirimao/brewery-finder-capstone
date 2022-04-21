@@ -18,25 +18,8 @@ import SearchBar from '../components/SearchBar.vue';
 export default {
   components: { BreweryList, SearchBar},
   name: "home",
-  mounted() {
-    let user = this.$store.state.user;
-
-    if (user.authorities === undefined) {
-      document.querySelector("#a-btn").disabled = true;
-      document.querySelector("#b-btn").disabled = true;
-      document.querySelector("#bl-btn").disabled = true;
-    } else if (user.authorities[0].name == "ROLE_USER") {
-      document.querySelector("#a-btn").disabled = true;
-      document.querySelector("#b-btn").disabled = true;
-    } else if (user.authorities[0].name == "ROLE_BREWER") {
-      document.querySelector("#a-btn").disabled = true;
-    }
-  },
   methods: {
     ifAdmin() {
-      // if (this.$store.state.user.authorities == undefined) {
-      //   return false;
-      // }
       if (this.$store.state.user.authorities[0].name == "ROLE_ADMIN") {
         return true;
       } else {
