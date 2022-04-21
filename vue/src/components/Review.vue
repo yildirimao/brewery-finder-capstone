@@ -34,7 +34,8 @@ export default {
     grid-template-areas: "reviewer rating" 
                          "text text";
     grid-template-columns: auto 1fr;
-    background-color: #ffffff80;
+    color: rgb(247, 243, 243);
+    background-color: #24222280;
     width: fit-content;
     height: fit-content;
     border-radius: 15px;
