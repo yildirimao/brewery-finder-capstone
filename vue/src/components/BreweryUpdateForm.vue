@@ -147,7 +147,7 @@ export default {
 <style>
 .toggle-buf {
   margin: 10px;
-  padding: 5px;
+  padding: 7px;
 }
 .header > h1 {
   margin: 15px;
