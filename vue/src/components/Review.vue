@@ -6,8 +6,10 @@
                     <h2 style="margin:0;">
                         {{this.review.username}}
                     </h2>
-                    <img src="https://image.shutterstock.com/image-photo/brewery-concept-happy-smiling-man-600w-1379996219.jpg" alt="beer drinker" style="width: 200px; border-radius: 70%">
-                    <p>review date: {{this.review.reviewDate}}</p>
+                    <img src="https://image.shutterstock.com/image-photo/brewery-concept-happy-smiling-man-600w-1379996219.jpg" alt="beer drinker" style="width: 200px; border-radius: 70%; " v-if="review.rating == 5 ">
+                    <img src="https://image.shutterstock.com/image-photo/happy-handsome-bearded-man-smiling-600w-1568270938.jpg" alt="beer drinker" style="width: 200px; border-radius: 70%;" v-else-if="review.rating > 2 && review.rating < 5">
+                    <img src="https://image.shutterstock.com/image-photo/upset-young-man-sit-bar-600w-1299448255.jpg" alt="beer drinker" style="width: 200px; border-radius: 70%;" v-if="review.rating < 3 ">
+                    <p><strong> review date: </strong> {{this.review.reviewDate}}</p>
                 </div>
             </div>
             
