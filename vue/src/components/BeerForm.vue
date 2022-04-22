@@ -88,6 +88,7 @@ export default {
       BeerService.createBeer(this.beer)
         .then((response) => {
           if (response.status == 201) {
+            alert("Brewery updated successfully!");
             this.$router.push({ name: "Home" });
           }
         })
@@ -108,7 +109,6 @@ export default {
 <style>
 .toggle-abf {
   margin: 10px;
-  border-radius: 15px;
 }
 .header-beer > h1 {
   margin: 15px;

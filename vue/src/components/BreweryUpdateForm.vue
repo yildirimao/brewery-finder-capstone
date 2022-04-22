@@ -148,7 +148,6 @@ export default {
 .toggle-buf {
   margin: 10px;
   padding: 5px;
-  border-radius: 15px;
 }
 .header > h1 {
   margin: 15px;
