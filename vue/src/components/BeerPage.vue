@@ -24,7 +24,7 @@
         <p id="beer_description">{{beer.description}}</p>
       </div>
     </div>
-    <review v-for="review in reviews" :key="review.id" v-bind:review="review"/>
+    <review v-for="review in reviews" :key="review.id" v-bind:review="review" style/>
     <beer-review-form v-if="this.$store.state.user.id != undefined"/>
   </div>
 </template>
