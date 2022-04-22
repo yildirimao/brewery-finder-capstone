@@ -867,6 +867,42 @@ WHERE beer_name = 'Truth'),(
 SELECT user_id
 FROM users
 WHERE username = 'Zach'));
+
+INSERT INTO reviews (review, rating, beer_id, reviewer_id)
+VALUES ('Eh, not hoppy enough for me.', 5, (
+SELECT beer_id
+FROM beers
+WHERE beer_name = 'Truth'),(
+SELECT user_id
+FROM users
+WHERE username = 'user'));
+
+INSERT INTO reviews (review, rating, beer_id, reviewer_id)
+VALUES ('That is one good Cider!', 4, (
+SELECT beer_id
+FROM beers
+WHERE beer_name = '42 Mile'),(
+SELECT user_id
+FROM users
+WHERE username = 'Zach'));
+
+INSERT INTO reviews (review, rating, beer_id, reviewer_id)
+VALUES ('Gross.', 1, (
+SELECT beer_id
+FROM beers
+WHERE beer_name = '42 Mile'),(
+SELECT user_id
+FROM users
+WHERE username = 'user'));
+
+INSERT INTO reviews (review, rating, beer_id, reviewer_id)
+VALUES ('Eh. One of the better ciders I have had.', 3, (
+SELECT beer_id
+FROM beers
+WHERE beer_name = '42 Mile'),(
+SELECT user_id
+FROM users
+WHERE username = 'brewer'));
  
 COMMIT TRANSACTION;
  
