@@ -88,7 +88,7 @@ export default {
       BeerService.createBeer(this.beer)
         .then((response) => {
           if (response.status == 201) {
-            alert("Brewery updated successfully!");
+            alert("Beer added successfully!");
             this.$router.push({ name: "Home" });
           }
         })
