@@ -13,7 +13,7 @@
                 </div>
             </div>
             
-            <p id="rating">
+            <p id="rating" style="width: 119px">
                 <span v-for="n in this.review.rating" :key="n">🍺</span>
             </p>
             
