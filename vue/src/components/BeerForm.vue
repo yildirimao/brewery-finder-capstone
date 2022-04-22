@@ -108,7 +108,8 @@ export default {
 
 <style>
 .toggle-abf {
-  margin: 10px;
+  margin: 8px;
+  padding: 7px;
 }
 .header-beer > h1 {
   margin: 15px;
